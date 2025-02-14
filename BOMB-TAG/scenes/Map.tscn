@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bugykv15n7o5b"]
 
-[ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://BOMB-TAG/assets/ENV + Art assets/wall.tscn" id="2_8pnrf"]
+[ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall.tscn" id="2_8pnrf"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="4_3efji"]
 
 [sub_resource type="Shader" id="Shader_r4msl"]
