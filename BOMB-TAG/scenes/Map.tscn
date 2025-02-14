@@ -1,8 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://bugykv15n7o5b"]
+[gd_scene load_steps=10 format=3 uid="uid://bugykv15n7o5b"]
 
-[ext_resource type="Texture2D" uid="uid://d37leivf4qgsd" path="res://BOMB-TAG/assets/textures/hangar_concrete_floor_diff_4k.png" id="1_404rf"]
-[ext_resource type="Texture2D" uid="uid://hhcresqs123" path="res://BOMB-TAG/assets/textures/hangar_concrete_floor_nor_gl_4k.png" id="2_dad6d"]
-[ext_resource type="Texture2D" uid="uid://d1qvi2wxbqlrf" path="res://BOMB-TAG/assets/textures/hangar_concrete_floor_rough_4k.png" id="3_n2nv5"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="4_3efji"]
 
 [sub_resource type="Shader" id="Shader_r4msl"]
@@ -116,20 +113,11 @@ sky = SubResource("Sky_spqgl")
 tonemap_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lebr1"]
-albedo_texture = ExtResource("1_404rf")
-roughness_texture = ExtResource("3_n2nv5")
 normal_enabled = true
-normal_texture = ExtResource("2_dad6d")
 uv1_scale = Vector3(20.045, 20, 20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4k76i"]
 albedo_color = Color(0.956863, 0.352941, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7ud6"]
-albedo_color = Color(1, 0.713726, 0.27451, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sifhy"]
-albedo_color = Color(0.156745, 0.385091, 0.911646, 1)
 
 [node name="Map" type="Node3D"]
 
@@ -144,86 +132,64 @@ shadow_enabled = true
 [node name="Ground" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 4.07618e-05, -0.000197168, -4.07097e-05, 1, 0.000326956, 0.000197179, -0.000326949, 1, 0, -0.5, 0)
 use_collision = true
-size = Vector3(120, 1, 150)
+size = Vector3(55, 1, 40)
 material = SubResource("StandardMaterial3D_lebr1")
 
 [node name="Player" parent="." instance=ExtResource("4_3efji")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91248, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 can_sprint = true
 
-[node name="DIVIDER" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 0)
-size = Vector3(120, 45, 1)
+[node name="Directional Markers" type="Node3D" parent="."]
 
-[node name="Orgini Waypoints" type="Node3D" parent="."]
+[node name="Cardinal" type="CSGCombiner3D" parent="Directional Markers"]
 
-[node name="Directional Markers" type="Node3D" parent="Orgini Waypoints"]
-
-[node name="Cardinal" type="CSGCombiner3D" parent="Orgini Waypoints/Directional Markers"]
-
-[node name="NORTH" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/Cardinal"]
+[node name="NORTH" type="CSGCylinder3D" parent="Directional Markers/Cardinal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, -150)
 radius = 8.0
 height = 100.0
 sides = 32
 material = SubResource("StandardMaterial3D_4k76i")
 
-[node name="East" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/Cardinal"]
+[node name="East" type="CSGCylinder3D" parent="Directional Markers/Cardinal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 25, 0)
 radius = 4.0
 height = 50.0
 sides = 32
 
-[node name="West" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/Cardinal"]
+[node name="West" type="CSGCylinder3D" parent="Directional Markers/Cardinal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 25, 0)
 radius = 4.0
 height = 50.0
 sides = 32
 
-[node name="South" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/Cardinal"]
+[node name="South" type="CSGCylinder3D" parent="Directional Markers/Cardinal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 150)
 radius = 4.0
 height = 50.0
 sides = 32
 
-[node name="InterCardinal" type="CSGCombiner3D" parent="Orgini Waypoints/Directional Markers"]
+[node name="InterCardinal" type="CSGCombiner3D" parent="Directional Markers"]
 
-[node name="SW" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/InterCardinal"]
+[node name="SW" type="CSGCylinder3D" parent="Directional Markers/InterCardinal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 12.5, 100)
 radius = 4.0
 height = 25.0
 sides = 32
 
-[node name="SE" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/InterCardinal"]
+[node name="SE" type="CSGCylinder3D" parent="Directional Markers/InterCardinal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 12.5, 100)
 radius = 4.0
 height = 25.0
 sides = 32
 
-[node name="NE" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/InterCardinal"]
+[node name="NE" type="CSGCylinder3D" parent="Directional Markers/InterCardinal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 12.5, -100)
 radius = 4.0
 height = 25.0
 sides = 32
 
-[node name="NW" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/InterCardinal"]
+[node name="NW" type="CSGCylinder3D" parent="Directional Markers/InterCardinal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 12.5, -100)
 radius = 4.0
 height = 25.0
 sides = 32
-
-[node name="Orange" type="CSGCombiner3D" parent="Orgini Waypoints"]
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Orgini Waypoints/Orange"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00239956, 0.247313, -37.5016)
-height = 0.5
-sides = 16
-material = SubResource("StandardMaterial3D_b7ud6")
-
-[node name="Blue" type="CSGCombiner3D" parent="Orgini Waypoints"]
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Orgini Waypoints/Blue"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002, 0.247, 37.502)
-height = 0.5
-sides = 16
-material = SubResource("StandardMaterial3D_sifhy")

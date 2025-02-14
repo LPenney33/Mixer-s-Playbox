@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://s48a25fy2xgq"
+path="res://.godot/imported/indicator-round-b.obj-a9ae1d6081315ace21c7abef7e5ed99b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/indicator-round-b.obj-a9ae1d6081315ace21c7abef7e5ed99b.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Prototype Kit/Models/OBJ format/indicator-round-b.obj"
+dest_files=["res://.godot/imported/indicator-round-b.obj-a9ae1d6081315ace21c7abef7e5ed99b.mesh", "res://.godot/imported/indicator-round-b.obj-a9ae1d6081315ace21c7abef7e5ed99b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

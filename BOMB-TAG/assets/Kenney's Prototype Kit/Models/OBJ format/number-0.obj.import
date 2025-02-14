@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://83mod1wa77y3"
+path="res://.godot/imported/number-0.obj-86c40ccd599dc3a75f11dfbb2c4a166c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/number-0.obj-86c40ccd599dc3a75f11dfbb2c4a166c.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Prototype Kit/Models/OBJ format/number-0.obj"
+dest_files=["res://.godot/imported/number-0.obj-86c40ccd599dc3a75f11dfbb2c4a166c.mesh", "res://.godot/imported/number-0.obj-86c40ccd599dc3a75f11dfbb2c4a166c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://qpc1511cfea7"
+path="res://.godot/imported/stairs-diagonal-small-narrow.obj-cf9d5375687c43302c61c83e3daa39ad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairs-diagonal-small-narrow.obj-cf9d5375687c43302c61c83e3daa39ad.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Prototype Kit/Models/OBJ format/stairs-diagonal-small-narrow.obj"
+dest_files=["res://.godot/imported/stairs-diagonal-small-narrow.obj-cf9d5375687c43302c61c83e3daa39ad.mesh", "res://.godot/imported/stairs-diagonal-small-narrow.obj-cf9d5375687c43302c61c83e3daa39ad.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

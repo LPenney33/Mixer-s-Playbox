@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dv16ehbewarnr"
+path="res://.godot/imported/wall-corner-low.obj-214c1148edce5115f23c5c9ee700fefb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-corner-low.obj-214c1148edce5115f23c5c9ee700fefb.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Prototype Kit/Models/OBJ format/wall-corner-low.obj"
+dest_files=["res://.godot/imported/wall-corner-low.obj-214c1148edce5115f23c5c9ee700fefb.mesh", "res://.godot/imported/wall-corner-low.obj-214c1148edce5115f23c5c9ee700fefb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

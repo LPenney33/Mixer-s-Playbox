@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cu0sg5r3ctb3f"
+path="res://.godot/imported/indicator-special-arrow.obj-4d8d27c2a9c8e9578f62208956581d2b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/indicator-special-arrow.obj-4d8d27c2a9c8e9578f62208956581d2b.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Prototype Kit/Models/OBJ format/indicator-special-arrow.obj"
+dest_files=["res://.godot/imported/indicator-special-arrow.obj-4d8d27c2a9c8e9578f62208956581d2b.mesh", "res://.godot/imported/indicator-special-arrow.obj-4d8d27c2a9c8e9578f62208956581d2b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctxgx0apb2rxe"
+path="res://.godot/imported/target-b-round.obj-8b3d3e25621ace22ba21f307285d63be.mesh"
+
+[deps]
+
+files=["res://.godot/imported/target-b-round.obj-8b3d3e25621ace22ba21f307285d63be.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Prototype Kit/Models/OBJ format/target-b-round.obj"
+dest_files=["res://.godot/imported/target-b-round.obj-8b3d3e25621ace22ba21f307285d63be.mesh", "res://.godot/imported/target-b-round.obj-8b3d3e25621ace22ba21f307285d63be.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

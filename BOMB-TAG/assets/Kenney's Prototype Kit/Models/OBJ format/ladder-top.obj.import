@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://we85t7avjhop"
+path="res://.godot/imported/ladder-top.obj-53936b120c142fcc1f1f03f525ebdc3b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ladder-top.obj-53936b120c142fcc1f1f03f525ebdc3b.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Prototype Kit/Models/OBJ format/ladder-top.obj"
+dest_files=["res://.godot/imported/ladder-top.obj-53936b120c142fcc1f1f03f525ebdc3b.mesh", "res://.godot/imported/ladder-top.obj-53936b120c142fcc1f1f03f525ebdc3b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

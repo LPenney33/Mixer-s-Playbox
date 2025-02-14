@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b7d4lkcrycsy5"
+path="res://.godot/imported/floor-thick.obj-f7ce8c6168118ab3b4f71c700fe93659.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-thick.obj-f7ce8c6168118ab3b4f71c700fe93659.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Prototype Kit/Models/OBJ format/floor-thick.obj"
+dest_files=["res://.godot/imported/floor-thick.obj-f7ce8c6168118ab3b4f71c700fe93659.mesh", "res://.godot/imported/floor-thick.obj-f7ce8c6168118ab3b4f71c700fe93659.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
