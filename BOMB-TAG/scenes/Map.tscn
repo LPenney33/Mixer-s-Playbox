@@ -1,0 +1,229 @@
+[gd_scene load_steps=15 format=3 uid="uid://bugykv15n7o5b"]
+
+[ext_resource type="Texture2D" uid="uid://d37leivf4qgsd" path="res://BOMB-TAG/assets/textures/hangar_concrete_floor_diff_4k.png" id="1_404rf"]
+[ext_resource type="Texture2D" uid="uid://hhcresqs123" path="res://BOMB-TAG/assets/textures/hangar_concrete_floor_nor_gl_4k.png" id="2_dad6d"]
+[ext_resource type="Texture2D" uid="uid://d1qvi2wxbqlrf" path="res://BOMB-TAG/assets/textures/hangar_concrete_floor_rough_4k.png" id="3_n2nv5"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="4_3efji"]
+
+[sub_resource type="Shader" id="Shader_r4msl"]
+code = "
+// NOTE: Shader automatically converted from Godot Engine 4.3.stable's ProceduralSkyMaterial.
+
+shader_type sky;
+render_mode use_debanding;
+
+uniform vec4 sky_top_color : source_color = vec4(0.385, 0.454, 0.55, 1.0);
+uniform vec4 sky_horizon_color : source_color = vec4(0.646, 0.656, 0.67, 1.0);
+uniform float sky_curve : hint_range(0, 1) = 0.15;
+uniform float sky_energy = 1.0; // In Lux.
+uniform sampler2D sky_cover : filter_linear, source_color, hint_default_black;
+uniform vec4 sky_cover_modulate : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform vec4 ground_bottom_color : source_color = vec4(0.2, 0.169, 0.133, 1.0);
+uniform vec4 ground_horizon_color : source_color = vec4(0.646, 0.656, 0.67, 1.0);
+uniform float ground_curve : hint_range(0, 1) = 0.02;
+uniform float ground_energy = 1.0;
+uniform float sun_angle_max = 30.0;
+uniform float sun_curve : hint_range(0, 1) = 0.15;
+uniform float exposure : hint_range(0, 128) = 1.0;
+
+void sky() {
+	float v_angle = acos(clamp(EYEDIR.y, -1.0, 1.0));
+	float c = (1.0 - v_angle / (PI * 0.5));
+	vec3 sky = mix(sky_horizon_color.rgb, sky_top_color.rgb, clamp(1.0 - pow(1.0 - c, 1.0 / sky_curve), 0.0, 1.0));
+	sky *= sky_energy;
+
+	if (LIGHT0_ENABLED) {
+		float sun_angle = acos(dot(LIGHT0_DIRECTION, EYEDIR));
+		if (sun_angle < LIGHT0_SIZE) {
+			sky = LIGHT0_COLOR * LIGHT0_ENERGY;
+		} else if (sun_angle < sun_angle_max) {
+			float c2 = (sun_angle - LIGHT0_SIZE) / (sun_angle_max - LIGHT0_SIZE);
+			sky = mix(LIGHT0_COLOR * LIGHT0_ENERGY, sky, clamp(1.0 - pow(1.0 - c2, 1.0 / sun_curve), 0.0, 1.0));
+		}
+	}
+
+	if (LIGHT1_ENABLED) {
+		float sun_angle = acos(dot(LIGHT1_DIRECTION, EYEDIR));
+		if (sun_angle < LIGHT1_SIZE) {
+			sky = LIGHT1_COLOR * LIGHT1_ENERGY;
+		} else if (sun_angle < sun_angle_max) {
+			float c2 = (sun_angle - LIGHT1_SIZE) / (sun_angle_max - LIGHT1_SIZE);
+			sky = mix(LIGHT1_COLOR * LIGHT1_ENERGY, sky, clamp(1.0 - pow(1.0 - c2, 1.0 / sun_curve), 0.0, 1.0));
+		}
+	}
+
+	if (LIGHT2_ENABLED) {
+		float sun_angle = acos(dot(LIGHT2_DIRECTION, EYEDIR));
+		if (sun_angle < LIGHT2_SIZE) {
+			sky = LIGHT2_COLOR * LIGHT2_ENERGY;
+		} else if (sun_angle < sun_angle_max) {
+			float c2 = (sun_angle - LIGHT2_SIZE) / (sun_angle_max - LIGHT2_SIZE);
+			sky = mix(LIGHT2_COLOR * LIGHT2_ENERGY, sky, clamp(1.0 - pow(1.0 - c2, 1.0 / sun_curve), 0.0, 1.0));
+		}
+	}
+
+	if (LIGHT3_ENABLED) {
+		float sun_angle = acos(dot(LIGHT3_DIRECTION, EYEDIR));
+		if (sun_angle < LIGHT3_SIZE) {
+			sky = LIGHT3_COLOR * LIGHT3_ENERGY;
+		} else if (sun_angle < sun_angle_max) {
+			float c2 = (sun_angle - LIGHT3_SIZE) / (sun_angle_max - LIGHT3_SIZE);
+			sky = mix(LIGHT3_COLOR * LIGHT3_ENERGY, sky, clamp(1.0 - pow(1.0 - c2, 1.0 / sun_curve), 0.0, 1.0));
+		}
+	}
+
+	vec4 sky_cover_texture = texture(sky_cover, SKY_COORDS);
+	sky += (sky_cover_texture.rgb * sky_cover_modulate.rgb) * sky_cover_texture.a * sky_cover_modulate.a * sky_energy;
+
+	c = (v_angle - (PI * 0.5)) / (PI * 0.5);
+	vec3 ground = mix(ground_horizon_color.rgb, ground_bottom_color.rgb, clamp(1.0 - pow(1.0 - c, 1.0 / ground_curve), 0.0, 1.0));
+	ground *= ground_energy;
+
+	COLOR = mix(ground, sky, step(0.0, EYEDIR.y)) * exposure;
+}
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4ptx1"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tb8yt"]
+width = 1024
+height = 1024
+seamless = true
+noise = SubResource("FastNoiseLite_4ptx1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_50lew"]
+shader = SubResource("Shader_r4msl")
+shader_parameter/sky_top_color = Color(0.0494666, 0.345849, 0.554901, 1)
+shader_parameter/sky_horizon_color = Color(0.489989, 0.697854, 0.83482, 1)
+shader_parameter/sky_curve = 0.15
+shader_parameter/sky_energy = 1.0
+shader_parameter/sky_cover_modulate = Color(1, 1, 1, 1)
+shader_parameter/ground_bottom_color = Color(0.772756, 0.731408, 0.722376, 1)
+shader_parameter/ground_horizon_color = Color(0.590516, 0.683324, 0.750243, 1)
+shader_parameter/ground_curve = 0.02
+shader_parameter/ground_energy = 1.0
+shader_parameter/sun_angle_max = 0.523599
+shader_parameter/sun_curve = 0.15
+shader_parameter/exposure = 1.0
+shader_parameter/sky_cover = SubResource("NoiseTexture2D_tb8yt")
+
+[sub_resource type="Sky" id="Sky_spqgl"]
+sky_material = SubResource("ShaderMaterial_50lew")
+
+[sub_resource type="Environment" id="Environment_2y8a8"]
+background_mode = 2
+sky = SubResource("Sky_spqgl")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lebr1"]
+albedo_texture = ExtResource("1_404rf")
+roughness_texture = ExtResource("3_n2nv5")
+normal_enabled = true
+normal_texture = ExtResource("2_dad6d")
+uv1_scale = Vector3(20.045, 20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4k76i"]
+albedo_color = Color(0.956863, 0.352941, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7ud6"]
+albedo_color = Color(1, 0.713726, 0.27451, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sifhy"]
+albedo_color = Color(0.156745, 0.385091, 0.911646, 1)
+
+[node name="Map" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2y8a8")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.365163, 0.93085, 0.0131977, 0.513832, -0.213352, 0.830938, 0.776294, -0.296646, -0.556209, -100, 150, -100)
+light_energy = 3.25
+shadow_enabled = true
+
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 4.07618e-05, -0.000197168, -4.07097e-05, 1, 0.000326956, 0.000197179, -0.000326949, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(120, 1, 150)
+material = SubResource("StandardMaterial3D_lebr1")
+
+[node name="Player" parent="." instance=ExtResource("4_3efji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91248, 0)
+can_sprint = true
+
+[node name="DIVIDER" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 0)
+size = Vector3(120, 45, 1)
+
+[node name="Orgini Waypoints" type="Node3D" parent="."]
+
+[node name="Directional Markers" type="Node3D" parent="Orgini Waypoints"]
+
+[node name="Cardinal" type="CSGCombiner3D" parent="Orgini Waypoints/Directional Markers"]
+
+[node name="NORTH" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/Cardinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, -150)
+radius = 8.0
+height = 100.0
+sides = 32
+material = SubResource("StandardMaterial3D_4k76i")
+
+[node name="East" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/Cardinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 25, 0)
+radius = 4.0
+height = 50.0
+sides = 32
+
+[node name="West" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/Cardinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 25, 0)
+radius = 4.0
+height = 50.0
+sides = 32
+
+[node name="South" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/Cardinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 150)
+radius = 4.0
+height = 50.0
+sides = 32
+
+[node name="InterCardinal" type="CSGCombiner3D" parent="Orgini Waypoints/Directional Markers"]
+
+[node name="SW" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/InterCardinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 12.5, 100)
+radius = 4.0
+height = 25.0
+sides = 32
+
+[node name="SE" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/InterCardinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 12.5, 100)
+radius = 4.0
+height = 25.0
+sides = 32
+
+[node name="NE" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/InterCardinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 12.5, -100)
+radius = 4.0
+height = 25.0
+sides = 32
+
+[node name="NW" type="CSGCylinder3D" parent="Orgini Waypoints/Directional Markers/InterCardinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 12.5, -100)
+radius = 4.0
+height = 25.0
+sides = 32
+
+[node name="Orange" type="CSGCombiner3D" parent="Orgini Waypoints"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Orgini Waypoints/Orange"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00239956, 0.247313, -37.5016)
+height = 0.5
+sides = 16
+material = SubResource("StandardMaterial3D_b7ud6")
+
+[node name="Blue" type="CSGCombiner3D" parent="Orgini Waypoints"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Orgini Waypoints/Blue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002, 0.247, 37.502)
+height = 0.5
+sides = 16
+material = SubResource("StandardMaterial3D_sifhy")

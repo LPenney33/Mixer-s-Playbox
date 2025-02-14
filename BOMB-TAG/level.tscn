@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://3f74jl8jq8fv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1gqwo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ewrxu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tqvt6"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ltp81"]
+size = Vector3(20, 1, 20)
+
+[node name="Level" type="Node3D"]
+
+[node name="PillPlayer" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.10067, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PillPlayer"]
+transform = Transform3D(0.875, -0.216506, 0.433013, 0.433013, 0.75, -0.5, -0.216506, 0.625, 0.75, 0.0423002, -0.0666623, -0.000369072)
+shape = SubResource("CapsuleShape3D_1gqwo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PillPlayer"]
+transform = Transform3D(0.875, -0.216506, 0.433013, 0.433013, 0.75, -0.5, -0.216506, 0.625, 0.75, 0.0423002, -0.0666623, -0.000369072)
+mesh = SubResource("CapsuleMesh_ewrxu")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.953706, 0.300739, 0, -0.300739, 0.953707, 0, 3.05519, 4.95109)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_tqvt6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_ltp81")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 30, 0)
+light_color = Color(1, 1, 0.262745, 1)
