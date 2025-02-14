@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxmrmm4lpgten"
+path="res://.godot/imported/wall-corner.obj-6a6efc80a1df184d60d0d247712d9702.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-corner.obj-6a6efc80a1df184d60d0d247712d9702.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/wall-corner.obj"
+dest_files=["res://.godot/imported/wall-corner.obj-6a6efc80a1df184d60d0d247712d9702.mesh", "res://.godot/imported/wall-corner.obj-6a6efc80a1df184d60d0d247712d9702.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

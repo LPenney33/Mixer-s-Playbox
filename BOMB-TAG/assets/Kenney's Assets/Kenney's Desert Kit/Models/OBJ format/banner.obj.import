@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://jfmg8cnreksa"
+path="res://.godot/imported/banner.obj-d2de9303768c3484df05d72135b3045d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/banner.obj-d2de9303768c3484df05d72135b3045d.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Desert Kit/Models/OBJ format/banner.obj"
+dest_files=["res://.godot/imported/banner.obj-d2de9303768c3484df05d72135b3045d.mesh", "res://.godot/imported/banner.obj-d2de9303768c3484df05d72135b3045d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
