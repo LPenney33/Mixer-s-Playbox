@@ -71,7 +71,6 @@ revolve_camera = NodePath("Cutscene Camera")
 player_camera = NodePath("Map/Player/Head/Camera3D")
 start_menu = NodePath("StartMenu")
 start_button = NodePath("StartMenu/Button")
-orbit_speed = 0.15
 
 [node name="Map" type="Node3D" parent="."]
 
