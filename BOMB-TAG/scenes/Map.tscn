@@ -39,10 +39,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, 
 can_sprint = true
 can_freefly = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.707107, 0.45452, -0.541675, 0, 0.766045, 0.642788, 0.707107, 0.45452, -0.541675, -20, 20, -20)
-
 [node name="Build" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="First Floor" type="Node3D" parent="Build"]
 
@@ -851,3 +849,6 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 10, 4, -
 
 [node name="wall_corner2" parent="Build/SecondFloor/GuardWalls" instance=ExtResource("8_d7ltw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 4, -3.3)
+
+[node name="Cutscene Camera" type="Camera3D" parent="."]
+transform = Transform3D(-0.34202, -0.604023, 0.719846, 0, 0.766045, 0.642788, -0.939693, 0.219846, -0.262003, 25, 20, -15)
