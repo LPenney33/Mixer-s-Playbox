@@ -89,6 +89,7 @@ script = ExtResource("2_srt87")
 can_sprint = true
 can_freefly = true
 controller_look_sensitivity = 10.0
+jump_velocity = 10.0
 input_left = "move_left"
 input_right = "move_right"
 input_forward = "move_up"

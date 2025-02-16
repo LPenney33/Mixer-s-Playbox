@@ -67,7 +67,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		capture_mouse()
 	if Input.is_key_pressed(KEY_ESCAPE):
 		release_mouse()
-	
+
+	# Quit game when Xbox Guide button is pressed
+	if Input.is_action_just_pressed("quit_game"):
+		get_tree().quit()
+
 	# Look around (Mouse)
 	if mouse_captured and event is InputEventMouseMotion:
 		rotate_look(event.relative * look_speed)
@@ -87,7 +91,7 @@ func _physics_process(delta: float) -> void:
 		motion *= freefly_speed * delta
 		move_and_collide(motion)
 		return
-	
+
 	# Apply gravity
 	if has_gravity and not is_on_floor():
 		velocity += get_gravity() * delta
@@ -108,7 +112,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 		velocity.y = 0
-	
+
 	move_and_slide()
 
 	# Apply controller look (Right Stick)
@@ -116,7 +120,6 @@ func _physics_process(delta: float) -> void:
 	var look_y = Input.get_action_strength(input_look_down) - Input.get_action_strength(input_look_up)
 	if look_x != 0 or look_y != 0:
 		rotate_look(Vector2(look_x, look_y) * controller_look_sensitivity * delta)
-
 
 ## Rotate look (Mouse & Controller)
 func rotate_look(rot_input : Vector2):
@@ -158,9 +161,10 @@ func check_input_mappings():
 		"input_look_right": input_look_right,
 		"input_look_left": input_look_left,
 		"input_look_up": input_look_up,
-		"input_look_down": input_look_down
+		"input_look_down": input_look_down,
+		"quit_game": "quit_game"  # Ensures quit action is checked
 	}
-	
+
 	for key in actions.keys():
 		if not InputMap.has_action(actions[key]):
 			push_error(key + " disabled. No InputAction found for: " + actions[key])
