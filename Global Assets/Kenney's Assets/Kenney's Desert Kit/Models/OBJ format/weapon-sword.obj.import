@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dgrvlbsoos5fs"
+path="res://.godot/imported/weapon-sword.obj-a89b8477cd55b13c3a5ae01ecfb57a0e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/weapon-sword.obj-a89b8477cd55b13c3a5ae01ecfb57a0e.mesh"]
+
+source_file="res://Global Assets/Kenney's Assets/Kenney's Desert Kit/Models/OBJ format/weapon-sword.obj"
+dest_files=["res://.godot/imported/weapon-sword.obj-a89b8477cd55b13c3a5ae01ecfb57a0e.mesh", "res://.godot/imported/weapon-sword.obj-a89b8477cd55b13c3a5ae01ecfb57a0e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

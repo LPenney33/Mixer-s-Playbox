@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cwi5dgreltegh"
+path="res://.godot/imported/animal-dog.obj-dd515c9a7d738d0b19e5bad14afa0768.mesh"
+
+[deps]
+
+files=["res://.godot/imported/animal-dog.obj-dd515c9a7d738d0b19e5bad14afa0768.mesh"]
+
+source_file="res://Global Assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/animal-dog.obj"
+dest_files=["res://.godot/imported/animal-dog.obj-dd515c9a7d738d0b19e5bad14afa0768.mesh", "res://.godot/imported/animal-dog.obj-dd515c9a7d738d0b19e5bad14afa0768.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
