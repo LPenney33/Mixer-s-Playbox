@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd3v5hnjipwya"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_tkkbl"]
+
+[node name="Color Switch" type="Node3D"]
+
+[node name="ProtoController" parent="." instance=ExtResource("1_tkkbl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96807, 0.595716, 4.50388)
+
+[node name="Schematics" type="Node3D" parent="."]
+
+[node name="Platform" type="CSGBox3D" parent="Schematics"]
+use_collision = true
+size = Vector3(42, 1, 42)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Schematics/Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6435, 0, -19.5907)
+operation = 2
+radius = 4.0
+sides = 20
+
+[node name="Tower1" type="CSGCylinder3D" parent="Schematics/Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1799, 0, -25)
+use_collision = true
+radius = 8.0
+height = 30.0
+sides = 20
+
+[node name="Tower2" type="CSGCylinder3D" parent="Schematics/Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1799, 0, 25)
+use_collision = true
+radius = 8.0
+height = 30.0
+sides = 20
+
+[node name="Tower3" type="CSGCylinder3D" parent="Schematics/Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8201, 0, 25)
+use_collision = true
+radius = 8.0
+height = 30.0
+sides = 20
+
+[node name="Tower4" type="CSGCylinder3D" parent="Schematics/Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8201, 0, -25)
+use_collision = true
+radius = 8.0
+height = 30.0
+sides = 20
+
+[node name="Wall1" type="CSGBox3D" parent="Schematics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -25)
+use_collision = true
+size = Vector3(36, 10, 1)
+
+[node name="Wall2" type="CSGBox3D" parent="Schematics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 25)
+use_collision = true
+size = Vector3(36, 10, 1)
+
+[node name="Wall3" type="CSGBox3D" parent="Schematics"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 4.5, 1)
+use_collision = true
+size = Vector3(36, 10, 1)
+
+[node name="Wall4" type="CSGBox3D" parent="Schematics"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 4.5, 1)
+use_collision = true
+size = Vector3(36, 10, 1)
