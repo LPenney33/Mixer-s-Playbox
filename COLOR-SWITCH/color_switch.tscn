@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=9 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_tkkbl"]
+[ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="2_7s34v"]
+[ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="3_3te26"]
+[ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://Global Assets/OFFICIAL Building Assets/floor_wood.tscn" id="4_eictm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3rrl"]
 sky_top_color = Color(0.262805, 0.254747, 0.527349, 1)
@@ -32,10 +35,11 @@ light_energy = 3.174
 shadow_enabled = true
 
 [node name="ProtoController" parent="." instance=ExtResource("1_tkkbl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96807, 0.595716, 4.50388)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03193, 1.59572, 0.50388)
 
 [node name="Schematics" type="Node3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+visible = false
 
 [node name="Platform" type="CSGBox3D" parent="Schematics"]
 use_collision = true
@@ -125,3 +129,32 @@ radius = 8.0
 height = 30.0
 sides = 20
 material = SubResource("StandardMaterial3D_a58av")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="pillar" parent="Map" instance=ExtResource("2_7s34v")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.18, -9, -15)
+
+[node name="pillar2" parent="Map" instance=ExtResource("2_7s34v")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.18, -9, 15)
+
+[node name="pillar3" parent="Map" instance=ExtResource("2_7s34v")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 15.18, -9, 15)
+
+[node name="pillar4" parent="Map" instance=ExtResource("2_7s34v")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 15.18, -9, -15)
+
+[node name="wall" parent="Map" instance=ExtResource("3_3te26")]
+transform = Transform3D(6, 0, 0, 0, 4.5, 0, 0, 0, 3, 0, -8, 15)
+
+[node name="wall2" parent="Map" instance=ExtResource("3_3te26")]
+transform = Transform3D(6, 0, 0, 0, 4.5, 0, 0, 0, 3, 0, -8, -15)
+
+[node name="wall3" parent="Map" instance=ExtResource("3_3te26")]
+transform = Transform3D(-2.62268e-07, 0, 3, 0, 4.5, 0, -6, 0, -1.31134e-07, 15, -8, 0)
+
+[node name="wall4" parent="Map" instance=ExtResource("3_3te26")]
+transform = Transform3D(-2.62268e-07, 0, 3, 0, 4.5, 0, -6, 0, -1.31134e-07, -15, -8, 0)
+
+[node name="floor_wood" parent="Map" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
