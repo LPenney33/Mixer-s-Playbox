@@ -34,33 +34,5 @@ size = Vector3(43.5684, 1, 47.5967)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.784241, -2.98023e-08)
 size = Vector3(1, 0.568481, 1)
 
-[node name="Tower1" type="CSGCylinder3D" parent="CSGBox3D/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1799, 0, -25)
-visible = false
-use_collision = true
-radius = 8.0
-height = 30.0
-
-[node name="Tower2" type="CSGCylinder3D" parent="CSGBox3D/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1799, 0, 25)
-visible = false
-use_collision = true
-radius = 8.0
-height = 30.0
-
-[node name="Tower3" type="CSGCylinder3D" parent="CSGBox3D/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8201, 0, 25)
-visible = false
-use_collision = true
-radius = 8.0
-height = 30.0
-
-[node name="Tower4" type="CSGCylinder3D" parent="CSGBox3D/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8201, 0, -25)
-visible = false
-use_collision = true
-radius = 8.0
-height = 30.0
-
 [node name="ProtoController" parent="." instance=ExtResource("1_bvxfg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.418006, 0.5, 1.74146)

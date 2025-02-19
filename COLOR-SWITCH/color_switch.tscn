@@ -1,68 +1,127 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=6 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_tkkbl"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3rrl"]
+sky_top_color = Color(0.262805, 0.254747, 0.527349, 1)
+sky_horizon_color = Color(0.722303, 0.72156, 0.707691, 1)
+sky_energy_multiplier = 1.45
+ground_horizon_color = Color(0.686594, 0.713456, 0.751873, 1)
+
+[sub_resource type="Sky" id="Sky_5lwlc"]
+sky_material = SubResource("ProceduralSkyMaterial_t3rrl")
+
+[sub_resource type="Environment" id="Environment_v3ngh"]
+background_mode = 2
+sky = SubResource("Sky_5lwlc")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a58av"]
+transparency = 1
+albedo_color = Color(1, 0.427451, 1, 0.505882)
+
 [node name="Color Switch" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v3ngh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.42948, 0.256021, 0, 0.512043, 0.85896, -0.5, 0.743881, -0.443442, 0, 38, -16)
+light_color = Color(0.564962, 0.564962, 0.564962, 1)
+light_energy = 3.174
+shadow_enabled = true
 
 [node name="ProtoController" parent="." instance=ExtResource("1_tkkbl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96807, 0.595716, 4.50388)
 
 [node name="Schematics" type="Node3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 
 [node name="Platform" type="CSGBox3D" parent="Schematics"]
 use_collision = true
 size = Vector3(42, 1, 42)
+material = SubResource("StandardMaterial3D_a58av")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Schematics/Platform"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6435, 0, -19.5907)
 operation = 2
 radius = 4.0
 sides = 20
+material = SubResource("StandardMaterial3D_a58av")
 
-[node name="Tower1" type="CSGCylinder3D" parent="Schematics/Platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1799, 0, -25)
-use_collision = true
-radius = 8.0
-height = 30.0
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Schematics/Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.64, 0, 19.59)
+operation = 2
+radius = 4.0
 sides = 20
+material = SubResource("StandardMaterial3D_a58av")
 
-[node name="Tower2" type="CSGCylinder3D" parent="Schematics/Platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1799, 0, 25)
-use_collision = true
-radius = 8.0
-height = 30.0
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Schematics/Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.64, 0, 19.59)
+operation = 2
+radius = 4.0
 sides = 20
+material = SubResource("StandardMaterial3D_a58av")
 
-[node name="Tower3" type="CSGCylinder3D" parent="Schematics/Platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8201, 0, 25)
-use_collision = true
-radius = 8.0
-height = 30.0
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Schematics/Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.64, 0, -19.59)
+operation = 2
+radius = 4.0
 sides = 20
-
-[node name="Tower4" type="CSGCylinder3D" parent="Schematics/Platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8201, 0, -25)
-use_collision = true
-radius = 8.0
-height = 30.0
-sides = 20
+material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Wall1" type="CSGBox3D" parent="Schematics"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -25)
 use_collision = true
 size = Vector3(36, 10, 1)
+material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Wall2" type="CSGBox3D" parent="Schematics"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 25)
 use_collision = true
 size = Vector3(36, 10, 1)
+material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Wall3" type="CSGBox3D" parent="Schematics"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 4.5, 1)
 use_collision = true
 size = Vector3(36, 10, 1)
+material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Wall4" type="CSGBox3D" parent="Schematics"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 4.5, 1)
 use_collision = true
 size = Vector3(36, 10, 1)
+material = SubResource("StandardMaterial3D_a58av")
+
+[node name="Tower1" type="CSGCylinder3D" parent="Schematics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1799, 0, -25)
+use_collision = true
+radius = 8.0
+height = 30.0
+sides = 20
+material = SubResource("StandardMaterial3D_a58av")
+
+[node name="Tower2" type="CSGCylinder3D" parent="Schematics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1799, 0, 25)
+use_collision = true
+radius = 8.0
+height = 30.0
+sides = 20
+material = SubResource("StandardMaterial3D_a58av")
+
+[node name="Tower3" type="CSGCylinder3D" parent="Schematics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8201, 0, 25)
+use_collision = true
+radius = 8.0
+height = 30.0
+sides = 20
+material = SubResource("StandardMaterial3D_a58av")
+
+[node name="Tower4" type="CSGCylinder3D" parent="Schematics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8201, 0, -25)
+use_collision = true
+radius = 8.0
+height = 30.0
+sides = 20
+material = SubResource("StandardMaterial3D_a58av")
