@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ddkfgrfl5jnqk"
+path="res://.godot/imported/wall-corner.obj-659f53ef9fabc2a937806b0535593710.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-corner.obj-659f53ef9fabc2a937806b0535593710.mesh"]
+
+source_file="res://Global Assets/Kenney's Assets/Kenney's Desert Kit/Models/OBJ format/wall-corner.obj"
+dest_files=["res://.godot/imported/wall-corner.obj-659f53ef9fabc2a937806b0535593710.mesh", "res://.godot/imported/wall-corner.obj-659f53ef9fabc2a937806b0535593710.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

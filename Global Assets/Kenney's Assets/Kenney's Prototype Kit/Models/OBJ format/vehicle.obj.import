@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c38c1m6crhj1w"
+path="res://.godot/imported/vehicle.obj-aa41521455b1a872d48e49e6b22c0f48.mesh"
+
+[deps]
+
+files=["res://.godot/imported/vehicle.obj-aa41521455b1a872d48e49e6b22c0f48.mesh"]
+
+source_file="res://Global Assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/vehicle.obj"
+dest_files=["res://.godot/imported/vehicle.obj-aa41521455b1a872d48e49e6b22c0f48.mesh", "res://.godot/imported/vehicle.obj-aa41521455b1a872d48e49e6b22c0f48.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

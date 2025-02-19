@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://divsnxi8ibwb7"
+path="res://.godot/imported/crate.obj-563bd7388493af78001b4833afdfe0ae.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crate.obj-563bd7388493af78001b4833afdfe0ae.mesh"]
+
+source_file="res://Global Assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/crate.obj"
+dest_files=["res://.godot/imported/crate.obj-563bd7388493af78001b4833afdfe0ae.mesh", "res://.godot/imported/crate.obj-563bd7388493af78001b4833afdfe0ae.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

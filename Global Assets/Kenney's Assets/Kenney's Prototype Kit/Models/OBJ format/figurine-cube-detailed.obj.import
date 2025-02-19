@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfwnr47fppl5a"
+path="res://.godot/imported/figurine-cube-detailed.obj-3f9e1b0282cc9bde466e7c29b4e00f78.mesh"
+
+[deps]
+
+files=["res://.godot/imported/figurine-cube-detailed.obj-3f9e1b0282cc9bde466e7c29b4e00f78.mesh"]
+
+source_file="res://Global Assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/figurine-cube-detailed.obj"
+dest_files=["res://.godot/imported/figurine-cube-detailed.obj-3f9e1b0282cc9bde466e7c29b4e00f78.mesh", "res://.godot/imported/figurine-cube-detailed.obj-3f9e1b0282cc9bde466e7c29b4e00f78.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
