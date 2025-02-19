@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://cleyfc8v6hy1e"]
+[gd_scene load_steps=22 format=3 uid="uid://cleyfc8v6hy1e"]
 
 [ext_resource type="Script" path="res://BOMB-TAG/cutscene.gd" id="1_2cssc"]
 [ext_resource type="Script" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_srt87"]
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/floor_wood.tscn" id="3_mosly"]
 [ext_resource type="PackedScene" uid="uid://6n8achi2iynu" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall_corner.tscn" id="4_aia4l"]
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall.tscn" id="5_xoj5x"]
+[ext_resource type="PackedScene" uid="uid://1367mm0hhlt4" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall_cracked.tscn" id="6_2f6on"]
 [ext_resource type="PackedScene" uid="uid://u4dnfxwalj5k" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/ceiling.tscn" id="6_par7a"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/pillar.tscn" id="7_sj02x"]
 [ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/half_wall.tscn" id="8_qmdvw"]
@@ -78,7 +79,7 @@ start_button = NodePath("StartMenu/Button")
 environment = SubResource("Environment_x6wsl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map"]
-transform = Transform3D(0.642788, 0.751455, -0.148792, 0, 0.194234, 0.980955, 0.766044, -0.630546, 0.124851, -12, 15, 0)
+transform = Transform3D(0.852071, 0.520952, 0.0508361, -0.318367, 0.438719, 0.840338, 0.415473, -0.732212, 0.539674, -12, 36.2145, 27.4498)
 light_color = Color(0.949378, 0.95411, 1, 1)
 light_energy = 0.361
 shadow_enabled = true
@@ -408,9 +409,6 @@ metadata/_edit_lock_ = true
 [node name="wall_corner" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("4_aia4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -0.21, -20)
 
-[node name="wall1" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.2, -20)
-
 [node name="wall2" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.2, -20)
 
@@ -429,23 +427,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.2, -20)
 [node name="wall_corner2" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("4_aia4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 3.79, -20)
 
-[node name="wall7" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.8, -20)
-
 [node name="wall8" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3.8, -20)
 
 [node name="wall9" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3.8, -20)
 
-[node name="wall10" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.8, -20)
-
 [node name="wall11" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.8, -20)
 
 [node name="wall12" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3.8, -20)
+
+[node name="wall_corner3" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("4_aia4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 7.7594, -20)
+
+[node name="wall13" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 7.7694, -20)
+
+[node name="wall15" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 7.7694, -20)
+
+[node name="wall16" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 7.7694, -20)
+
+[node name="wall17" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 7.7694, -20)
+
+[node name="wall18" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7.7694, -20)
+
+[node name="wall_corner4" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("4_aia4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 11.7594, -20)
+
+[node name="wall19" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 11.7694, -20)
+
+[node name="wall20" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 11.7694, -20)
+
+[node name="wall21" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 11.7694, -20)
+
+[node name="wall22" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 11.7694, -20)
+
+[node name="wall24" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 11.7694, -20)
+
+[node name="wall_cracked" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("6_2f6on")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 11.769, -20)
+
+[node name="wall_cracked2" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("6_2f6on")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.8, -20)
+
+[node name="wall_cracked3" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("6_2f6on")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 7.769, -20)
+
+[node name="wall_cracked4" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("6_2f6on")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.2, -20)
+
+[node name="wall_cracked5" parent="Map/Build/First Floor/Walls/Wall1" instance=ExtResource("6_2f6on")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.8, -20)
 
 [node name="Wall2" type="Node3D" parent="Map/Build/First Floor/Walls"]
 metadata/_edit_lock_ = true
@@ -489,17 +532,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.
 [node name="wall12" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, -8)
 
-[node name="wall13" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, -4)
-
 [node name="wall14" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, 0)
-
-[node name="wall15" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, 4)
-
-[node name="wall16" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, 8)
 
 [node name="wall17" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, 12)
@@ -509,6 +543,75 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.
 
 [node name="wall_corner2" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("4_aia4l")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.79, 20)
+
+[node name="wall19" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, -16)
+
+[node name="wall21" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, -8)
+
+[node name="wall22" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, -4)
+
+[node name="wall23" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, 0)
+
+[node name="wall24" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, 4)
+
+[node name="wall25" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, 8)
+
+[node name="wall27" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, 16)
+
+[node name="wall_corner3" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("4_aia4l")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.79, 20)
+
+[node name="wall29" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.8, -12)
+
+[node name="wall31" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.8, -4)
+
+[node name="wall33" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.8, 4)
+
+[node name="wall35" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.8, 12)
+
+[node name="wall_corner4" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("4_aia4l")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.79, 20)
+
+[node name="wall_cracked" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 11.8, -16)
+
+[node name="wall_cracked2" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 11.8, -8)
+
+[node name="wall_cracked3" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 11.8, 0)
+
+[node name="wall_cracked4" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 11.8, 8)
+
+[node name="wall_cracked5" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 11.8, 16)
+
+[node name="wall_cracked6" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 7.8, -12)
+
+[node name="wall_cracked8" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 3.8, 8)
+
+[node name="wall_cracked9" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 3.8, 4)
+
+[node name="wall_cracked10" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 3.8, -4)
+
+[node name="wall_cracked7" parent="Map/Build/First Floor/Walls/Wall2" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 7.8, 12)
 
 [node name="Wall3" type="Node3D" parent="Map/Build/First Floor/Walls"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -532,9 +635,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.2, -20)
 [node name="wall5" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.2, -20)
 
-[node name="wall6" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.2, -20)
-
 [node name="wall_corner2" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("4_aia4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 3.79, -20)
 
@@ -544,9 +644,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.8, -20)
 [node name="wall8" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3.8, -20)
 
-[node name="wall9" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3.8, -20)
-
 [node name="wall10" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3.8, -20)
 
@@ -555,6 +652,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.8, -20)
 
 [node name="wall12" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3.8, -20)
+
+[node name="wall_corner3" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("4_aia4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 7.79, -20)
+
+[node name="wall13" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 7.8, -20)
+
+[node name="wall16" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 7.8, -20)
+
+[node name="wall18" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7.8, -20)
+
+[node name="wall_corner4" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("4_aia4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 11.79, -20)
+
+[node name="wall20" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 11.8, -20)
+
+[node name="wall21" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 11.8, -20)
+
+[node name="wall22" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 11.8, -20)
+
+[node name="wall23" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 11.8, -20)
+
+[node name="wall24" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 11.8, -20)
+
+[node name="wall_cracked" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10, 11.8, -20)
+
+[node name="wall_cracked2" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6, 7.8, -20)
+
+[node name="wall_cracked3" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 7.8, -20)
+
+[node name="wall_cracked4" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, 7.8, -20)
+
+[node name="wall_cracked5" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 3.8, -20)
+
+[node name="wall_cracked6" parent="Map/Build/First Floor/Walls/Wall3" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10, -0.2, -20)
 
 [node name="Wall4" type="Node3D" parent="Map/Build/First Floor/Walls"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -568,9 +713,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, -0
 
 [node name="wall3" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, -0.2, -8)
-
-[node name="wall4" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, -0.2, -4)
 
 [node name="wall5" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, -0.2, 0)
@@ -596,20 +738,11 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.
 [node name="wall11" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, -12)
 
-[node name="wall12" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, -8)
-
 [node name="wall13" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, -4)
 
 [node name="wall14" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, 0)
-
-[node name="wall15" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, 4)
-
-[node name="wall16" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, 8)
 
 [node name="wall17" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.8, 12)
@@ -620,18 +753,84 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.
 [node name="wall_corner2" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("4_aia4l")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 3.79, 20)
 
+[node name="wall19" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, -16)
+
+[node name="wall21" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, -8)
+
+[node name="wall22" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, -4)
+
+[node name="wall24" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, 4)
+
+[node name="wall25" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, 8)
+
+[node name="wall26" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.8, 12)
+
+[node name="wall_corner3" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("4_aia4l")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 7.79, 20)
+
+[node name="wall28" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.8, -16)
+
+[node name="wall29" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.8, -12)
+
+[node name="wall30" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.8, -8)
+
+[node name="wall31" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.8, -4)
+
+[node name="wall32" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.8, 0)
+
+[node name="wall34" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.8, 8)
+
+[node name="wall35" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.8, 12)
+
+[node name="wall36" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("5_xoj5x")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.8, 16)
+
+[node name="wall_corner4" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("4_aia4l")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 11.79, 20)
+
+[node name="wall_cracked" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 7.8, -12)
+
+[node name="wall_cracked2" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 7.8, 2.70245e-07)
+
+[node name="wall_cracked3" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 7.8, 16)
+
+[node name="wall_cracked4" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 11.8, 4)
+
+[node name="wall_cracked5" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 3.8, 4)
+
+[node name="wall_cracked6" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 3.8, 8)
+
+[node name="wall_cracked7" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 3.8, -8)
+
+[node name="wall_cracked8" parent="Map/Build/First Floor/Walls/Wall4" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, -0.2, -4)
+
 [node name="InsideWalls" type="Node3D" parent="Map/Build/First Floor"]
 
 [node name="Wall" type="Node3D" parent="Map/Build/First Floor/InsideWalls"]
 
 [node name="wall1" parent="Map/Build/First Floor/InsideWalls/Wall" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, 14)
-
-[node name="wall2" parent="Map/Build/First Floor/InsideWalls/Wall" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, 10)
-
-[node name="wall3" parent="Map/Build/First Floor/InsideWalls/Wall" instance=ExtResource("5_xoj5x")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, 6)
 
 [node name="wall4" parent="Map/Build/First Floor/InsideWalls/Wall" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, 2)
@@ -647,6 +846,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0
 
 [node name="wall8" parent="Map/Build/First Floor/InsideWalls/Wall" instance=ExtResource("5_xoj5x")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, -14)
+
+[node name="wall_cracked" parent="Map/Build/First Floor/InsideWalls/Wall" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, 10)
+
+[node name="wall_cracked2" parent="Map/Build/First Floor/InsideWalls/Wall" instance=ExtResource("6_2f6on")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, 6)
 
 [node name="Wall2" type="Node3D" parent="Map/Build/First Floor/InsideWalls"]
 
@@ -910,8 +1115,35 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 10, 4, -
 [node name="wall_corner2" parent="Map/Build/SecondFloor/GuardWalls" instance=ExtResource("9_7x8v1")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 4, -3.3)
 
+[node name="MainOverHang" type="Node3D" parent="Map/Build"]
+
+[node name="Pillars" type="Node3D" parent="Map/Build/MainOverHang"]
+
+[node name="pillar" parent="Map/Build/MainOverHang/Pillars" instance=ExtResource("7_sj02x")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 14, 15.75, 0)
+
+[node name="pillar2" parent="Map/Build/MainOverHang/Pillars" instance=ExtResource("7_sj02x")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 14, 18.75, 0)
+
+[node name="pillar3" parent="Map/Build/MainOverHang/Pillars" instance=ExtResource("7_sj02x")]
+transform = Transform3D(0.75, 0, 0, 0, 0.445, 0, 0, 0, 0.75, 14, 21.75, 0)
+
+[node name="pillar4" parent="Map/Build/MainOverHang/Pillars" instance=ExtResource("7_sj02x")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -14, 15.75, 0)
+
+[node name="pillar5" parent="Map/Build/MainOverHang/Pillars" instance=ExtResource("7_sj02x")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -14, 18.75, 0)
+
+[node name="pillar6" parent="Map/Build/MainOverHang/Pillars" instance=ExtResource("7_sj02x")]
+transform = Transform3D(0.75, 0, 0, 0, 0.445, 0, 0, 0, 0.75, -14, 21.75, 0)
+
+[node name="Hang" type="Node3D" parent="Map/Build/MainOverHang"]
+
+[node name="ceiling" parent="Map/Build/MainOverHang/Hang" instance=ExtResource("6_par7a")]
+transform = Transform3D(8, 0, 0, 0, 0.939693, -2.05212, 0, 0.34202, 5.63816, 0, 19.5, 10.25)
+
 [node name="Cutscene Camera" type="Camera3D" parent="."]
-transform = Transform3D(-0.34202, -0.604023, 0.719847, 0, 0.766045, 0.642787, -0.939693, 0.219846, -0.262002, 25, 20, -15)
+transform = Transform3D(-0.337417, -0.721153, 0.605052, -0.0559255, 0.656967, 0.751842, -0.939693, 0.219846, -0.262002, 39.8896, 27.4821, -15)
 
 [node name="StartMenu" type="Control" parent="."]
 layout_mode = 3
