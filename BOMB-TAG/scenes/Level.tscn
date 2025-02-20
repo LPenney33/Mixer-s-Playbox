@@ -81,11 +81,11 @@ environment = SubResource("Environment_x6wsl")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map"]
 transform = Transform3D(0.852071, 0.520952, 0.0508361, -0.318367, 0.438719, 0.840338, 0.415473, -0.732212, 0.539674, -12, 36.2145, 27.4498)
 light_color = Color(0.949378, 0.95411, 1, 1)
-light_energy = 0.361
+light_energy = 1.116
 shadow_enabled = true
 
 [node name="Player" type="CharacterBody3D" parent="Map"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -17)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.25, -14.75)
 script = ExtResource("2_srt87")
 can_sprint = true
 can_freefly = true

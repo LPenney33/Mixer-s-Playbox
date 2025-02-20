@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="animation_library"
 importer_version=1
-type="PackedScene"
+type="AnimationLibrary"
 uid="uid://dwkwiqmry75ec"
-path="res://.godot/imported/zombie_jump.glb-62907a1704287f6f1eec5b0706c5b435.scn"
+path="res://.godot/imported/zombie_jump.glb-62907a1704287f6f1eec5b0706c5b435.res"
 
 [deps]
 
 source_file="res://BOMB-TAG/assets/brackeys_3d_game_assets/zombie/zombie_jump.glb"
-dest_files=["res://.godot/imported/zombie_jump.glb-62907a1704287f6f1eec5b0706c5b435.scn"]
+dest_files=["res://.godot/imported/zombie_jump.glb-62907a1704287f6f1eec5b0706c5b435.res"]
 
 [params]
 

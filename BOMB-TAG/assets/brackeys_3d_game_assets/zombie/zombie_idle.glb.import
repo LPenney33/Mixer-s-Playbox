@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="animation_library"
 importer_version=1
-type="PackedScene"
+type="AnimationLibrary"
 uid="uid://cbsfmfxp56rho"
-path="res://.godot/imported/zombie_idle.glb-d1744f44d7c0d0609acb3dc8c68b90cd.scn"
+path="res://.godot/imported/zombie_idle.glb-d1744f44d7c0d0609acb3dc8c68b90cd.res"
 
 [deps]
 
 source_file="res://BOMB-TAG/assets/brackeys_3d_game_assets/zombie/zombie_idle.glb"
-dest_files=["res://.godot/imported/zombie_idle.glb-d1744f44d7c0d0609acb3dc8c68b90cd.scn"]
+dest_files=["res://.godot/imported/zombie_idle.glb-d1744f44d7c0d0609acb3dc8c68b90cd.res"]
 
 [params]
 
