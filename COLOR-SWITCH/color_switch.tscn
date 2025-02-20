@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=15 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_tkkbl"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="2_7s34v"]
@@ -23,6 +23,24 @@ tonemap_mode = 2
 transparency = 1
 albedo_color = Color(1, 0.427451, 1, 0.505882)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tqks"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8tc8"]
+albedo_color = Color(0.484932, 0.238072, 9.62615e-08, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_huxip"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tj8a5"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23ad3"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3lshp"]
+albedo_color = Color(0.252387, 0.000638695, 0.601038, 1)
+
 [node name="Color Switch" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -42,6 +60,7 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 visible = false
 
 [node name="Platform" type="CSGBox3D" parent="Schematics"]
+transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 0, 0, 0)
 use_collision = true
 size = Vector3(42, 1, 42)
 material = SubResource("StandardMaterial3D_a58av")
@@ -75,31 +94,31 @@ sides = 20
 material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Wall1" type="CSGBox3D" parent="Schematics"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -25)
+transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 0, 4.5, -25)
 use_collision = true
 size = Vector3(36, 10, 1)
 material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Wall2" type="CSGBox3D" parent="Schematics"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 25)
+transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 0, 4.5, 25)
 use_collision = true
 size = Vector3(36, 10, 1)
 material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Wall3" type="CSGBox3D" parent="Schematics"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 4.5, 1)
+transform = Transform3D(-5.33279e-08, 0, 1.22, 0, 1.22, 0, -1.22, 0, -5.33279e-08, 25, 4.5, 1)
 use_collision = true
 size = Vector3(36, 10, 1)
 material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Wall4" type="CSGBox3D" parent="Schematics"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 4.5, 1)
+transform = Transform3D(-5.33279e-08, 0, 1.22, 0, 1.22, 0, -1.22, 0, -5.33279e-08, -25, 4.5, 1)
 use_collision = true
 size = Vector3(36, 10, 1)
 material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Tower1" type="CSGCylinder3D" parent="Schematics"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1799, 0, -25)
+transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, -25.1799, 0, -25)
 use_collision = true
 radius = 8.0
 height = 30.0
@@ -107,7 +126,7 @@ sides = 20
 material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Tower2" type="CSGCylinder3D" parent="Schematics"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1799, 0, 25)
+transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, -25.1799, 0, 25)
 use_collision = true
 radius = 8.0
 height = 30.0
@@ -115,7 +134,7 @@ sides = 20
 material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Tower3" type="CSGCylinder3D" parent="Schematics"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8201, 0, 25)
+transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 24.8201, 0, 25)
 use_collision = true
 radius = 8.0
 height = 30.0
@@ -123,7 +142,7 @@ sides = 20
 material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Tower4" type="CSGCylinder3D" parent="Schematics"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8201, 0, -25)
+transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 24.8201, 0, -25)
 use_collision = true
 radius = 8.0
 height = 30.0
@@ -132,29 +151,2509 @@ material = SubResource("StandardMaterial3D_a58av")
 
 [node name="Map" type="Node3D" parent="."]
 
-[node name="pillar" parent="Map" instance=ExtResource("2_7s34v")]
+[node name="OutsideMap" type="Node3D" parent="Map"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="pillar" parent="Map/OutsideMap" instance=ExtResource("2_7s34v")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.18, -9, -15)
 
-[node name="pillar2" parent="Map" instance=ExtResource("2_7s34v")]
+[node name="pillar2" parent="Map/OutsideMap" instance=ExtResource("2_7s34v")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.18, -9, 15)
 
-[node name="pillar3" parent="Map" instance=ExtResource("2_7s34v")]
+[node name="pillar3" parent="Map/OutsideMap" instance=ExtResource("2_7s34v")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 15.18, -9, 15)
 
-[node name="pillar4" parent="Map" instance=ExtResource("2_7s34v")]
+[node name="pillar4" parent="Map/OutsideMap" instance=ExtResource("2_7s34v")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 15.18, -9, -15)
 
-[node name="wall" parent="Map" instance=ExtResource("3_3te26")]
+[node name="wall" parent="Map/OutsideMap" instance=ExtResource("3_3te26")]
 transform = Transform3D(6, 0, 0, 0, 4.5, 0, 0, 0, 3, 0, -8, 15)
 
-[node name="wall2" parent="Map" instance=ExtResource("3_3te26")]
+[node name="wall2" parent="Map/OutsideMap" instance=ExtResource("3_3te26")]
 transform = Transform3D(6, 0, 0, 0, 4.5, 0, 0, 0, 3, 0, -8, -15)
 
-[node name="wall3" parent="Map" instance=ExtResource("3_3te26")]
+[node name="wall3" parent="Map/OutsideMap" instance=ExtResource("3_3te26")]
 transform = Transform3D(-2.62268e-07, 0, 3, 0, 4.5, 0, -6, 0, -1.31134e-07, 15, -8, 0)
 
-[node name="wall4" parent="Map" instance=ExtResource("3_3te26")]
+[node name="wall4" parent="Map/OutsideMap" instance=ExtResource("3_3te26")]
 transform = Transform3D(-2.62268e-07, 0, 3, 0, 4.5, 0, -6, 0, -1.31134e-07, -15, -8, 0)
 
-[node name="floor_wood" parent="Map" instance=ExtResource("4_eictm")]
+[node name="PlatformV1" type="Node3D" parent="Map"]
+
+[node name="RedTiles" type="Node3D" parent="Map/PlatformV1"]
+
+[node name="RedTile" parent="Map/PlatformV1/RedTiles" instance=ExtResource("4_eictm")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="RedTile2" parent="Map/PlatformV1/RedTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 12)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="RedTile3" parent="Map/PlatformV1/RedTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, -6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="RedTile4" parent="Map/PlatformV1/RedTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/RedTiles/RedTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="OrangeTiles" type="Node3D" parent="Map/PlatformV1"]
+
+[node name="OrangeTile" parent="Map/PlatformV1/OrangeTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="OrangeTile2" parent="Map/PlatformV1/OrangeTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="OrangeTile3" parent="Map/PlatformV1/OrangeTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 12)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/OrangeTiles/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="YellowTiles" type="Node3D" parent="Map/PlatformV1"]
+
+[node name="YellowTile" parent="Map/PlatformV1/YellowTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 0)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="YellowTile2" parent="Map/PlatformV1/YellowTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -12)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="YellowTile3" parent="Map/PlatformV1/YellowTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 0)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/YellowTiles/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="GreenTiles" type="Node3D" parent="Map/PlatformV1"]
+
+[node name="GreenTile" parent="Map/PlatformV1/GreenTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="GreenTile2" parent="Map/PlatformV1/GreenTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 0)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="GreenTile3" parent="Map/PlatformV1/GreenTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, -6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/GreenTiles/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="BlueTiles" type="Node3D" parent="Map/PlatformV1"]
+
+[node name="BlueTile" parent="Map/PlatformV1/BlueTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="BlueTile2" parent="Map/PlatformV1/BlueTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="BlueTile3" parent="Map/PlatformV1/BlueTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -12)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="BlueTile4" parent="Map/PlatformV1/BlueTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -12)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/BlueTiles/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="PurpleTiles" type="Node3D" parent="Map/PlatformV1"]
+
+[node name="PurpleTile" parent="Map/PlatformV1/PurpleTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="PurpleTile2" parent="Map/PlatformV1/PurpleTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 0)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="PurpleTile3" parent="Map/PlatformV1/PurpleTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="PurpleTile4" parent="Map/PlatformV1/PurpleTiles" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 12)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV1/PurpleTiles/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="PlatformV2" type="Node3D" parent="Map"]
+visible = false
+
+[node name="RedTiles2" type="Node3D" parent="Map/PlatformV2"]
+
+[node name="RedTile" parent="Map/PlatformV2/RedTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="RedTile2" parent="Map/PlatformV2/RedTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 0)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="RedTile3" parent="Map/PlatformV2/RedTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/RedTiles2/RedTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="OrangeTiles2" type="Node3D" parent="Map/PlatformV2"]
+
+[node name="OrangeTile" parent="Map/PlatformV2/OrangeTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="OrangeTile2" parent="Map/PlatformV2/OrangeTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 12)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="OrangeTile3" parent="Map/PlatformV2/OrangeTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/OrangeTiles2/OrangeTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="YellowTiles2" type="Node3D" parent="Map/PlatformV2"]
+
+[node name="YellowTile" parent="Map/PlatformV2/YellowTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="YellowTile2" parent="Map/PlatformV2/YellowTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, -6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="YellowTile3" parent="Map/PlatformV2/YellowTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 12)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="YellowTile4" parent="Map/PlatformV2/YellowTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -12)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/YellowTiles2/YellowTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="GreenTiles2" type="Node3D" parent="Map/PlatformV2"]
+
+[node name="GreenTile" parent="Map/PlatformV2/GreenTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 0)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="GreenTile2" parent="Map/PlatformV2/GreenTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="GreenTile3" parent="Map/PlatformV2/GreenTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -12)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/GreenTiles2/GreenTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="BlueTiles2" type="Node3D" parent="Map/PlatformV2"]
+
+[node name="BlueTile" parent="Map/PlatformV2/BlueTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="BlueTile2" parent="Map/PlatformV2/BlueTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="BlueTile3" parent="Map/PlatformV2/BlueTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="BlueTile4" parent="Map/PlatformV2/BlueTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, -6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/BlueTiles2/BlueTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="PurpleTiles2" type="Node3D" parent="Map/PlatformV2"]
+
+[node name="PurpleTile" parent="Map/PlatformV2/PurpleTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 0)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="PurpleTile2" parent="Map/PlatformV2/PurpleTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 0)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="PurpleTile3" parent="Map/PlatformV2/PurpleTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 12)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="PurpleTile4" parent="Map/PlatformV2/PurpleTiles2" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -12)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV2/PurpleTiles2/PurpleTile4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="PlatformV3" type="Node3D" parent="Map"]
+visible = false
+
+[node name="RedTile" parent="Map/PlatformV3" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV3/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV3/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV3/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV3/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV3/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV3/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV3/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV3/RedTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_4tqks")
+
+[node name="GreenTile" parent="Map/PlatformV3" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV3/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV3/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV3/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV3/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV3/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV3/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV3/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV3/GreenTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_tj8a5")
+
+[node name="BlueTile" parent="Map/PlatformV3" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV3/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV3/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV3/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV3/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV3/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV3/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV3/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV3/BlueTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_23ad3")
+
+[node name="YellowTile" parent="Map/PlatformV3" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 0)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV3/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV3/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV3/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV3/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV3/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV3/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV3/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV3/YellowTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_huxip")
+
+[node name="OrangeTile" parent="Map/PlatformV3" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV3/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV3/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV3/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV3/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV3/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV3/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV3/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV3/OrangeTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_p8tc8")
+
+[node name="PurpleTile" parent="Map/PlatformV3" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -6)
+
+[node name="TileShard1" type="CSGPolygon3D" parent="Map/PlatformV3/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard2" type="CSGPolygon3D" parent="Map/PlatformV3/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard3" type="CSGPolygon3D" parent="Map/PlatformV3/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard4" type="CSGPolygon3D" parent="Map/PlatformV3/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard5" type="CSGPolygon3D" parent="Map/PlatformV3/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard6" type="CSGPolygon3D" parent="Map/PlatformV3/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard7" type="CSGPolygon3D" parent="Map/PlatformV3/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
+
+[node name="TileShard8" type="CSGPolygon3D" parent="Map/PlatformV3/PurpleTile"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
+depth = 0.11
+material = SubResource("StandardMaterial3D_3lshp")
