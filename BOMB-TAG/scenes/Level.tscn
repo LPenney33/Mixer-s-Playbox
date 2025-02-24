@@ -77,7 +77,6 @@ revolve_camera = NodePath("Cutscene Camera")
 player_camera = NodePath("Map/Player/Head/Camera3D")
 start_menu = NodePath("StartMenu")
 start_button = NodePath("StartMenu/Button")
-skip_cutscene = true
 
 [node name="Cutscene Camera" type="Camera3D" parent="."]
 transform = Transform3D(-0.337417, -0.721153, 0.605052, -0.0559255, 0.656967, 0.751842, -0.939693, 0.219846, -0.262002, 39.8896, 27.4821, -15)
