@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bk7dwiidivjqf"
+path="res://.godot/imported/floor-diagonal.obj-6d770db271edb06b00fc97b1ded852ff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-diagonal.obj-6d770db271edb06b00fc97b1ded852ff.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/floor-diagonal.obj"
+dest_files=["res://.godot/imported/floor-diagonal.obj-6d770db271edb06b00fc97b1ded852ff.mesh", "res://.godot/imported/floor-diagonal.obj-6d770db271edb06b00fc97b1ded852ff.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

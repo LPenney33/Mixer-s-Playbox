@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d1wsphtw4owp2"
+path="res://.godot/imported/figurine-large.obj-45edc45fb1a11db7e3acea02ee261bd2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/figurine-large.obj-45edc45fb1a11db7e3acea02ee261bd2.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/figurine-large.obj"
+dest_files=["res://.godot/imported/figurine-large.obj-45edc45fb1a11db7e3acea02ee261bd2.mesh", "res://.godot/imported/figurine-large.obj-45edc45fb1a11db7e3acea02ee261bd2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
