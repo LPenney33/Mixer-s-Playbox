@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5ro0hnmod7bl"
-path="res://.godot/imported/colormap.png-c1b94ccf62acf42a7a8a2aad31dc9703.ctex"
+uid="uid://cj3phfr3144dv"
+path="res://.godot/imported/colormap.png-1806cca91f1011fb17abb308994953ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Global Assets/Kenney's Assets/Kenney's Desert Kit/Models/OBJ format/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-c1b94ccf62acf42a7a8a2aad31dc9703.ctex"]
+source_file="res://Global Assets/Kenney's Assets/Kenney's Prototype Kit/Models/FBX format/Textures/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-1806cca91f1011fb17abb308994953ec.ctex"]
 
 [params]
 
