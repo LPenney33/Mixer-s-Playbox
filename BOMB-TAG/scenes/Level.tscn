@@ -1,6 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://cleyfc8v6hy1e"]
+[gd_scene load_steps=23 format=3 uid="uid://cleyfc8v6hy1e"]
 
-[ext_resource type="Script" path="res://BOMB-TAG/cutscene.gd" id="1_2cssc"]
+[ext_resource type="Script" path="res://scripts/cutscene.gd" id="1_2cssc"]
 [ext_resource type="Script" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_srt87"]
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/floor_wood.tscn" id="3_mosly"]
 [ext_resource type="PackedScene" uid="uid://6n8achi2iynu" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall_corner.tscn" id="4_aia4l"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/pillar.tscn" id="7_sj02x"]
 [ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/half_wall.tscn" id="8_qmdvw"]
 [ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="9_7x8v1"]
-[ext_resource type="PackedScene" uid="uid://dv6xewp5blt34" path="res://BOMB-TAG/scenes/bomber.tscn" id="11_h2r53"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3am5r"]
 
@@ -158,15 +157,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Map/Player/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
-
-[node name="Bomber" parent="Map" instance=ExtResource("11_h2r53")]
-transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 4, 0.25, 17.3298)
-
-[node name="Bomber2" parent="Map" instance=ExtResource("11_h2r53")]
-transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0.25, 17.3298)
-
-[node name="Bomber3" parent="Map" instance=ExtResource("11_h2r53")]
-transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -4, 0.25, 17.3298)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map"]
 navigation_mesh = SubResource("NavigationMesh_m2fc6")
