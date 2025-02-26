@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=17 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="Script" path="res://COLOR-SWITCH/color_switch.gd" id="1_mas38"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_tkkbl"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="2_7s34v"]
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="3_3te26"]
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://Global Assets/OFFICIAL Building Assets/floor_wood.tscn" id="4_eictm"]
+[ext_resource type="Script" path="res://COLOR-SWITCH/hud.gd" id="6_acf2r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3rrl"]
 sky_top_color = Color(0.262805, 0.254747, 0.527349, 1)
@@ -5611,6 +5612,7 @@ material = SubResource("StandardMaterial3D_3lshp")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+script = ExtResource("6_acf2r")
 
 [node name="StartButton" type="Button" parent="HUD"]
 offset_left = 25.0
@@ -5629,3 +5631,5 @@ offset_top = 25.0
 offset_right = -25.0
 offset_bottom = 125.0
 grow_horizontal = 0
+
+[connection signal="pressed" from="HUD/StartButton" to="HUD" method="_on_start_button_pressed"]
