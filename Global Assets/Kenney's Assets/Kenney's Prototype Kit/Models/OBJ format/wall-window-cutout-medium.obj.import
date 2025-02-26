@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctvf0yhrh24eb"
+path="res://.godot/imported/wall-window-cutout-medium.obj-43d96070e47dc87352b587c70430cc36.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-window-cutout-medium.obj-43d96070e47dc87352b587c70430cc36.mesh"]
+
+source_file="res://Global Assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/wall-window-cutout-medium.obj"
+dest_files=["res://.godot/imported/wall-window-cutout-medium.obj-43d96070e47dc87352b587c70430cc36.mesh", "res://.godot/imported/wall-window-cutout-medium.obj-43d96070e47dc87352b587c70430cc36.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

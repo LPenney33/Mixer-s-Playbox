@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ciopcjwwsn1fv"
+path="res://.godot/imported/number-3.obj-56434e393d5ab4412a5b75cf4792c93e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/number-3.obj-56434e393d5ab4412a5b75cf4792c93e.mesh"]
+
+source_file="res://Global Assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/number-3.obj"
+dest_files=["res://.godot/imported/number-3.obj-56434e393d5ab4412a5b75cf4792c93e.mesh", "res://.godot/imported/number-3.obj-56434e393d5ab4412a5b75cf4792c93e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
