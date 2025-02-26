@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mixer's Playbox"
-run/main_scene="res://scenes/player_test.tscn"
+run/main_scene="res://scenes/RLGL.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
