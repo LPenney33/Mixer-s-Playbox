@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dv6xewp5blt34"]
 
-[ext_resource type="PackedScene" uid="uid://g5gvlql40lv4" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/zombie/zombie.glb" id="1_hji5q"]
-[ext_resource type="Script" path="res://BOMB-TAG/scenes/bomber.gd" id="1_ode8r"]
+[ext_resource type="PackedScene" uid="uid://g5gvlql40lv4" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie.glb" id="1_hji5q"]
+[ext_resource type="Script" path="res://BOMB-TAG/scripts/bomber.gd" id="1_ode8r"]
 [ext_resource type="AnimationLibrary" uid="uid://cbsfmfxp56rho" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/zombie/zombie_idle.glb" id="2_h8bho"]
 [ext_resource type="AnimationLibrary" uid="uid://dwkwiqmry75ec" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/zombie/zombie_jump.glb" id="3_xcaxh"]
 [ext_resource type="AnimationLibrary" uid="uid://dc0dhl2yib861" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/zombie/zombie_run.glb" id="4_c3nol"]
@@ -24,20 +24,12 @@ shape = SubResource("CapsuleShape3D_3v05w")
 
 [node name="zombie" parent="." instance=ExtResource("1_hji5q")]
 
-[node name="TagAnimation" type="AnimationPlayer" parent="zombie"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="zombie"]
 libraries = {
 "zombie_idle": ExtResource("2_h8bho"),
 "zombie_jump": ExtResource("3_xcaxh"),
 "zombie_run": ExtResource("4_c3nol")
 }
-
-[node name="RunningAnimation" type="AnimationPlayer" parent="zombie"]
-libraries = {
-"zombie_idle": ExtResource("2_h8bho"),
-"zombie_jump": ExtResource("3_xcaxh"),
-"zombie_run": ExtResource("4_c3nol")
-}
-speed_scale = 0.75
 
 [node name="TagArea" type="Area3D" parent="."]
 
