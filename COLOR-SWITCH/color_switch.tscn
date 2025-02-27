@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=18 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="Script" path="res://COLOR-SWITCH/color_switch.gd" id="1_mas38"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_tkkbl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="3_3te26"]
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://Global Assets/OFFICIAL Building Assets/floor_wood.tscn" id="4_eictm"]
 [ext_resource type="Script" path="res://COLOR-SWITCH/hud.gd" id="6_acf2r"]
+[ext_resource type="Script" path="res://COLOR-SWITCH/start_button.gd" id="7_4k8s2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3rrl"]
 sky_top_color = Color(0.262805, 0.254747, 0.527349, 1)
@@ -56,7 +57,7 @@ light_energy = 3.174
 shadow_enabled = true
 
 [node name="ProtoController" parent="." instance=ExtResource("1_tkkbl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03193, 1.59572, 0.50388)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.0319, 1.59572, 0.50388)
 
 [node name="Schematics" type="Node3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
@@ -152,34 +153,99 @@ height = 30.0
 sides = 20
 material = SubResource("StandardMaterial3D_a58av")
 
-[node name="PLATFORMS" type="Node3D" parent="."]
+[node name="BlankPlatform" type="Node3D" parent="."]
 
-[node name="OutsideMap" type="Node3D" parent="PLATFORMS"]
+[node name="floor_wood" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="floor_wood2" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 6)
+
+[node name="floor_wood3" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 12)
+
+[node name="floor_wood4" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 12)
+
+[node name="floor_wood5" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 12)
+
+[node name="floor_wood6" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 6)
+
+[node name="floor_wood7" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 0)
+
+[node name="floor_wood8" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 0)
+
+[node name="floor_wood9" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 6)
+
+[node name="floor_wood10" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, -6)
+
+[node name="floor_wood11" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -6)
+
+[node name="floor_wood12" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -6)
+
+[node name="floor_wood13" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -12)
+
+[node name="floor_wood14" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -12)
+
+[node name="floor_wood15" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -12)
+
+[node name="floor_wood16" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -6)
+
+[node name="floor_wood17" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 0)
+
+[node name="floor_wood18" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 6)
+
+[node name="floor_wood19" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 6)
+
+[node name="floor_wood20" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 0)
+
+[node name="floor_wood21" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, -6)
+
+[node name="OutsideMap" type="Node3D" parent="."]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
-[node name="pillar" parent="PLATFORMS/OutsideMap" instance=ExtResource("2_7s34v")]
+[node name="pillar" parent="OutsideMap" instance=ExtResource("2_7s34v")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.18, -9, -15)
 
-[node name="pillar2" parent="PLATFORMS/OutsideMap" instance=ExtResource("2_7s34v")]
+[node name="pillar2" parent="OutsideMap" instance=ExtResource("2_7s34v")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.18, -9, 15)
 
-[node name="pillar3" parent="PLATFORMS/OutsideMap" instance=ExtResource("2_7s34v")]
+[node name="pillar3" parent="OutsideMap" instance=ExtResource("2_7s34v")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 15.18, -9, 15)
 
-[node name="pillar4" parent="PLATFORMS/OutsideMap" instance=ExtResource("2_7s34v")]
+[node name="pillar4" parent="OutsideMap" instance=ExtResource("2_7s34v")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 15.18, -9, -15)
 
-[node name="wall" parent="PLATFORMS/OutsideMap" instance=ExtResource("3_3te26")]
+[node name="wall" parent="OutsideMap" instance=ExtResource("3_3te26")]
 transform = Transform3D(6, 0, 0, 0, 4.5, 0, 0, 0, 3, 0, -8, 15)
 
-[node name="wall2" parent="PLATFORMS/OutsideMap" instance=ExtResource("3_3te26")]
+[node name="wall2" parent="OutsideMap" instance=ExtResource("3_3te26")]
 transform = Transform3D(6, 0, 0, 0, 4.5, 0, 0, 0, 3, 0, -8, -15)
 
-[node name="wall3" parent="PLATFORMS/OutsideMap" instance=ExtResource("3_3te26")]
+[node name="wall3" parent="OutsideMap" instance=ExtResource("3_3te26")]
 transform = Transform3D(-2.62268e-07, 0, 3, 0, 4.5, 0, -6, 0, -1.31134e-07, 15, -8, 0)
 
-[node name="wall4" parent="PLATFORMS/OutsideMap" instance=ExtResource("3_3te26")]
+[node name="wall4" parent="OutsideMap" instance=ExtResource("3_3te26")]
 transform = Transform3D(-2.62268e-07, 0, 3, 0, 4.5, 0, -6, 0, -1.31134e-07, -15, -8, 0)
+
+[node name="PLATFORMS" type="Node3D" parent="."]
 
 [node name="PlatformV1" type="Node3D" parent="PLATFORMS"]
 visible = false
@@ -4526,6 +4592,7 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
 [node name="PlatformV5" type="Node3D" parent="PLATFORMS"]
+visible = false
 
 [node name="RedTiles5" type="Node3D" parent="PLATFORMS/PlatformV5"]
 
@@ -5621,6 +5688,7 @@ offset_right = 191.0
 offset_bottom = 128.0
 text = "Click me to fucking randomize the fucking color of the fucking box in the fucking corner"
 autowrap_mode = 1
+script = ExtResource("7_4k8s2")
 
 [node name="ColorRect" type="ColorRect" parent="HUD"]
 anchors_preset = 1
@@ -5632,4 +5700,5 @@ offset_right = -25.0
 offset_bottom = 125.0
 grow_horizontal = 0
 
+[connection signal="pressed" from="HUD/StartButton" to="PLATFORMS" method="_on_start_button_pressed"]
 [connection signal="pressed" from="HUD/StartButton" to="HUD" method="_on_start_button_pressed"]
