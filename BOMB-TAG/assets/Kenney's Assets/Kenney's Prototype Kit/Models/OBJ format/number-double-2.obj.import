@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dyotgrnk6h21i"
+path="res://.godot/imported/number-double-2.obj-89ef8d1cbbec001731a09b51b595505d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/number-double-2.obj-89ef8d1cbbec001731a09b51b595505d.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/number-double-2.obj"
+dest_files=["res://.godot/imported/number-double-2.obj-89ef8d1cbbec001731a09b51b595505d.mesh", "res://.godot/imported/number-double-2.obj-89ef8d1cbbec001731a09b51b595505d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
