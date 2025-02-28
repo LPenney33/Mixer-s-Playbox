@@ -48,15 +48,27 @@ var mouse_captured : bool = false
 var look_rotation : Vector2
 var move_speed : float = 0.0
 var freeflying : bool = false
+var is_red_light = false  # ✅ Correct declaration
+
 
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
+@onready var red_light_npc = get_node("../skeleton_mage2/AnimationPlayer")  # Adjust to match the actual node path
+
+func set_red_light(state: bool):
+	is_red_light = state
+	print("🚦 Red Light status changed:", is_red_light)  # Debugging state change
+
+func die():
+	print("You moved on Red Light! Game Over!")  
+	queue_free()  # Remove player (or replace with a death animation)
 
 func _ready() -> void:
 	check_input_mappings()
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Mouse capturing
@@ -84,38 +96,36 @@ func _physics_process(delta: float) -> void:
 		motion *= freefly_speed * delta
 		move_and_collide(motion)
 		return
-	
-	# Apply gravity to velocity
-	if has_gravity:
-		if not is_on_floor():
-			velocity += get_gravity() * delta
+	if is_red_light:
+		print("🚦 Red Light is active!")  # Debugging red light toggle
+		if velocity.x != 0 or velocity.z != 0:
+			print("🟢 Player is moving!")  # Debugging movement detection
+			die()
 
-	# Apply jumping
-	if can_jump:
-		if Input.is_action_just_pressed(input_jump) and is_on_floor():
-			velocity.y = jump_velocity
 
-	# Modify speed based on sprinting
-	if can_sprint and Input.is_action_pressed(input_sprint):
-			move_speed = sprint_speed
-	else:
-		move_speed = base_speed
+	# Handle normal movement (X/Z velocity)
+	var move_input = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var move_direction = Vector3(move_input.x, 0, move_input.y).normalized()  # Horizontal movement
+	velocity.x = move_direction.x * base_speed  # Apply horizontal speed
+	velocity.z = move_direction.z * base_speed
 
-	# Apply desired movement to velocity
+	# Apply gravity if not on the floor
+	if not is_on_floor():
+		velocity.y += get_gravity().y * delta  # Only apply gravity on Y-axis (vertical)
+
+	# Jumping logic: Apply jump velocity only if player is on the floor and presses jump
+	if can_jump and is_on_floor() and Input.is_action_just_pressed(input_jump):
+		velocity.y = jump_velocity  # Apply upward force for jumping
+
+	# Apply desired movement to velocity (only for horizontal movement)
 	if can_move:
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
 		var move_dir := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if move_dir:
-			velocity.x = move_dir.x * move_speed
-			velocity.z = move_dir.z * move_speed
-		else:
-			velocity.x = move_toward(velocity.x, 0, move_speed)
-			velocity.z = move_toward(velocity.z, 0, move_speed)
-	else:
-		velocity.x = 0
-		velocity.y = 0
-	
-	# Use velocity to actually move
+			velocity.x = move_dir.x * base_speed
+			velocity.z = move_dir.z * base_speed
+
+	# Move the player
 	move_and_slide()
 
 
