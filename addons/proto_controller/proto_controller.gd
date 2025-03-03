@@ -56,6 +56,12 @@ var is_red_light = false  # ✅ Correct declaration
 @onready var collider: CollisionShape3D = $Collider
 @onready var red_light_npc = get_node("../skeleton_mage2/AnimationPlayer")  # Adjust to match the actual node path
 
+func set_red_light_false():
+	set_red_light(false)
+	
+func set_red_light_true():
+	set_red_light(true)
+
 func set_red_light(state: bool):
 	is_red_light = state
 	print("🚦 Red Light status changed:", is_red_light)  # Debugging state change

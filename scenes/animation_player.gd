@@ -13,6 +13,12 @@ func _ready():
 	if is_red_light:
 		print("🚦 Red Light is active!")
 
+func _on_animation_started(anim_name):
+	if anim_name == "Red_Light":  # Make sure the name matches the animation
+		get_node("../Player").set_red_light(true)
+	elif anim_name == "Green_Light":
+		get_node("../Player").set_red_light(false)
+
 func _on_animation_finished(anim_name):
 	if anim_name == "Startup":
 		play_green_light()  
