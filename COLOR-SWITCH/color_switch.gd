@@ -6,7 +6,7 @@ extends Node3D
 @onready var player = $ProtoController
 @onready var color_square = $HUD/ColorRect
 @onready var start_label = $HUD/ColorSwitchLabel
-@onready var timer = $ColorSwitchTimer
+@onready var timer = $HUD/ColorSwitchTimer
 
 var colors = [
 	Color(1, 0, 0),    # Red
@@ -20,6 +20,8 @@ var colors = [
 var target_position = Vector3(-0.032, 1.596, 0.504)
 
 var last_index = -1
+
+var new_index = last_index
 
 func _ready():
 	button.connect("pressed", _on_start_button_pressed)
@@ -40,7 +42,10 @@ func _on_start_button_pressed():
 	starting_platform.visible = false
 	player.global_transform.origin = target_position
 
-	var new_index = last_index
+func _process(_delta):
+	print("Time left: " + timer.time_left())
+
+func _on_color_switch_timer_timeout():
 
 	# Ensure a different index is selected
 	while new_index == last_index:
@@ -52,3 +57,5 @@ func _on_start_button_pressed():
 	color_square.self_modulate = selected_color
 
 	print("Selected Color: ", selected_color)
+
+	timer.start()
