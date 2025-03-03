@@ -1,12 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=22 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="Script" path="res://COLOR-SWITCH/color_switch.gd" id="1_mas38"]
-[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_tkkbl"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="2_7s34v"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="2_fle2w"]
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="3_3te26"]
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://Global Assets/OFFICIAL Building Assets/floor_wood.tscn" id="4_eictm"]
 [ext_resource type="Script" path="res://COLOR-SWITCH/hud.gd" id="6_acf2r"]
-[ext_resource type="Script" path="res://COLOR-SWITCH/start_button.gd" id="7_4k8s2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3rrl"]
 sky_top_color = Color(0.262805, 0.254747, 0.527349, 1)
@@ -44,7 +43,38 @@ albedo_color = Color(0, 0, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3lshp"]
 albedo_color = Color(0.252387, 0.000638695, 0.601038, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3am5r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi5qk"]
+bg_color = Color(0.326181, 0.694393, 0.360148, 1)
+border_width_left = 10
+border_width_bottom = 15
+border_color = Color(0.227451, 0.498039, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4351x"]
+bg_color = Color(0.326181, 0.694393, 0.360148, 1)
+border_width_top = 15
+border_color = Color(0.227451, 0.498039, 0.254902, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Theme" id="Theme_jclgh"]
+default_font_size = 75
+Button/styles/focus = SubResource("StyleBoxEmpty_3am5r")
+Button/styles/hover = SubResource("StyleBoxFlat_gi5qk")
+Button/styles/normal = SubResource("StyleBoxFlat_gi5qk")
+Button/styles/pressed = SubResource("StyleBoxFlat_4351x")
+
+[sub_resource type="Theme" id="Theme_eyso4"]
+
 [node name="Color Switch" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138779, -0.142441, 0.0684204)
 script = ExtResource("1_mas38")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -56,8 +86,8 @@ light_color = Color(0.564962, 0.564962, 0.564962, 1)
 light_energy = 3.174
 shadow_enabled = true
 
-[node name="ProtoController" parent="." instance=ExtResource("1_tkkbl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.0319, 1.59572, 0.50388)
+[node name="ProtoController" parent="." instance=ExtResource("2_fle2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138779, 2.14244, -0.0684204)
 
 [node name="Schematics" type="Node3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
@@ -5682,13 +5712,35 @@ unique_name_in_owner = true
 script = ExtResource("6_acf2r")
 
 [node name="StartButton" type="Button" parent="HUD"]
-offset_left = 25.0
-offset_top = 25.0
-offset_right = 191.0
-offset_bottom = 128.0
-text = "Click me to fucking randomize the fucking color of the fucking box in the fucking corner"
-autowrap_mode = 1
-script = ExtResource("7_4k8s2")
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+offset_left = -330.0
+offset_top = -155.0
+offset_right = 330.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_jclgh")
+text = "Start Game"
+
+[node name="ColorSwitchLabel" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_left = 0.25434
+anchor_top = 0.0972222
+anchor_right = 0.74566
+anchor_bottom = 0.332222
+offset_left = -49.4997
+offset_right = 49.4997
+offset_bottom = -0.279877
+grow_horizontal = 2
+theme = SubResource("Theme_eyso4")
+theme_override_font_sizes/font_size = 111
+text = "Color Switch"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="HUD"]
 anchors_preset = 1
@@ -5700,5 +5752,4 @@ offset_right = -25.0
 offset_bottom = 125.0
 grow_horizontal = 0
 
-[connection signal="pressed" from="HUD/StartButton" to="PLATFORMS" method="_on_start_button_pressed"]
-[connection signal="pressed" from="HUD/StartButton" to="HUD" method="_on_start_button_pressed"]
+[node name="ColorSwitchTimer" type="Timer" parent="HUD"]
