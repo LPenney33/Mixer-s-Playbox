@@ -7,6 +7,7 @@ extends Node3D
 @onready var color_square = $HUD/ColorRect
 @onready var start_label = $HUD/ColorSwitchLabel
 @onready var timer = $HUD/ColorSwitchTimer
+@onready var timer_label = $HUD/TimerLabel
 
 var colors = [
 	Color(1, 0, 0),    # Red
@@ -32,26 +33,41 @@ func hide_all():
 		platform.visible = false
 
 func _on_start_button_pressed():
-	hide_all()
 	timer.start()
+	hide_all()
 	var random_index = randi() % platforms.size()
 	platforms[random_index].visible = true
 	print("Platform ", random_index, " is now visible.")
 	button.visible = false
 	start_label.visible = false
+	color_square.visible = true
+	timer_label.visible = true
 	starting_platform.visible = false
 	player.global_transform.origin = target_position
 
-func _process(_delta):
-	print("Time left: " + timer.time_left())
-
-func _on_color_switch_timer_timeout():
-
-	# Ensure a different index is selected
+	#Chooses starting color
 	while new_index == last_index:
 		new_index = randi() % colors.size()
 
-	last_index = new_index  # Update last selected index
+	last_index = new_index
+	var selected_color = colors[new_index]
+
+	color_square.self_modulate = selected_color
+
+	print("Selected Color: ", selected_color)
+
+func _process(_delta):
+	timer_label.text = ":0" + str(roundf(timer.get_time_left()))
+
+
+
+func _on_color_switch_timer_timeout():
+
+	#Chooses new color
+	while new_index == last_index:
+		new_index = randi() % colors.size()
+
+	last_index = new_index
 	var selected_color = colors[new_index]
 
 	color_square.self_modulate = selected_color
