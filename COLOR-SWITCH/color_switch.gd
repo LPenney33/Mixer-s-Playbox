@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var platforms = $PLATFORMS.get_children()
+@onready var platform_manager = $PLATFORMS
 @onready var button = $HUD/StartButton
 @onready var starting_platform = $BlankPlatform
 @onready var player = $ProtoController
@@ -18,7 +18,7 @@ var colors = [
 	Color(0.5, 0, 1)   # Purple
 ]
 
-var target_position = Vector3(-0.032, 1.596, 0.504)
+var target_position = Vector3(-0.032, 1.596, 0.504) ## Players starting point
 
 var last_index = -1
 
@@ -29,21 +29,21 @@ func _ready():
 	hide_all()
 
 func hide_all():
-	for platform in platforms:
+	for platform in platform_manager.get_children():
 		platform.visible = false
 
 func _on_start_button_pressed():
-	timer.start()
+	## timer.start()
 	hide_all()
-	var random_index = randi() % platforms.size()
-	platforms[random_index].visible = true
-	print("Platform ", random_index, " is now visible.")
+	var random_index = randi() % platform_manager.get_children().size() ## Picks a random platform_manager child (PlatformV1 - V5)
+	platform_manager.get_children()[random_index].visible = true ## Makes picked platform_manager visible
+	print("Platform ", random_index, " is now visible.") ## Tells Output to print what platform_manager is visible
 	button.visible = false
 	start_label.visible = false
 	color_square.visible = true
 	timer_label.visible = true
 	starting_platform.visible = false
-	player.global_transform.origin = target_position
+	player.global_transform.origin = target_position ## Teleports player to starting point
 
 	#Chooses starting color
 	while new_index == last_index:
@@ -56,8 +56,12 @@ func _on_start_button_pressed():
 
 	print("Selected Color: ", selected_color)
 
+	platform_manager.active_platform = platform_manager.get_children()[random_index]
+
+
+
 func _process(_delta):
-	timer_label.text = ":0" + str(roundf(timer.get_time_left()))
+	timer_label.text = ":0" + str(roundf(timer.get_time_left())) ## Displays time left in Output
 
 
 
@@ -70,8 +74,12 @@ func _on_color_switch_timer_timeout():
 	last_index = new_index
 	var selected_color = colors[new_index]
 
+	platform_manager.update_platform(selected_color)
+
 	color_square.self_modulate = selected_color
 
 	print("Selected Color: ", selected_color)
+
+	platform_manager.update_platform(selected_color)
 
 	timer.start()

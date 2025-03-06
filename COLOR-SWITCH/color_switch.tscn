@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="3_3te26"]
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://Global Assets/OFFICIAL Building Assets/floor_wood.tscn" id="4_eictm"]
 [ext_resource type="Script" path="res://COLOR-SWITCH/hud.gd" id="6_acf2r"]
+[ext_resource type="Script" path="res://COLOR-SWITCH/platforms.gd" id="6_dqfmj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3rrl"]
 sky_top_color = Color(0.262805, 0.254747, 0.527349, 1)
@@ -31,10 +32,6 @@ height = 1.8
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
 radius = 0.4
 height = 1.8
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a58av"]
-transparency = 1
-albedo_color = Color(1, 0.427451, 1, 0.505882)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tqks"]
 albedo_color = Color(1, 0, 0, 1)
@@ -130,99 +127,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 [node name="Camera3D" type="Camera3D" parent="ProtoController/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
 
-[node name="Schematics" type="Node3D" parent="."]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
-visible = false
-
-[node name="Platform" type="CSGBox3D" parent="Schematics"]
-transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 0, 0, 0)
-size = Vector3(42, 1, 42)
-material = SubResource("StandardMaterial3D_a58av")
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Schematics/Platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6435, 0, -19.5907)
-operation = 2
-radius = 4.0
-sides = 20
-material = SubResource("StandardMaterial3D_a58av")
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Schematics/Platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.64, 0, 19.59)
-operation = 2
-radius = 4.0
-sides = 20
-material = SubResource("StandardMaterial3D_a58av")
-
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Schematics/Platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.64, 0, 19.59)
-operation = 2
-radius = 4.0
-sides = 20
-material = SubResource("StandardMaterial3D_a58av")
-
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Schematics/Platform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.64, 0, -19.59)
-operation = 2
-radius = 4.0
-sides = 20
-material = SubResource("StandardMaterial3D_a58av")
-
-[node name="Wall1" type="CSGBox3D" parent="Schematics"]
-transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 0, 4.5, -25)
-use_collision = true
-size = Vector3(36, 10, 1)
-material = SubResource("StandardMaterial3D_a58av")
-
-[node name="Wall2" type="CSGBox3D" parent="Schematics"]
-transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 0, 4.5, 25)
-use_collision = true
-size = Vector3(36, 10, 1)
-material = SubResource("StandardMaterial3D_a58av")
-
-[node name="Wall3" type="CSGBox3D" parent="Schematics"]
-transform = Transform3D(-5.33279e-08, 0, 1.22, 0, 1.22, 0, -1.22, 0, -5.33279e-08, 25, 4.5, 1)
-use_collision = true
-size = Vector3(36, 10, 1)
-material = SubResource("StandardMaterial3D_a58av")
-
-[node name="Wall4" type="CSGBox3D" parent="Schematics"]
-transform = Transform3D(-5.33279e-08, 0, 1.22, 0, 1.22, 0, -1.22, 0, -5.33279e-08, -25, 4.5, 1)
-use_collision = true
-size = Vector3(36, 10, 1)
-material = SubResource("StandardMaterial3D_a58av")
-
-[node name="Tower1" type="CSGCylinder3D" parent="Schematics"]
-transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, -25.1799, 0, -25)
-use_collision = true
-radius = 8.0
-height = 30.0
-sides = 20
-material = SubResource("StandardMaterial3D_a58av")
-
-[node name="Tower2" type="CSGCylinder3D" parent="Schematics"]
-transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, -25.1799, 0, 25)
-use_collision = true
-radius = 8.0
-height = 30.0
-sides = 20
-material = SubResource("StandardMaterial3D_a58av")
-
-[node name="Tower3" type="CSGCylinder3D" parent="Schematics"]
-transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 24.8201, 0, 25)
-use_collision = true
-radius = 8.0
-height = 30.0
-sides = 20
-material = SubResource("StandardMaterial3D_a58av")
-
-[node name="Tower4" type="CSGCylinder3D" parent="Schematics"]
-transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 24.8201, 0, -25)
-use_collision = true
-radius = 8.0
-height = 30.0
-sides = 20
-material = SubResource("StandardMaterial3D_a58av")
-
 [node name="BlankPlatform" type="Node3D" parent="."]
 
 [node name="floor_wood" parent="BlankPlatform" instance=ExtResource("4_eictm")]
@@ -316,6 +220,7 @@ transform = Transform3D(-2.62268e-07, 0, 3, 0, 4.5, 0, -6, 0, -1.31134e-07, 15, 
 transform = Transform3D(-2.62268e-07, 0, 3, 0, 4.5, 0, -6, 0, -1.31134e-07, -15, -8, 0)
 
 [node name="PLATFORMS" type="Node3D" parent="."]
+script = ExtResource("6_dqfmj")
 
 [node name="PlatformV1" type="Node3D" parent="PLATFORMS"]
 visible = false
