@@ -5,6 +5,7 @@
 
 extends CharacterBody3D
 
+
 ## Can we move around?
 @export var can_move : bool = true
 ## Are we affected by gravity?
@@ -55,6 +56,7 @@ var is_red_light = false  # ✅ Correct declaration
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
 @onready var red_light_npc = get_node("../skeleton_mage2/AnimationPlayer")  # Adjust to match the actual node path
+@onready var DeathMenu: Control = $DeathMenu
 
 func set_red_light_false():
 	set_red_light(false)
@@ -68,7 +70,13 @@ func set_red_light(state: bool):
 
 func die():
 	print("You moved on Red Light! Game Over!")  
-	queue_free()  # Remove player (or replace with a death animation)
+
+	# Show the UI elements
+	var ui = get_node("../Menu")  # Adjust path if needed
+	DeathMenu.visible = true
+
+	# Disable player movement
+	can_move = false
 
 func _ready() -> void:
 	check_input_mappings()
