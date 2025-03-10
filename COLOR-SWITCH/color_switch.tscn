@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=27 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="Script" path="res://COLOR-SWITCH/color_switch.gd" id="1_mas38"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="2_7s34v"]
@@ -87,6 +87,20 @@ outline_size = 3
 shadow_size = 2
 shadow_color = Color(0, 0, 0, 0.368627)
 shadow_offset = Vector2(5, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bq87"]
+bg_color = Color(0.522832, 0.536898, 0.533453, 0.470588)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.259294, 0.259294, 0.259294, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 3
 
 [node name="Color Switch" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138779, -0.142441, 0.0684204)
@@ -5689,6 +5703,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TimerLabel" type="Label" parent="HUD"]
 visible = false
+z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -5703,6 +5718,19 @@ label_settings = SubResource("LabelSettings_02jvy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="HUD/TimerLabel"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.5
+offset_top = 7.0
+offset_right = 71.5
+offset_bottom = 86.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5bq87")
+
 [node name="ColorRect" type="ColorRect" parent="HUD"]
 visible = false
 anchors_preset = 1
@@ -5715,6 +5743,6 @@ offset_bottom = 125.0
 grow_horizontal = 0
 
 [node name="ColorSwitchTimer" type="Timer" parent="HUD"]
-wait_time = 5.0
+wait_time = 10.0
 
 [connection signal="timeout" from="HUD/ColorSwitchTimer" to="." method="_on_color_switch_timer_timeout"]

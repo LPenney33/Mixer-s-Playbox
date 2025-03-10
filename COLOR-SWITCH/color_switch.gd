@@ -33,7 +33,7 @@ func hide_all():
 		platform.visible = false
 
 func _on_start_button_pressed():
-	## timer.start()
+	timer.start()
 	hide_all()
 	var random_index = randi() % platform_manager.get_children().size() ## Picks a random platform_manager child (PlatformV1 - V5)
 	platform_manager.get_children()[random_index].visible = true ## Makes picked platform_manager visible
@@ -58,12 +58,12 @@ func _on_start_button_pressed():
 
 	platform_manager.active_platform = platform_manager.get_children()[random_index]
 
+	platform_manager.update_platform(random_index)
+
 
 
 func _process(_delta):
-	timer_label.text = ":0" + str(roundf(timer.get_time_left())) ## Displays time left in Output
-
-
+	timer_label.text = ":" + str(roundf(timer.get_time_left())) ## Displays time left in Output
 
 func _on_color_switch_timer_timeout():
 
@@ -73,8 +73,6 @@ func _on_color_switch_timer_timeout():
 
 	last_index = new_index
 	var selected_color = colors[new_index]
-
-	platform_manager.update_platform(selected_color)
 
 	color_square.self_modulate = selected_color
 
