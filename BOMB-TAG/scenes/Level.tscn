@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cleyfc8v6hy1e"]
+[gd_scene load_steps=26 format=3 uid="uid://cleyfc8v6hy1e"]
 
 [ext_resource type="Script" path="res://BOMB-TAG/scripts/cutscene.gd" id="1_2cssc"]
 [ext_resource type="Script" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_srt87"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://Global Assets/OFFICIAL Building Assets/half_wall.tscn" id="8_qmdvw"]
 [ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://Global Assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="9_7x8v1"]
 [ext_resource type="PackedScene" uid="uid://dv6xewp5blt34" path="res://BOMB-TAG/scenes/bomber.tscn" id="11_h2r53"]
+[ext_resource type="Script" path="res://BOMB-TAG/scripts/timer.gd" id="13_wsk4p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3am5r"]
 
@@ -70,6 +71,12 @@ height = 1.8
 [sub_resource type="NavigationMesh" id="NavigationMesh_m2fc6"]
 vertices = PackedVector3Array(-14.25, 16.2775, -19.8797, -14.25, 16.2775, -6.12969, -13.75, 16.2775, -19.8797, 13.5, 16.0275, -19.8797, 14, 16.2775, -18.1297, 14, 16.0275, -20.1297, -11, 2.52748, -16.3797, -5.75, 0.52748, -16.6297, -5.75, 0.52748, -19.1297, -13, 2.52748, -18.8797, -9.6875, 2.52748, -16.4422, -10.1, 2.52748, -18.9797, -13, 4.52748, -4.87969, -11, 4.52748, -4.87969, -13, 2.52748, -16.0797, -13, 4.52748, -11.8797, -11, 4.52748, -12.0672, -5.25, 0.52748, -16.3797, 5.25, 0.52748, -16.3797, 5.75, 0.52748, -16.6297, 5.75, 0.52748, -19.1297, -5.5, 0.52748, -14.3797, -4.75, 0.52748, -3.12969, -3.25, 0.52748, -3.12969, 4.75, 0.52748, -3.12969, 5.25, 0.52748, -2.12969, 9, 0.52748, -2.12969, 9, 0.52748, -14.3797, 5.5, 0.52748, -14.3797, -2.75, 0.52748, -2.12969, 2.75, 0.52748, -2.12969, 3.25, 0.52748, -3.12969, -9, 0.52748, -14.3797, -9, 0.52748, -3.12969, 10.25, 4.27748, -13.1297, 10, 4.27748, -13.8797, 10, 4.27748, -12.8797, 11.25, 4.27748, -12.6297, 11.25, 4.02748, -13.1297, 13.25, 4.52748, -10.3797, 12.75, 2.52748, -18.8797, 11.25, 2.52748, -16.3797, 11.9167, 4.52748, -12.213, 13.1667, 4.52748, -11.7964, 12.9167, 2.52748, -16.0464, 11.25, 4.52748, -4.62969, 13, 4.52748, -4.37969, 7.125, 0.77748, -16.5672, 9.875, 2.52748, -16.4422, 9.95, 2.52748, -18.9797, 7.15, 0.77748, -19.0797, -11, 0.52748, -14.3797, -13, 0.52748, -14.3797, -13.25, 0.52748, -13.8797, -10.75, 0.52748, -12.3797, -13, 0.52748, 14.3703, -11, 0.52748, 14.3703, -10.75, 0.52748, 10.1203, 11, 0.52748, 14.3703, 13, 0.52748, 14.3703, 13.25, 0.52748, 13.8703, 13, 0.52748, -14.3797, 11, 0.52748, -14.3797, -10, 6.27748, -3.37969, -2.5, 6.27748, -3.37969, -9.5, 6.27748, -3.62969, -10, 6.27748, -5.37969, -13, 4.52748, 4.87031, -11, 4.52748, 4.87031, -11, 4.52748, 2.87031, -11, 4.52748, -2.87969, -10.5, 4.52748, 2.37031, -3.25, 4.52748, 2.37031, -3.25, 4.52748, -2.37969, -10.5, 4.52748, -2.37969, 11.25, 4.52748, 3.12031, 11.25, 4.52748, 4.87031, 13, 4.52748, 4.62031, 11.25, 4.52748, -2.87969, 10.5, 4.52748, -2.12969, 10.5, 4.52748, 2.37031, 2, 4.52748, -2.12969, 2, 4.52748, 2.37031, -1.25, 4.52748, 3.62031, 1.5, 4.52748, 3.62031, 1.5, 4.52748, 2.62031, -1.5, 4.52748, 2.37031, 1.5, 4.52748, -2.37969, -1.5, 4.52748, -2.37969, 1.5, 4.52748, -3.62969, -1.25, 4.52748, -3.62969, 2.5, 6.27748, -3.37969, 10, 6.27748, -3.12969, 10, 6.27748, -3.62969, -5.25, 0.52748, 1.37031, -4, 0.52748, 0.870306, -4, 0.52748, -0.879694, -5.25, 0.52748, -1.37969, -9, 0.52748, 3.12031, -4.75, 0.52748, 3.12031, -5.25, 0.52748, 2.62031, -5.25, 0.52748, -2.62969, -3.25, 0.52748, 0.870306, -3.25, 0.52748, -0.879694, 3.25, 0.52748, 0.870306, 4.75, 0.52748, 0.870306, 4.75, 0.52748, -0.879694, 3.25, 0.52748, -0.879694, -2.75, 0.52748, 2.12031, 2.75, 0.52748, 2.12031, 5.25, 0.52748, 2.12031, 9, 0.52748, 2.12031, -15.5, 24.2775, -0.379694, -15.5, 16.5275, 21.1203, 15.5, 16.5275, 21.1203, 15.5, 24.2775, -0.379694, 5.5, 0.52748, 16.3703, -5.5, 0.52748, 16.3703, -6, 0.52748, 16.6203, -6, 0.52748, 19.1203, 6, 0.52748, 19.1203, 6, 0.52748, 16.6203, -3.25, 0.52748, 3.12031, -5.75, 0.52748, 14.3703, 4.75, 0.52748, 3.12031, 5.75, 0.52748, 14.3703, 9, 0.52748, 14.3703, 3.25, 0.52748, 3.12031, -9, 0.52748, 14.3703, -10, 6.27748, 3.37031, -10, 6.27748, 3.87031, -2.5, 6.27748, 3.62031, 2.5, 6.27748, 3.37031, 10, 6.27748, 3.87031, 10, 6.27748, 3.37031, 11.25, 2.52748, 16.3703, 13, 2.52748, 18.8703, 9.9375, 2.52748, 16.4328, 10.2, 2.52748, 18.9703, 11.25, 4.52748, 12.0578, 11.25, 2.77748, 14.9328, 13, 2.52748, 16.0203, 13, 4.52748, 11.7453, -11, 2.52748, 16.3703, -12.75, 2.52748, 18.8703, -10.05, 2.52748, 18.9703, -9.75, 2.52748, 16.4328, -11, 2.77748, 14.9328, -11, 4.52748, 12.0578, -12.875, 4.52748, 11.8703, -12.8, 2.52748, 16.0703)
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(5, 3, 2), PackedInt32Array(5, 2, 0), PackedInt32Array(6, 9, 10), PackedInt32Array(10, 9, 11), PackedInt32Array(10, 11, 7), PackedInt32Array(7, 11, 8), PackedInt32Array(9, 6, 14), PackedInt32Array(14, 6, 16), PackedInt32Array(14, 16, 15), PackedInt32Array(15, 16, 12), PackedInt32Array(12, 16, 13), PackedInt32Array(7, 8, 17), PackedInt32Array(17, 8, 18), PackedInt32Array(18, 8, 19), PackedInt32Array(19, 8, 20), PackedInt32Array(23, 22, 21), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 28), PackedInt32Array(26, 28, 27), PackedInt32Array(29, 23, 30), PackedInt32Array(30, 23, 31), PackedInt32Array(28, 24, 31), PackedInt32Array(32, 21, 33), PackedInt32Array(33, 21, 22), PackedInt32Array(18, 28, 17), PackedInt32Array(17, 28, 21), PackedInt32Array(21, 28, 31), PackedInt32Array(21, 31, 23), PackedInt32Array(36, 35, 34), PackedInt32Array(38, 37, 34), PackedInt32Array(34, 37, 36), PackedInt32Array(39, 42, 43), PackedInt32Array(43, 42, 38), PackedInt32Array(43, 38, 44), PackedInt32Array(44, 38, 41), PackedInt32Array(44, 41, 40), PackedInt32Array(46, 45, 39), PackedInt32Array(39, 45, 37), PackedInt32Array(20, 50, 19), PackedInt32Array(19, 50, 47), PackedInt32Array(47, 50, 49), PackedInt32Array(47, 49, 48), PackedInt32Array(48, 49, 41), PackedInt32Array(41, 49, 40), PackedInt32Array(38, 42, 37), PackedInt32Array(37, 42, 39), PackedInt32Array(53, 52, 51), PackedInt32Array(51, 54, 53), PackedInt32Array(53, 54, 57), PackedInt32Array(53, 57, 56), PackedInt32Array(53, 56, 55), PackedInt32Array(59, 58, 60), PackedInt32Array(60, 58, 61), PackedInt32Array(61, 58, 62), PackedInt32Array(65, 64, 63), PackedInt32Array(65, 63, 66), PackedInt32Array(69, 68, 67), PackedInt32Array(12, 13, 70), PackedInt32Array(70, 69, 12), PackedInt32Array(12, 69, 67), PackedInt32Array(74, 73, 71), PackedInt32Array(71, 73, 72), PackedInt32Array(71, 69, 74), PackedInt32Array(74, 69, 70), PackedInt32Array(77, 76, 75), PackedInt32Array(78, 45, 46), PackedInt32Array(78, 46, 79), PackedInt32Array(79, 46, 80), PackedInt32Array(80, 46, 75), PackedInt32Array(75, 46, 77), PackedInt32Array(79, 80, 81), PackedInt32Array(81, 80, 82), PackedInt32Array(84, 83, 85), PackedInt32Array(85, 83, 86), PackedInt32Array(87, 81, 88), PackedInt32Array(88, 81, 82), PackedInt32Array(88, 82, 85), PackedInt32Array(88, 85, 86), PackedInt32Array(89, 87, 90), PackedInt32Array(90, 87, 88), PackedInt32Array(88, 86, 73), PackedInt32Array(73, 86, 72), PackedInt32Array(93, 92, 91), PackedInt32Array(95, 94, 96), PackedInt32Array(96, 94, 97), PackedInt32Array(94, 98, 97), PackedInt32Array(97, 98, 33), PackedInt32Array(98, 100, 99), PackedInt32Array(33, 22, 101), PackedInt32Array(94, 100, 98), PackedInt32Array(33, 101, 97), PackedInt32Array(103, 102, 96), PackedInt32Array(96, 102, 95), PackedInt32Array(107, 106, 104), PackedInt32Array(104, 106, 105), PackedInt32Array(102, 103, 29), PackedInt32Array(107, 109, 30), PackedInt32Array(30, 109, 108), PackedInt32Array(30, 108, 102), PackedInt32Array(30, 102, 29), PackedInt32Array(106, 25, 105), PackedInt32Array(105, 25, 110), PackedInt32Array(110, 25, 26), PackedInt32Array(110, 26, 111), PackedInt32Array(107, 104, 109), PackedInt32Array(115, 114, 112), PackedInt32Array(112, 114, 113), PackedInt32Array(121, 120, 116), PackedInt32Array(116, 120, 117), PackedInt32Array(117, 120, 118), PackedInt32Array(118, 120, 119), PackedInt32Array(123, 99, 122), PackedInt32Array(110, 111, 124), PackedInt32Array(124, 111, 125), PackedInt32Array(125, 111, 126), PackedInt32Array(109, 127, 108), PackedInt32Array(108, 127, 122), PackedInt32Array(127, 124, 125), PackedInt32Array(128, 98, 123), PackedInt32Array(123, 98, 99), PackedInt32Array(117, 123, 116), PackedInt32Array(116, 123, 125), PackedInt32Array(125, 123, 122), PackedInt32Array(125, 122, 127), PackedInt32Array(131, 130, 129), PackedInt32Array(134, 133, 132), PackedInt32Array(135, 136, 137), PackedInt32Array(137, 136, 138), PackedInt32Array(137, 138, 121), PackedInt32Array(121, 138, 120), PackedInt32Array(136, 135, 141), PackedInt32Array(141, 135, 140), PackedInt32Array(141, 140, 139), PackedInt32Array(141, 139, 142), PackedInt32Array(142, 139, 76), PackedInt32Array(142, 76, 77), PackedInt32Array(143, 146, 144), PackedInt32Array(144, 146, 145), PackedInt32Array(145, 146, 118), PackedInt32Array(145, 118, 119), PackedInt32Array(144, 150, 143), PackedInt32Array(143, 150, 147), PackedInt32Array(147, 150, 148), PackedInt32Array(148, 150, 149), PackedInt32Array(148, 149, 68), PackedInt32Array(68, 149, 67)]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xqupy"]
+font_size = 64
+outline_size = 3
+shadow_size = 2
+shadow_offset = Vector2(5, 2)
 
 [node name="Level" type="Node3D" node_paths=PackedStringArray("revolve_camera", "player_camera", "start_menu", "start_button")]
 script = ExtResource("1_2cssc")
@@ -1194,3 +1201,40 @@ transform = Transform3D(0.75, 0, 0, 0, 0.445, 0, 0, 0, 0.75, -14, 21.75, 0)
 transform = Transform3D(8, 0, 0, 0, 0.939693, -2.05212, 0, 0.34202, 5.63816, 0, 19.5, 10.25)
 
 [node name="Bomber" parent="." instance=ExtResource("11_h2r53")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+script = ExtResource("13_wsk4p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CountdownLabel" type="Label" parent="CanvasLayer"]
+z_index = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 83.0
+offset_bottom = 80.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = ":05"
+label_settings = SubResource("LabelSettings_xqupy")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/CountdownLabel"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.091
+anchor_right = 0.5
+anchor_bottom = -0.091
+offset_left = -48.0
+offset_top = 24.008
+offset_right = 45.0
+offset_bottom = 80.008
+grow_horizontal = 2
+grow_vertical = 2
