@@ -56,7 +56,7 @@ var is_red_light = false  # ✅ Correct declaration
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
 @onready var red_light_npc = get_node("../skeleton_mage2/AnimationPlayer")  # Adjust to match the actual node path
-@onready var DeathMenu: Control = $DeathMenu
+@onready var DeathMenu: Control = $"../DeathMenu"
 
 func set_red_light_false():
 	set_red_light(false)
@@ -72,11 +72,12 @@ func die():
 	print("You moved on Red Light! Game Over!")  
 
 	# Show the UI elements
-	var ui = get_node("../Menu")  # Adjust path if needed
 	DeathMenu.visible = true
 
 	# Disable player movement
 	can_move = false
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _ready() -> void:
 	check_input_mappings()
