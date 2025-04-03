@@ -9,14 +9,16 @@ extends Node3D
 @onready var timer = $HUD/ColorSwitchTimer
 @onready var timer_label = $HUD/TimerLabel
 
-var colors = [
-	Color(1, 0, 0),    # Red
-	Color(1, 0.647, 0), # Orange
-	Color(1, 1, 0),    # Yellow
-	Color(0, 1, 0),    # Green
-	Color(0, 0, 1),    # Blue
-	Color(0.5, 0, 1)   # Purple
-]
+
+var red = Color(1, 0, 0)    # Red
+var orange = Color(1, 0.647, 0)    # Orange
+var yellow = Color(1, 1, 0)    # Yellow
+var green = Color(0, 1, 0)    # Green
+var blue = Color(0, 0, 1)    # Blue
+var purple = Color(0.5, 0, 1)    # Purple
+
+var colors = [red, orange, yellow, green, blue, purple]
+
 
 var target_position = Vector3(-0.032, 1.596, 0.504) ## Players starting point
 
@@ -24,9 +26,15 @@ var last_index = -1
 
 var new_index = last_index
 
+@onready var cameraStart = %CameraStart
+
+@onready var cameraPlayer = %CameraPlayer
+
 func _ready():
 	button.connect("pressed", _on_start_button_pressed)
 	hide_all()
+	cameraStart.current = true
+	cameraPlayer.current = false
 
 func hide_all():
 	for platform in platform_manager.get_children():
@@ -35,6 +43,8 @@ func hide_all():
 func _on_start_button_pressed():
 	timer.start()
 	hide_all()
+	cameraPlayer.current = true
+	cameraStart.current = false
 	var random_index = randi() % platform_manager.get_children().size() ## Picks a random platform_manager child (PlatformV1 - V5)
 	platform_manager.get_children()[random_index].visible = true ## Makes picked platform_manager visible
 	print("Platform ", random_index, " is now visible.") ## Tells Output to print what platform_manager is visible
@@ -56,9 +66,10 @@ func _on_start_button_pressed():
 
 	print("Selected Color: ", selected_color)
 
+	platform_manager.update_platform(selected_color)
+
 	platform_manager.active_platform = platform_manager.get_children()[random_index]
 
-	platform_manager.update_platform(random_index)
 
 
 

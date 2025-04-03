@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=28 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="Script" path="res://COLOR-SWITCH/color_switch.gd" id="1_mas38"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="2_7s34v"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://Global Assets/OFFICIAL Building Assets/floor_wood.tscn" id="4_eictm"]
 [ext_resource type="Script" path="res://COLOR-SWITCH/hud.gd" id="6_acf2r"]
 [ext_resource type="Script" path="res://COLOR-SWITCH/platforms.gd" id="6_dqfmj"]
+[ext_resource type="Script" path="res://COLOR-SWITCH/Tile.gd" id="7_24l46"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3rrl"]
 sky_top_color = Color(0.262805, 0.254747, 0.527349, 1)
@@ -115,8 +116,13 @@ light_color = Color(0.564962, 0.564962, 0.564962, 1)
 light_energy = 3.174
 shadow_enabled = true
 
+[node name="CameraStart" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.107005, 0.697864, -0.708192, -0.0786227, 0.715991, 0.693669, 0.991145, -0.0185459, 0.131482, -32, 38, 5)
+fov = 35.0
+
 [node name="ProtoController" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138779, 2.14244, -0.0684204)
+transform = Transform3D(1, 1.29701e-05, -0.000994183, -1.35234e-05, 1, -0.000546289, 0.000994176, 0.000546303, 0.999999, -0.138779, 2.14244, -0.0684204)
 script = ExtResource("2_pmtck")
 input_left = "move_left"
 input_right = "move_right"
@@ -138,8 +144,9 @@ shape = SubResource("CapsuleShape3D_iof21")
 [node name="Head" type="Node3D" parent="ProtoController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
-[node name="Camera3D" type="Camera3D" parent="ProtoController/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
+[node name="CameraPlayer" type="Camera3D" parent="ProtoController/Head"]
+unique_name_in_owner = true
+transform = Transform3D(0.999998, -0.000409431, 0.00208287, 0.000404815, 0.999997, 0.00222074, -0.00208378, -0.00221989, 0.999995, 0, -0.35, 0)
 
 [node name="BlankPlatform" type="Node3D" parent="."]
 
@@ -240,6 +247,7 @@ script = ExtResource("6_dqfmj")
 visible = false
 
 [node name="RedTiles" type="Node3D" parent="PLATFORMS/PlatformV1"]
+script = ExtResource("7_24l46")
 
 [node name="RedTile" parent="PLATFORMS/PlatformV1/RedTiles" instance=ExtResource("4_eictm")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
