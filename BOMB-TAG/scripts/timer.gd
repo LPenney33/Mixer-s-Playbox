@@ -2,7 +2,7 @@ extends Timer
 
 signal countdown_finished
 
-@onready var timer: Timer = $Timer  # Ensure you have a Timer node as a child.
+@onready var timer: Timer = $StartGameTimer  # Ensure you have a Timer node as a child.
 
 func start_countdown():
     # Set how many seconds you want (5 in your case).

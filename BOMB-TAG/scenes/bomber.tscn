@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dv6xewp5blt34"]
+[gd_scene load_steps=5 format=3 uid="uid://dv6xewp5blt34"]
 
 [ext_resource type="PackedScene" uid="uid://g5gvlql40lv4" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie.glb" id="1_hji5q"]
 [ext_resource type="Script" path="res://BOMB-TAG/scripts/bomber.gd" id="1_ode8r"]
-[ext_resource type="AnimationLibrary" uid="uid://dc0dhl2yib861" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/zombie/zombie_run.glb" id="3_rtc15"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3v05w"]
 radius = 1.0
@@ -24,9 +23,6 @@ shape = SubResource("CapsuleShape3D_3v05w")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="zombie"]
-libraries = {
-"zombie_run": ExtResource("3_rtc15")
-}
 autoplay = "zombie_run/Run"
 playback_auto_capture = false
 speed_scale = 0.75
