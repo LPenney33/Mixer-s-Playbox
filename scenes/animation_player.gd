@@ -28,12 +28,14 @@ func _on_animation_finished(anim_name):
 		play_idle()
 
 func play_green_light():
-	is_red_light = false  # Green Light → Safe to move
+	RlglManager.set_red_light(false)
+	is_red_light = true  # Green Light → Safe to move
 	anim_player.play("Green_Light")
 	timer.start(5)  
 
 func play_red_light():
-	is_red_light = true  # Red Light → Don't move!
+	RlglManager.set_red_light(true)
+	is_red_light = false  # Red Light → Don't move!
 	anim_player.play("Red_Light")
 	timer.start(4)  
 
@@ -45,5 +47,15 @@ func _on_Timer_timeout():
 	if anim_player.current_animation == "RLGL_Idle":  # ✅ Use current_animation instead
 		if is_red_light:
 			play_green_light()
+			RlglManager.set_red_light(false)
 		else:
 			play_red_light()
+			RlglManager.set_red_light(true)
+
+func _pon_animation_started(anim_name):
+	if anim_name == "Red_Light":
+		get_node("../Player").set_red_light(true)
+		print("🚦 Red light started.")
+	elif anim_name == "Green_Light":
+		get_node("../Player").set_red_light(false)
+		print("🚦 Green light started.")
