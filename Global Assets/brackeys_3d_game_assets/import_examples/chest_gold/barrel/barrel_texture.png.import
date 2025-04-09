@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3nlko0t0lnie"
-path.s3tc="res://.godot/imported/colormap.png-3bac7ccf5c52abde34f917946b77a4bf.s3tc.ctex"
+uid="uid://c6eflc37s2ysa"
+path.s3tc="res://.godot/imported/barrel_texture.png-4348721f4e24b5d7bb13c9db904ed382.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "33c924802a36c4f3415e10bb6940e832"
+}
 
 [deps]
 
-source_file="res://Global Assets/Kenney's Assets/Kenney's Desert Kit/Models/GLB format/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-3bac7ccf5c52abde34f917946b77a4bf.s3tc.ctex"]
+source_file="res://Global Assets/brackeys_3d_game_assets/import_examples/chest_gold/barrel/barrel_texture.png"
+dest_files=["res://.godot/imported/barrel_texture.png-4348721f4e24b5d7bb13c9db904ed382.s3tc.ctex"]
 
 [params]
 
