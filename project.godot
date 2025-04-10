@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Mixer's Playbox"
-run/main_scene="res://scenes/RLGL.tscn"
+run/main_scene="res://RLGL/RLGL.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-RlglManager="*res://rlgl_manager.gd"
+RlglManager="*res://RLGL/rlgl_manager.gd"
 
 [display]
 
