@@ -35,7 +35,7 @@ _subresources={
 "materials": {
 "DungeonMat": {
 "use_external/enabled": true,
-"use_external/path": "res://BOMB-TAG/assets/brackeys_3d_game_assets/dungeon_assets/mat_dungeon.tres"
+"use_external/path": "res://Global Assets/brackeys_3d_game_assets/dungeon_assets/mat_dungeon.tres"
 }
 }
 }
