@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6eflc37s2ysa"
-path.s3tc="res://.godot/imported/barrel_texture.png-0234dcf3fad8f77b29b8d794455380d2.s3tc.ctex"
+uid="uid://bvo121j267aj1"
+path.s3tc="res://.godot/imported/colormap.png-c04e8ca72acaeaeb8f35f121d74f24de.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "33c924802a36c4f3415e10bb6940e832"
-}
 
 [deps]
 
-source_file="res://Global Assets/brackeys_3d_game_assets/import_examples/barrel/barrel_texture.png"
-dest_files=["res://.godot/imported/barrel_texture.png-0234dcf3fad8f77b29b8d794455380d2.s3tc.ctex"]
+source_file="res://Global Assets/Kenney's Assets/Kenney's Prototype Kit/Models/GLB format/Textures/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-c04e8ca72acaeaeb8f35f121d74f24de.s3tc.ctex"]
 
 [params]
 

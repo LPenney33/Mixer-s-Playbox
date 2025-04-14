@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwwg0pjlpw084"]
+
+[ext_resource type="PackedScene" uid="uid://br7m3kaf1ywqs" path="res://Global Assets/brackeys_3d_game_assets/import_examples/chest_gold/chest_gold.glb" id="1_afin2"]
+
+[node name="Chest" type="StaticBody3D"]
+
+[node name="chest_gold2" parent="." instance=ExtResource("1_afin2")]
