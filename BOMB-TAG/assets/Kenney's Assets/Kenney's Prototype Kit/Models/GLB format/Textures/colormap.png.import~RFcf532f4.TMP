@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dndogmwk2jmgq"
-path.s3tc="res://.godot/imported/colormap.png-7e8d6d57113b98dfdd173a39604ec8c4.s3tc.ctex"
+uid="uid://go7xsnwdw834"
+path.s3tc="res://.godot/imported/colormap.png-150fb9ed13a7328ccc1690988a3f80bf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Desert Kit/Models/FBX format/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-7e8d6d57113b98dfdd173a39604ec8c4.s3tc.ctex"]
+source_file="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Prototype Kit/Models/GLB format/Textures/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-150fb9ed13a7328ccc1690988a3f80bf.s3tc.ctex"]
 
 [params]
 
