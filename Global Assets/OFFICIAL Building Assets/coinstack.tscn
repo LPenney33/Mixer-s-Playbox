@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctgwr1p1ptn6a"]
+
+[ext_resource type="PackedScene" uid="uid://c202hq2w3gumb" path="res://Global Assets/brackeys_3d_game_assets/dungeon_assets/props/coin_stack.glb" id="1_oovbt"]
+
+[node name="coinstack" type="StaticBody3D"]
+
+[node name="coin_stack" parent="." instance=ExtResource("1_oovbt")]

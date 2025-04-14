@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyk46kbtjgkly"]
+
+[ext_resource type="PackedScene" uid="uid://bcxvn36b8gtia" path="res://Global Assets/brackeys_3d_game_assets/import_examples/chest_gold/barrel/barrel.glb" id="1_ffp5x"]
+
+[node name="barrel" type="StaticBody3D"]
+
+[node name="barrel" parent="." instance=ExtResource("1_ffp5x")]
