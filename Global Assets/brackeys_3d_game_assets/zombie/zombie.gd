@@ -13,6 +13,14 @@ func _ready():
 	# Random delay before NPC starts moving (personality quirk)
 	delay_timer = randf_range(0.0, 2.0)
 
+	# Print to check if animation player is found
+	if zom_player == null:
+		print("Error: AnimationPlayer not found!")
+
+	# Start with an idle animation (or you can leave it empty to default to no animation)
+	if !zom_player.is_playing():
+		zom_player.play("Idle")  # Or change this to a default pose name if you have one
+
 func _physics_process(delta):
 	# If the NPC hasn't started yet, wait for the delay to be over
 	if not started:
@@ -35,6 +43,7 @@ func _physics_process(delta):
 	# If it's red light and they're not cheating, freeze the zombie
 	if RlglManager.is_red_light and not ignoring_red_light:
 		if zom_player.is_playing() and zom_player.current_animation != "Idle":
+			print("Stopping animation during red light.")
 			zom_player.stop()  # Stop animation during red light
 		return  # Stop movement and animation during red light
 
@@ -45,10 +54,12 @@ func _physics_process(delta):
 	if is_moving:
 		# Only play "Run" animation if it's not already playing
 		if !zom_player.is_playing() or zom_player.current_animation != "Run":
+			print("Playing run animation.")
 			zom_player.play("Run")
 	else:
 		# Stop animation if zombie is not moving
 		if zom_player.is_playing():
+			print("Stopping animation, zombie is idle.")
 			zom_player.stop()
 
 # Move the NPC forward (on green light or if they are cheating)

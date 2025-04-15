@@ -1,8 +1,8 @@
 extends AnimationPlayer
 
 @onready var anim_player = $"../AnimationPlayer"
-
-@onready var timer = $Timer  
+@onready var timer = $Timer
+@onready var status_light = $"../RedGreenLight"  # Adjust path to your light node
 
 var is_red_light = false  # Track if it's red light
 
@@ -12,6 +12,12 @@ func _ready():
 	timer.timeout.connect(_on_Timer_timeout)
 	if is_red_light:
 		print("🚦 Red Light is active!")
+func _process(_delta):
+	# Check light status every frame (or use signals if you optimize later)
+	if RlglManager.is_red_light:
+		status_light.light_color = Color.RED
+	else:
+		status_light.light_color = Color.LIME_GREEN  # Or use Color(0, 1, 0)
 
 func _on_animation_started(anim_name):
 	if anim_name == "Red_Light":  # Make sure the name matches the animation
