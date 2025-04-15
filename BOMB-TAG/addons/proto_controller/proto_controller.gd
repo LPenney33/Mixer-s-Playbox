@@ -149,7 +149,7 @@ func kill():
 	respawn()
 
 func respawn():
-	global_transform.origin = Vector3(0, 0, 0)
+	global_transform.origin = Vector3(0, 10, 0)
 	velocity = Vector3.ZERO
 	can_move = true
 

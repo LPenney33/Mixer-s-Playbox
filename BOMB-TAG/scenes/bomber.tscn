@@ -22,11 +22,6 @@ shape = SubResource("CapsuleShape3D_3v05w")
 [node name="zombie" parent="." instance=ExtResource("1_hji5q")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="zombie"]
-autoplay = "zombie_run/Run"
-playback_auto_capture = false
-speed_scale = 0.75
-
 [node name="TagArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TagArea"]
