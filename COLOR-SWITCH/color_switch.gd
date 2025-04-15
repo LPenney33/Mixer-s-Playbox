@@ -66,11 +66,9 @@ func _on_start_button_pressed():
 
 	print("Selected Color: ", selected_color)
 
-	platform_manager.update_platform(selected_color)
-
 	platform_manager.active_platform = platform_manager.get_children()[random_index]
 
-
+	platform_manager.update_platform(selected_color)
 
 
 func _process(_delta):
