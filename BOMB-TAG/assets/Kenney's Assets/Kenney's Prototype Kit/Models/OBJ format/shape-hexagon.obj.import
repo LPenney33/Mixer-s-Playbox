@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5j04wmh8klav"
+path="res://.godot/imported/shape-hexagon.obj-2198c48149a2029e00bfa58dbfdfdd3d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/shape-hexagon.obj-2198c48149a2029e00bfa58dbfdfdd3d.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/shape-hexagon.obj"
+dest_files=["res://.godot/imported/shape-hexagon.obj-2198c48149a2029e00bfa58dbfdfdd3d.mesh", "res://.godot/imported/shape-hexagon.obj-2198c48149a2029e00bfa58dbfdfdd3d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

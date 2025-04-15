@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://phlbvcc512sc"
+path="res://.godot/imported/wall-doorway-round.obj-1a37bb3ea6c6f5ee2c87a8bc95562d12.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-doorway-round.obj-1a37bb3ea6c6f5ee2c87a8bc95562d12.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/wall-doorway-round.obj"
+dest_files=["res://.godot/imported/wall-doorway-round.obj-1a37bb3ea6c6f5ee2c87a8bc95562d12.mesh", "res://.godot/imported/wall-doorway-round.obj-1a37bb3ea6c6f5ee2c87a8bc95562d12.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

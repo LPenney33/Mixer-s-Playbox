@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxomekkp44vay"]
+
+[ext_resource type="PackedScene" uid="uid://dftlcp8k3bekl" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/dungeon_assets/props/torch_mounted.glb" id="1_w1pa3"]
+
+[node name="torch" type="StaticBody3D"]
+
+[node name="torch_mounted2" parent="." instance=ExtResource("1_w1pa3")]

@@ -7,7 +7,7 @@ size = Vector3(4, 0.14, 4)
 
 [node name="floor_wood" type="StaticBody3D"]
 
-[node name="floor_wood" parent="." instance=ExtResource("1_v1rmg")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_vugug")
+
+[node name="floor_wood" parent="." instance=ExtResource("1_1whcj")]
