@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpwmef811635l"]
 
-[ext_resource type="PackedScene" uid="uid://dkx654shcejl7" path="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Prototype Kit/Models/GLB format/stairs.glb" id="1_cbgkh"]
+[ext_resource type="PackedScene" uid="uid://dkx654shcejl7" path="res://Global Assets/Kenney's Assets/Kenney's Prototype Kit/Models/GLB format/stairs.glb" id="1_cbgkh"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_udeb2"]
 points = PackedVector3Array(1, 2.5, 1, 1, 2.5, -1, 1, 0, 1, 1, 0, -1, -1.5, 0, 1, -1.5, 0, -1)
