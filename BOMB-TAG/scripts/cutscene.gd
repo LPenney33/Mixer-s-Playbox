@@ -1,5 +1,7 @@
 extends Node3D
 
+signal game_started
+
 @export var revolve_camera: Camera3D
 @export var player_camera: Camera3D
 
@@ -14,6 +16,13 @@ extends Node3D
 @export var spiral_duration: float = 3.0
 @export var forced_y_if_collision: float = 12.0
 @export var collision_bump: float = 2.0
+
+# Countdown variables
+var countdown_active = false
+var countdown_time = 5.0
+# Now the countdown label is directly under CanvasLayer.
+@onready var countdown_label: Label = $CanvasLayer/CountdownLabel
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
 
 var orbit_angle: float = 0.0
 var is_spiraling: bool = false
@@ -53,15 +62,20 @@ var spiral_param := 0.0:
 		return _spiral_param
 
 func _ready():
-	# IMPORTANT for Godot 4: pass a Callable to connect().
+	# Hide the entire UI until the countdown starts.
+	if canvas_layer:
+		canvas_layer.visible = false
+
+	# Connect start button signal if available
 	if start_button:
 		start_button.connect("pressed", Callable(self, "_on_button_pressed"))
-
+    
 	if skip_cutscene:
 		revolve_camera.current = false
 		player_camera.current = true
 		if start_menu:
 			start_menu.visible = false
+		emit_signal("game_started")
 		return
 
 	revolve_camera.current = true
@@ -82,41 +96,50 @@ func _ready():
 	)
 
 func _process(delta: float) -> void:
-	if skip_cutscene or is_spiraling:
-		return
-
-	var old_pos = revolve_camera.global_transform.origin
-	orbit_angle -= orbit_speed * delta
-	var x = revolve_center.x + orbit_radius * cos(orbit_angle)
-	var z = revolve_center.z + orbit_radius * sin(orbit_angle)
-	var desired_pos = Vector3(x, old_pos.y, z)
-
-	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.new()
-	query.from = old_pos
-	query.to = desired_pos
-	query.exclude = [revolve_camera]
-	var collision = space_state.intersect_ray(query)
-	if collision:
-		desired_pos.y = max(collision.position.y + collision_bump, forced_y_if_collision)
-
-	revolve_camera.global_transform.origin = desired_pos
-	revolve_camera.look_at(revolve_center, Vector3.UP)
+	# Normal orbit movement during cutscene (if not spiraling)
+	if skip_cutscene or is_spiraling == false:
+		var old_pos = revolve_camera.global_transform.origin
+		orbit_angle -= orbit_speed * delta
+		var x = revolve_center.x + orbit_radius * cos(orbit_angle)
+		var z = revolve_center.z + orbit_radius * sin(orbit_angle)
+		var desired_pos = Vector3(x, old_pos.y, z)
+		var space_state = get_world_3d().direct_space_state
+		var query = PhysicsRayQueryParameters3D.new()
+		query.from = old_pos
+		query.to = desired_pos
+		query.exclude = [revolve_camera]
+		var collision = space_state.intersect_ray(query)
+		if collision:
+			desired_pos.y = max(collision.position.y + collision_bump, forced_y_if_collision)
+		revolve_camera.global_transform.origin = desired_pos
+		revolve_camera.look_at(revolve_center, Vector3.UP)
+    
+	# Update countdown if active
+	if countdown_active:
+		countdown_time -= delta
+		var seconds_left = ceil(countdown_time)
+		# Only display seconds in the format :05, :04, etc.
+		if seconds_left < 10:
+			countdown_label.text = ":0" + str(seconds_left)
+		else:
+			countdown_label.text = ":" + str(seconds_left)
+		if countdown_time <= 0:
+			countdown_active = false
+			canvas_layer.visible = false
+			emit_signal("game_started")
 
 func _on_button_pressed() -> void:
-	print("Button pressed! Hiding start_menu now...")  # Debug
-
+	print("Button pressed! Hiding start_menu...")
 	if skip_cutscene:
 		revolve_camera.current = false
 		player_camera.current = true
 		if start_menu:
 			start_menu.visible = false
+		emit_signal("game_started")
 		return
 
 	if start_menu:
-		print("start_menu was visible? ", start_menu.visible)  # Debug
 		start_menu.visible = false
-		print("start_menu now visible? ", start_menu.visible)  # Debug
 
 	if is_spiraling:
 		return
@@ -143,6 +166,10 @@ func _on_button_pressed() -> void:
 func _on_spiral_done() -> void:
 	revolve_camera.current = false
 	player_camera.current = true
+	# Activate the countdown UI
+	canvas_layer.visible = true
+	countdown_active = true
+	countdown_time = 5.0
 
 func _shortest_arc(current_angle: float, target_angle: float) -> float:
 	var diff = fmod(target_angle - current_angle, TAU)

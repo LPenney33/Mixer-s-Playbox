@@ -1,25 +1,25 @@
 [gd_scene load_steps=24 format=3 uid="uid://boqt6aedc5k2e"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="1_mqm61"]
-[ext_resource type="PackedScene" uid="uid://b5lbqwdlk57ef" path="res://Global Assets/brackeys_3d_game_assets/dungeon_assets/building/wall_half_endcap.glb" id="2_73ap0"]
-[ext_resource type="PackedScene" uid="uid://dpwmef811635l" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/stairs.tscn" id="3_s0jrv"]
-[ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall.tscn" id="4_2a04k"]
-[ext_resource type="PackedScene" uid="uid://6n8achi2iynu" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall_corner.tscn" id="5_yoxcw"]
-[ext_resource type="PackedScene" uid="uid://c3k4vtteee0e5" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall_doorway_open_1.tscn" id="6_upmvo"]
-[ext_resource type="PackedScene" uid="uid://d1dk8qy8we8pu" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall_archedwindow_gated.tscn" id="7_u6s5w"]
-[ext_resource type="PackedScene" uid="uid://dq7a6de5g51do" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall_window_closed.tscn" id="8_ej7tj"]
-[ext_resource type="PackedScene" uid="uid://bi1e2i1apdlgs" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall_arched.tscn" id="9_for5q"]
-[ext_resource type="PackedScene" uid="uid://2vldi74nj2lx" path="res://Global Assets/brackeys_3d_game_assets/dungeon_assets/building/wall_cracked.glb" id="10_3g10a"]
-[ext_resource type="PackedScene" uid="uid://dh5i235bcbmtk" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall_tsplit.tscn" id="11_jwyjy"]
-[ext_resource type="PackedScene" uid="uid://u4dnfxwalj5k" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/ceiling.tscn" id="12_diokj"]
-[ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/floor_wood.tscn" id="13_7tkac"]
-[ext_resource type="PackedScene" path="res://Global Assets/OFFICIAL Building Assets/barrel.tscn" id="13_to046"]
-[ext_resource type="PackedScene" path="res://Global Assets/OFFICIAL Building Assets/torch.tscn" id="14_h6o1d"]
-[ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/half_wall.tscn" id="16_4nlbu"]
-[ext_resource type="PackedScene" path="res://Global Assets/OFFICIAL Building Assets/coinstack.tscn" id="16_qjqjm"]
-[ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="17_stgal"]
-[ext_resource type="PackedScene" uid="uid://drrtatnx6no77" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall_half_endcap.tscn" id="18_d67ae"]
-[ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/pillar.tscn" id="19_wsqcs"]
+[ext_resource type="PackedScene" uid="uid://b5lbqwdlk57ef" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/dungeon_assets/building/wall_half_endcap.glb" id="2_73ap0"]
+[ext_resource type="PackedScene" uid="uid://dpwmef811635l" path="res://Global Assets/OFFICIAL Building Assets/stairs.tscn" id="3_s0jrv"]
+[ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="4_2a04k"]
+[ext_resource type="PackedScene" uid="uid://6n8achi2iynu" path="res://Global Assets/OFFICIAL Building Assets/wall_corner.tscn" id="5_yoxcw"]
+[ext_resource type="PackedScene" uid="uid://c3k4vtteee0e5" path="res://Global Assets/OFFICIAL Building Assets/wall_doorway_open_1.tscn" id="6_upmvo"]
+[ext_resource type="PackedScene" uid="uid://d1dk8qy8we8pu" path="res://Global Assets/OFFICIAL Building Assets/wall_archedwindow_gated.tscn" id="7_u6s5w"]
+[ext_resource type="PackedScene" uid="uid://dq7a6de5g51do" path="res://Global Assets/OFFICIAL Building Assets/wall_window_closed.tscn" id="8_ej7tj"]
+[ext_resource type="PackedScene" uid="uid://bi1e2i1apdlgs" path="res://Global Assets/OFFICIAL Building Assets/wall_arched.tscn" id="9_for5q"]
+[ext_resource type="PackedScene" uid="uid://2vldi74nj2lx" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/dungeon_assets/building/wall_cracked.glb" id="10_3g10a"]
+[ext_resource type="PackedScene" uid="uid://dh5i235bcbmtk" path="res://Global Assets/OFFICIAL Building Assets/wall_tsplit.tscn" id="11_jwyjy"]
+[ext_resource type="PackedScene" uid="uid://u4dnfxwalj5k" path="res://Global Assets/OFFICIAL Building Assets/ceiling.tscn" id="12_diokj"]
+[ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://Global Assets/OFFICIAL Building Assets/floor_wood.tscn" id="13_7tkac"]
+[ext_resource type="PackedScene" uid="uid://dyk46kbtjgkly" path="res://Global Assets/OFFICIAL Building Assets/barrel.tscn" id="13_to046"]
+[ext_resource type="PackedScene" uid="uid://bxomekkp44vay" path="res://Global Assets/OFFICIAL Building Assets/torch.tscn" id="14_h6o1d"]
+[ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://Global Assets/OFFICIAL Building Assets/half_wall.tscn" id="16_4nlbu"]
+[ext_resource type="PackedScene" uid="uid://ctgwr1p1ptn6a" path="res://Global Assets/OFFICIAL Building Assets/coinstack.tscn" id="16_qjqjm"]
+[ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://Global Assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="17_stgal"]
+[ext_resource type="PackedScene" uid="uid://drrtatnx6no77" path="res://Global Assets/OFFICIAL Building Assets/wall_half_endcap.tscn" id="18_d67ae"]
+[ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="19_wsqcs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6ybj"]
 sky_top_color = Color(0.165718, 0.464165, 0.722672, 1)
@@ -52,7 +52,8 @@ use_collision = true
 size = Vector3(34.25, 28.75, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_mqm61")]
-transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -24.0063, 0.228715, 1.80674)
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -24.0063, 0.526559, 1.80674)
+can_move = true
 can_sprint = true
 can_freefly = true
 

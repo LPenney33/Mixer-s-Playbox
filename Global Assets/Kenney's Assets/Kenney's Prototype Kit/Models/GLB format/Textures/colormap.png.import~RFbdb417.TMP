@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8ddvx1pse466"
-path="res://.godot/imported/colormap.png-7b6512dab4abf0c62a77538e2260d718.ctex"
+uid="uid://d1ryhb3ro8cra"
+path="res://.godot/imported/colormap.png-c04e8ca72acaeaeb8f35f121d74f24de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-7b6512dab4abf0c62a77538e2260d718.ctex"]
+source_file="res://Global Assets/Kenney's Assets/Kenney's Prototype Kit/Models/GLB format/Textures/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-c04e8ca72acaeaeb8f35f121d74f24de.ctex"]
 
 [params]
 
