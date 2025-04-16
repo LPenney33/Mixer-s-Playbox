@@ -24,8 +24,14 @@ static var color_dict = {
 func not_selected():
 	print("tile is not the selected color.")
 	self.visible = false
+	for tile : StaticBody3D in get_children():
+		tile.collision_layer = 0
+		tile.collision_mask = 0
 
 
 func selected():
 	print("tile is the selected color.")
 	self.visible = true
+	for tile : StaticBody3D in get_children():
+		tile.collision_layer = 1
+		tile.collision_mask = 1

@@ -21,6 +21,8 @@ var colors = [red, orange, yellow, green, blue, purple]
 
 
 var target_position = Vector3(-0.032, 1.596, 0.504) ## Players starting point
+var target_platform_position = Vector3(0, 0, 0)
+var target_start_platform_position = Vector3(0, 50, 0)
 
 var last_index = -1
 
@@ -53,6 +55,7 @@ func _on_start_button_pressed():
 	color_square.visible = true
 	timer_label.visible = true
 	starting_platform.visible = false
+	starting_platform.global_position = target_start_platform_position
 	player.global_transform.origin = target_position ## Teleports player to starting point
 
 	#Chooses starting color
@@ -69,6 +72,8 @@ func _on_start_button_pressed():
 	platform_manager.active_platform = platform_manager.get_children()[random_index]
 
 	platform_manager.update_platform(selected_color)
+
+	platform_manager.active_platform.global_position = target_platform_position
 
 
 func _process(_delta):
