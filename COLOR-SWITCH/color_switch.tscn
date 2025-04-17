@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=34 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="Script" path="res://COLOR-SWITCH/color_switch.gd" id="1_mas38"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="2_7s34v"]
@@ -36,7 +36,23 @@ height = 1.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tp4i5"]
 transparency = 1
-albedo_color = Color(0.956863, 0.435294, 0.121569, 0.835294)
+albedo_color = Color(0.517525, 0.185817, 0.0297402, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5aw8"]
+transparency = 1
+albedo_color = Color(0.587979, 0.261361, 0.0499202, 0.498039)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xss2q"]
+transparency = 1
+albedo_color = Color(0.937255, 0.462745, 0.243137, 0.517647)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evp4r"]
+transparency = 1
+albedo_color = Color(0.991184, 0.568561, 0.359404, 0.333333)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_deajm"]
+transparency = 1
+albedo_color = Color(0.738352, 0.293757, 0.167557, 0.639216)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tqks"]
 albedo_color = Color(1, 0, 0, 1)
@@ -107,6 +123,21 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 shadow_size = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5e32w"]
+bg_color = Color(0.841739, 0.358701, 0.305293, 0.470588)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.339364, 0.111485, 0.00487247, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0.388521, 0.125488, 0.0152081, 0.6)
+shadow_size = 3
+
 [node name="Color Switch" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138779, -0.142441, 0.0684204)
 script = ExtResource("1_mas38")
@@ -124,6 +155,15 @@ shadow_enabled = true
 unique_name_in_owner = true
 transform = Transform3D(0.107005, 0.697864, -0.708192, -0.0786227, 0.715991, 0.693669, 0.991145, -0.0185459, 0.131482, -32, 38, 5)
 fov = 35.0
+
+[node name="Timers" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="IntermissionTimer" type="Timer" parent="Timers"]
+wait_time = 3.0
+
+[node name="SpeedUpTimer" type="Timer" parent="Timers"]
+wait_time = 19.0
 
 [node name="ProtoController" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 1.29701e-05, -0.000994183, -1.35234e-05, 1, -0.000546289, 0.000994176, 0.000546303, 0.999999, -0.138779, 2.14244, -0.0684204)
@@ -220,10 +260,76 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, -6)
 [node name="LavaPit" type="Node" parent="."]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="LavaPit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.8843, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.67078, 0)
 use_collision = true
 size = Vector3(32.4902, 1, 33.5039)
 material = SubResource("StandardMaterial3D_tp4i5")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LavaPit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.9605, 0)
+use_collision = true
+size = Vector3(32.4902, 1, 33.5039)
+material = SubResource("StandardMaterial3D_t5aw8")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LavaPit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.15982, 0)
+use_collision = true
+size = Vector3(32.4902, 1, 33.5039)
+material = SubResource("StandardMaterial3D_xss2q")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="LavaPit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.69657, 0)
+use_collision = true
+size = Vector3(32.4902, 1, 33.5039)
+material = SubResource("StandardMaterial3D_evp4r")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="LavaPit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.41655, 3.40387)
+radius = 2.549
+height = 0.317
+sides = 24
+smooth_faces = false
+material = SubResource("StandardMaterial3D_deajm")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="LavaPit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86939, -7.41655, 7.56642)
+radius = 2.549
+height = 0.317
+sides = 24
+smooth_faces = false
+material = SubResource("StandardMaterial3D_deajm")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="LavaPit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.92152, -7.41655, -9.17607)
+radius = 2.549
+height = 0.317
+sides = 24
+smooth_faces = false
+material = SubResource("StandardMaterial3D_deajm")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="LavaPit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.492411, -7.41655, -5.06554)
+radius = 2.549
+height = 0.317
+sides = 24
+smooth_faces = false
+material = SubResource("StandardMaterial3D_deajm")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="LavaPit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3646, -7.41655, -11.0655)
+radius = 2.549
+height = 0.317
+sides = 24
+smooth_faces = false
+material = SubResource("StandardMaterial3D_deajm")
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="LavaPit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3646, -7.41655, 8.63252)
+radius = 2.549
+height = 0.317
+sides = 24
+smooth_faces = false
+material = SubResource("StandardMaterial3D_deajm")
 
 [node name="OutsideMap" type="Node3D" parent="."]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
@@ -5785,6 +5891,36 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="IntermissionTimerLabel" type="Label" parent="HUD"]
+visible = false
+z_index = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.0
+offset_top = 7.0
+offset_right = 105.0
+offset_bottom = 95.0
+grow_horizontal = 2
+text = ":00
+"
+label_settings = SubResource("LabelSettings_02jvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="HUD/IntermissionTimerLabel"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.5
+offset_top = 7.0
+offset_right = 71.5
+offset_bottom = 86.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5bq87")
+
 [node name="TimerLabel" type="Label" parent="HUD"]
 visible = false
 z_index = 1
@@ -5813,7 +5949,7 @@ offset_top = 7.0
 offset_right = 71.5
 offset_bottom = 86.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_5bq87")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5e32w")
 
 [node name="ColorRect" type="ColorRect" parent="HUD"]
 visible = false
@@ -5827,6 +5963,8 @@ offset_bottom = 125.0
 grow_horizontal = 0
 
 [node name="ColorSwitchTimer" type="Timer" parent="HUD"]
-wait_time = 10.0
+wait_time = 5.0
 
+[connection signal="timeout" from="Timers/IntermissionTimer" to="." method="_on_intermission_timer_timeout"]
+[connection signal="timeout" from="Timers/SpeedUpTimer" to="." method="_on_speed_up_timer_timeout"]
 [connection signal="timeout" from="HUD/ColorSwitchTimer" to="." method="_on_color_switch_timer_timeout"]

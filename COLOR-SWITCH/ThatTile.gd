@@ -22,7 +22,7 @@ static var color_dict = {
 @export var color : TileColor = TileColor.BLANK
 
 func not_selected():
-	print("tile is not the selected color.")
+	#print("tile is not the selected color.")
 	self.visible = false
 	for tile : StaticBody3D in get_children():
 		tile.collision_layer = 0
@@ -30,7 +30,7 @@ func not_selected():
 
 
 func selected():
-	print("tile is the selected color.")
+	#print("tile is the selected color.")
 	self.visible = true
 	for tile : StaticBody3D in get_children():
 		tile.collision_layer = 1

@@ -6,8 +6,11 @@ extends Node3D
 @onready var player = $ProtoController
 @onready var color_square = $HUD/ColorRect
 @onready var start_label = $HUD/ColorSwitchLabel
-@onready var timer = $HUD/ColorSwitchTimer
+@onready var color_timer = $HUD/ColorSwitchTimer
 @onready var timer_label = $HUD/TimerLabel
+@onready var int_timer = $Timers/IntermissionTimer
+@onready var int_timer_label = $HUD/IntermissionTimerLabel
+@onready var speed_timer = $Timers/SpeedUpTimer
 
 
 var red = Color(1, 0, 0)    # Red
@@ -43,7 +46,8 @@ func hide_all():
 		platform.visible = false
 
 func _on_start_button_pressed():
-	timer.start()
+	int_timer.start()
+	speed_timer.start()
 	hide_all()
 	cameraPlayer.current = true
 	cameraStart.current = false
@@ -53,7 +57,8 @@ func _on_start_button_pressed():
 	button.visible = false
 	start_label.visible = false
 	color_square.visible = true
-	timer_label.visible = true
+	int_timer_label.visible = true
+	timer_label.visible = false
 	starting_platform.visible = false
 	starting_platform.global_position = target_start_platform_position
 	player.global_transform.origin = target_position ## Teleports player to starting point
@@ -71,17 +76,17 @@ func _on_start_button_pressed():
 
 	platform_manager.active_platform = platform_manager.get_children()[random_index]
 
-	platform_manager.update_platform(selected_color)
-
 	platform_manager.active_platform.global_position = target_platform_position
 
 
 func _process(_delta):
-	timer_label.text = ":" + str(roundf(timer.get_time_left())) ## Displays time left in Output
+	timer_label.text = ":" + str(roundf(color_timer.get_time_left())) ## Displays time left in Output
+	int_timer_label.text = ":" + str(roundf(int_timer.get_time_left()))
 
-func _on_color_switch_timer_timeout():
+func _on_intermission_timer_timeout():
+	int_timer_label.visible = false
+	timer_label.visible = true
 
-	#Chooses new color
 	while new_index == last_index:
 		new_index = randi() % colors.size()
 
@@ -92,6 +97,23 @@ func _on_color_switch_timer_timeout():
 
 	print("Selected Color: ", selected_color)
 
+	for tile in platform_manager.active_platform.get_children():
+		tile.selected()
+
+	color_timer.start()
+	int_timer.stop()
+
+func _on_color_switch_timer_timeout():
+	int_timer_label.visible = true
+	timer_label.visible = false
+
+	var selected_color = colors[new_index]
+
 	platform_manager.update_platform(selected_color)
 
-	timer.start()
+	color_timer.stop()
+	int_timer.start()
+
+func _on_speed_up_timer_timeout():
+	color_timer.wait_time = 3
+	int_timer.wait_time = 1

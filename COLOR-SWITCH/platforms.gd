@@ -6,7 +6,7 @@ func update_platform(selected_color):
 	print("Updating platform color to: ", selected_color)
 
 	var tiles = active_platform.get_children()
-	print("Number of tiles: ", tiles.size())
+	## print("Number of tiles: ", tiles.size())
 
 	for tile in tiles:
 		#print(tile.get_class())
