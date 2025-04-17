@@ -2,7 +2,7 @@ extends AnimationPlayer
 
 @onready var anim_player = $"../AnimationPlayer"
 @onready var timer = $Timer
-@onready var status_light = $"../RedGreenLight"  # Adjust path to your light node
+@onready var status_light = $"../Rig/Skeleton3D/Skeleton_Mage_Hat/RedGreenLight" # Adjust path to your light node
 
 var is_red_light = false  # Track if it's red light
 
