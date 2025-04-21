@@ -552,7 +552,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.24512, 2.38419e-07, 0.5413
 
 [node name="CS_Torch" parent="LobbyRoom2/TransitionTorches" instance=ExtResource("4_7uu27")]
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -5.5, 1.7, 0.075)
-visible = false
+script = ExtResource("22_wtp6t")
+prompt_message = "Press [X] to Interact"
 
 [node name="CS_OmniLight" type="OmniLight3D" parent="LobbyRoom2/TransitionTorches/CS_Torch"]
 transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.34202, 2.63612e-09, 0.34202, 0.939693, 0, 0.689168, 0.342449)
@@ -569,7 +570,8 @@ text = "Color Switch"
 [node name="TAG_Torch" parent="LobbyRoom2/TransitionTorches" instance=ExtResource("4_7uu27")]
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -1.5, 1.7, 0.075)
 script = ExtResource("22_wtp6t")
-prompt_message = "Press [E] to Interact"
+prompt_message = "Press [X] to Interact"
+LevelPath = "res://BOMB-TAG/scenes/Level.tscn"
 
 [node name="TAG_OmniLight" type="OmniLight3D" parent="LobbyRoom2/TransitionTorches/TAG_Torch"]
 transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.34202, 2.63612e-09, 0.34202, 0.939693, 0, 0.689168, 0.342449)
@@ -586,7 +588,8 @@ text = "Zombie Tag
 
 [node name="RLGL_Torch" parent="LobbyRoom2/TransitionTorches" instance=ExtResource("4_7uu27")]
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 2.5, 1.7, 0.075)
-visible = false
+script = ExtResource("22_wtp6t")
+prompt_message = "Press [X] to Interact"
 
 [node name="RLGL_OmniLight" type="OmniLight3D" parent="LobbyRoom2/TransitionTorches/RLGL_Torch"]
 transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.34202, 2.63612e-09, 0.34202, 0.939693, 0, 0.689168, 0.342449)
