@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://BOMB-TAG/scripts/cutscene.gd" id="1_2cssc"]
 [ext_resource type="Script" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_srt87"]
-[ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://Global Assets/OFFICIAL Building Assets/floor_wood.tscn" id="3_mosly"]
+[ext_resource type="PackedScene" uid="uid://c871m31o65if5" path="res://Global Assets/OFFICIAL Building Assets/woodfloor.tscn" id="3_mosly"]
 [ext_resource type="PackedScene" uid="uid://6n8achi2iynu" path="res://Global Assets/OFFICIAL Building Assets/wall_corner.tscn" id="4_aia4l"]
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="5_xoj5x"]
 [ext_resource type="PackedScene" uid="uid://1367mm0hhlt4" path="res://Global Assets/OFFICIAL Building Assets/wall_cracked.tscn" id="6_2f6on"]
