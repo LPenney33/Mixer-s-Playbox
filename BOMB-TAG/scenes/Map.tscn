@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bugykv15n7o5b"]
 
-[ext_resource type="Script" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="1_qbgkn"]
+[ext_resource type="Script" uid="uid://bisc62nxxk3am" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="1_qbgkn"]
 [ext_resource type="PackedScene" uid="uid://dv6xewp5blt34" path="res://BOMB-TAG/scenes/bomber.tscn" id="2_2oda5"]
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall.tscn" id="2_8pnrf"]
 [ext_resource type="PackedScene" uid="uid://u4dnfxwalj5k" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/ceiling.tscn" id="2_p1gwi"]
