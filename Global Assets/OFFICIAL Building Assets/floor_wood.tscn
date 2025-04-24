@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh2s0jhac7t2d"]
+[gd_scene load_steps=3 format=3 uid="uid://d3cax8n2vq0lw"]
 
-[ext_resource type="PackedScene" uid="uid://c0utj7bfqwj6r" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/dungeon_assets/building/floor_wood.glb" id="1_v1rmg"]
+[ext_resource type="PackedScene" uid="uid://c0utj7bfqwj6r" path="res://Global Assets/brackeys_3d_game_assets/dungeon_assets/building/floor_wood.glb" id="1_v1rmg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vugug"]
 size = Vector3(4, 0.14, 4)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://bxtrgi11wsx6e"]
 
-[ext_resource type="Material" uid="uid://1oyr5lflpul" path="res://Global Assets/OFFICIAL Building Assets/blue.tres" id="1_7fwi2"]
+[ext_resource type="Material" uid="uid://1oyr5lflpul" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/dungeon_assets/mat_dungeon.tres" id="1_7fwi2"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_riuc6"]
 _surfaces = [{

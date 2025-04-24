@@ -1,13 +1,13 @@
-[gd_scene load_steps=34 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=45 format=3 uid="uid://dd3v5hnjipwya"]
 
-[ext_resource type="Script" path="res://COLOR-SWITCH/color_switch.gd" id="1_mas38"]
-[ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="2_7s34v"]
-[ext_resource type="Script" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_pmtck"]
-[ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="3_3te26"]
-[ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://Global Assets/OFFICIAL Building Assets/floor_wood.tscn" id="4_eictm"]
-[ext_resource type="Script" path="res://COLOR-SWITCH/hud.gd" id="6_acf2r"]
-[ext_resource type="Script" path="res://COLOR-SWITCH/platforms.gd" id="6_dqfmj"]
-[ext_resource type="Script" path="res://COLOR-SWITCH/ThatTile.gd" id="7_js3m4"]
+[ext_resource type="Script" uid="uid://cdpk6bj4rkuvi" path="res://COLOR-SWITCH/color_switch.gd" id="1_iyol3"]
+[ext_resource type="Script" uid="uid://bxmm7bges2de3" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_4mt3y"]
+[ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/floor_wood.tscn" id="3_wfbg8"]
+[ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/pillar.tscn" id="4_13qcr"]
+[ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall.tscn" id="5_4y1eh"]
+[ext_resource type="Script" uid="uid://cta1tlul583at" path="res://COLOR-SWITCH/platforms.gd" id="6_36ef6"]
+[ext_resource type="Script" uid="uid://cljex2s47i161" path="res://COLOR-SWITCH/ThatTile.gd" id="7_vpoqu"]
+[ext_resource type="Script" uid="uid://tatpd88ul1w0" path="res://COLOR-SWITCH/hud.gd" id="8_5w2yo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3rrl"]
 sky_top_color = Color(0.262805, 0.254747, 0.527349, 1)
@@ -53,6 +53,9 @@ albedo_color = Color(0.991184, 0.568561, 0.359404, 0.333333)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_deajm"]
 transparency = 1
 albedo_color = Color(0.738352, 0.293757, 0.167557, 0.639216)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0els"]
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tqks"]
 albedo_color = Color(1, 0, 0, 1)
@@ -100,7 +103,17 @@ Button/styles/hover = SubResource("StyleBoxFlat_gi5qk")
 Button/styles/normal = SubResource("StyleBoxFlat_gi5qk")
 Button/styles/pressed = SubResource("StyleBoxFlat_4351x")
 
+[sub_resource type="InputEventKey" id="InputEventKey_iyol3"]
+device = -1
+keycode = 76
+unicode = 108
+
+[sub_resource type="Shortcut" id="Shortcut_4mt3y"]
+events = [SubResource("InputEventKey_iyol3")]
+
 [sub_resource type="Theme" id="Theme_eyso4"]
+
+[sub_resource type="Theme" id="Theme_sspva"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_02jvy"]
 font_size = 64
@@ -138,9 +151,50 @@ corner_radius_bottom_left = 30
 shadow_color = Color(0.388521, 0.125488, 0.0152081, 0.6)
 shadow_size = 3
 
+[sub_resource type="Theme" id="Theme_iyol3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mt3y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfbg8"]
+bg_color = Color(0.32549, 0.694118, 0.360784, 1)
+border_width_left = 10
+border_width_bottom = 15
+border_color = Color(0.227451, 0.498039, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13qcr"]
+bg_color = Color(0.32549, 0.694118, 0.360784, 1)
+border_width_top = 15
+border_color = Color(0.227451, 0.498039, 0.254902, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4y1eh"]
+bg_color = Color(0.32549, 0.694118, 0.360784, 1)
+border_width_left = 10
+border_width_bottom = 15
+border_color = Color(0.227451, 0.498039, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="InputEventKey" id="InputEventKey_4mt3y"]
+device = -1
+keycode = 76
+unicode = 108
+
+[sub_resource type="Shortcut" id="Shortcut_wfbg8"]
+events = [SubResource("InputEventKey_4mt3y")]
+
 [node name="Color Switch" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138779, -0.142441, 0.0684204)
-script = ExtResource("1_mas38")
+script = ExtResource("1_iyol3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v3ngh")
@@ -163,11 +217,17 @@ unique_name_in_owner = true
 wait_time = 3.0
 
 [node name="SpeedUpTimer" type="Timer" parent="Timers"]
-wait_time = 19.0
+wait_time = 27.0
+
+[node name="SpeedUpTimer2" type="Timer" parent="Timers"]
+wait_time = 18.0
+
+[node name="SpeedUpTimer3" type="Timer" parent="Timers"]
+wait_time = 9.0
 
 [node name="ProtoController" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 1.29701e-05, -0.000994183, -1.35234e-05, 1, -0.000546289, 0.000994176, 0.000546303, 0.999999, -0.138779, 2.14244, -0.0684204)
-script = ExtResource("2_pmtck")
+script = ExtResource("2_4mt3y")
 input_left = "move_left"
 input_right = "move_right"
 input_forward = "move_up"
@@ -194,67 +254,67 @@ transform = Transform3D(0.999998, -0.000409431, 0.00208287, 0.000404815, 0.99999
 
 [node name="BlankPlatform" type="Node3D" parent="."]
 
-[node name="floor_wood" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
-[node name="floor_wood2" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood2" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 6)
 
-[node name="floor_wood3" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood3" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 12)
 
-[node name="floor_wood4" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood4" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 12)
 
-[node name="floor_wood5" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood5" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 12)
 
-[node name="floor_wood6" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood6" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 6)
 
-[node name="floor_wood7" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood7" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 0)
 
-[node name="floor_wood8" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood8" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 0)
 
-[node name="floor_wood9" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood9" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 6)
 
-[node name="floor_wood10" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood10" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, -6)
 
-[node name="floor_wood11" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood11" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -6)
 
-[node name="floor_wood12" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood12" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -6)
 
-[node name="floor_wood13" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood13" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -12)
 
-[node name="floor_wood14" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood14" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -12)
 
-[node name="floor_wood15" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood15" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -12)
 
-[node name="floor_wood16" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood16" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -6)
 
-[node name="floor_wood17" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood17" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 0)
 
-[node name="floor_wood18" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood18" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 6)
 
-[node name="floor_wood19" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood19" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 6)
 
-[node name="floor_wood20" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood20" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 0)
 
-[node name="floor_wood21" parent="BlankPlatform" instance=ExtResource("4_eictm")]
+[node name="floor_wood21" parent="BlankPlatform" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, -6)
 
 [node name="LavaPit" type="Node" parent="."]
@@ -331,45 +391,83 @@ sides = 24
 smooth_faces = false
 material = SubResource("StandardMaterial3D_deajm")
 
+[node name="DeathBox" type="Node" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="DeathBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0.446228, 0)
+use_collision = true
+size = Vector3(4.45313, 0.107544, 4.42163)
+material = SubResource("StandardMaterial3D_k0els")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="DeathBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.43862, -1.95087)
+use_collision = true
+size = Vector3(4.453, 3.89346, 0.52)
+material = SubResource("StandardMaterial3D_k0els")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="DeathBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2.44576, 1.93485)
+use_collision = true
+size = Vector3(4.453, 3.90774, 0.52)
+material = SubResource("StandardMaterial3D_k0els")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="DeathBox"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -33.9652, 2.43746, -0.00544262)
+use_collision = true
+size = Vector3(3.38062, 3.89114, 0.52)
+material = SubResource("StandardMaterial3D_k0els")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="DeathBox"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.0307, 2.45015, -0.00544262)
+use_collision = true
+size = Vector3(3.38062, 3.91653, 0.52)
+material = SubResource("StandardMaterial3D_k0els")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="DeathBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0203, 4.35628, 0)
+use_collision = true
+size = Vector3(4.45313, 0.107544, 4.42163)
+material = SubResource("StandardMaterial3D_k0els")
+
 [node name="OutsideMap" type="Node3D" parent="."]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
-[node name="pillar" parent="OutsideMap" instance=ExtResource("2_7s34v")]
+[node name="pillar" parent="OutsideMap" instance=ExtResource("4_13qcr")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.18, -9, -15)
 
-[node name="pillar2" parent="OutsideMap" instance=ExtResource("2_7s34v")]
+[node name="pillar2" parent="OutsideMap" instance=ExtResource("4_13qcr")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.18, -9, 15)
 
-[node name="pillar3" parent="OutsideMap" instance=ExtResource("2_7s34v")]
+[node name="pillar3" parent="OutsideMap" instance=ExtResource("4_13qcr")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 15.18, -9, 15)
 
-[node name="pillar4" parent="OutsideMap" instance=ExtResource("2_7s34v")]
+[node name="pillar4" parent="OutsideMap" instance=ExtResource("4_13qcr")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 15.18, -9, -15)
 
-[node name="wall" parent="OutsideMap" instance=ExtResource("3_3te26")]
+[node name="wall" parent="OutsideMap" instance=ExtResource("5_4y1eh")]
 transform = Transform3D(6, 0, 0, 0, 4.5, 0, 0, 0, 3, 0, -8, 15)
 
-[node name="wall2" parent="OutsideMap" instance=ExtResource("3_3te26")]
+[node name="wall2" parent="OutsideMap" instance=ExtResource("5_4y1eh")]
 transform = Transform3D(6, 0, 0, 0, 4.5, 0, 0, 0, 3, 0, -8, -15)
 
-[node name="wall3" parent="OutsideMap" instance=ExtResource("3_3te26")]
+[node name="wall3" parent="OutsideMap" instance=ExtResource("5_4y1eh")]
 transform = Transform3D(-2.62268e-07, 0, 3, 0, 4.5, 0, -6, 0, -1.31134e-07, 15, -8, 0)
 
-[node name="wall4" parent="OutsideMap" instance=ExtResource("3_3te26")]
+[node name="wall4" parent="OutsideMap" instance=ExtResource("5_4y1eh")]
 transform = Transform3D(-2.62268e-07, 0, 3, 0, 4.5, 0, -6, 0, -1.31134e-07, -15, -8, 0)
 
 [node name="PLATFORMS" type="Node3D" parent="."]
-script = ExtResource("6_dqfmj")
+script = ExtResource("6_36ef6")
 
 [node name="PlatformV1" type="Node3D" parent="PLATFORMS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.6103, 0)
 visible = false
 
 [node name="RedTiles" type="Node3D" parent="PLATFORMS/PlatformV1"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 1
 
-[node name="RedTile" parent="PLATFORMS/PlatformV1/RedTiles" instance=ExtResource("4_eictm")]
+[node name="RedTile" parent="PLATFORMS/PlatformV1/RedTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/RedTiles/RedTile"]
@@ -420,7 +518,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile2" parent="PLATFORMS/PlatformV1/RedTiles" instance=ExtResource("4_eictm")]
+[node name="RedTile2" parent="PLATFORMS/PlatformV1/RedTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/RedTiles/RedTile2"]
@@ -471,7 +569,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile3" parent="PLATFORMS/PlatformV1/RedTiles" instance=ExtResource("4_eictm")]
+[node name="RedTile3" parent="PLATFORMS/PlatformV1/RedTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/RedTiles/RedTile3"]
@@ -522,7 +620,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile4" parent="PLATFORMS/PlatformV1/RedTiles" instance=ExtResource("4_eictm")]
+[node name="RedTile4" parent="PLATFORMS/PlatformV1/RedTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/RedTiles/RedTile4"]
@@ -574,10 +672,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
 [node name="OrangeTiles" type="Node3D" parent="PLATFORMS/PlatformV1"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 2
 
-[node name="OrangeTile" parent="PLATFORMS/PlatformV1/OrangeTiles" instance=ExtResource("4_eictm")]
+[node name="OrangeTile" parent="PLATFORMS/PlatformV1/OrangeTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile"]
@@ -628,7 +726,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile2" parent="PLATFORMS/PlatformV1/OrangeTiles" instance=ExtResource("4_eictm")]
+[node name="OrangeTile2" parent="PLATFORMS/PlatformV1/OrangeTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2"]
@@ -679,7 +777,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile3" parent="PLATFORMS/PlatformV1/OrangeTiles" instance=ExtResource("4_eictm")]
+[node name="OrangeTile3" parent="PLATFORMS/PlatformV1/OrangeTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3"]
@@ -731,10 +829,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
 [node name="YellowTiles" type="Node3D" parent="PLATFORMS/PlatformV1"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 3
 
-[node name="YellowTile" parent="PLATFORMS/PlatformV1/YellowTiles" instance=ExtResource("4_eictm")]
+[node name="YellowTile" parent="PLATFORMS/PlatformV1/YellowTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/YellowTiles/YellowTile"]
@@ -785,7 +883,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
-[node name="YellowTile2" parent="PLATFORMS/PlatformV1/YellowTiles" instance=ExtResource("4_eictm")]
+[node name="YellowTile2" parent="PLATFORMS/PlatformV1/YellowTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/YellowTiles/YellowTile2"]
@@ -836,7 +934,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
-[node name="YellowTile3" parent="PLATFORMS/PlatformV1/YellowTiles" instance=ExtResource("4_eictm")]
+[node name="YellowTile3" parent="PLATFORMS/PlatformV1/YellowTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/YellowTiles/YellowTile3"]
@@ -888,10 +986,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
 [node name="GreenTiles" type="Node3D" parent="PLATFORMS/PlatformV1"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 4
 
-[node name="GreenTile" parent="PLATFORMS/PlatformV1/GreenTiles" instance=ExtResource("4_eictm")]
+[node name="GreenTile" parent="PLATFORMS/PlatformV1/GreenTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/GreenTiles/GreenTile"]
@@ -942,7 +1040,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
-[node name="GreenTile2" parent="PLATFORMS/PlatformV1/GreenTiles" instance=ExtResource("4_eictm")]
+[node name="GreenTile2" parent="PLATFORMS/PlatformV1/GreenTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/GreenTiles/GreenTile2"]
@@ -993,7 +1091,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
-[node name="GreenTile3" parent="PLATFORMS/PlatformV1/GreenTiles" instance=ExtResource("4_eictm")]
+[node name="GreenTile3" parent="PLATFORMS/PlatformV1/GreenTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/GreenTiles/GreenTile3"]
@@ -1045,10 +1143,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
 [node name="BlueTiles" type="Node3D" parent="PLATFORMS/PlatformV1"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 5
 
-[node name="BlueTile" parent="PLATFORMS/PlatformV1/BlueTiles" instance=ExtResource("4_eictm")]
+[node name="BlueTile" parent="PLATFORMS/PlatformV1/BlueTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/BlueTiles/BlueTile"]
@@ -1099,7 +1197,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile2" parent="PLATFORMS/PlatformV1/BlueTiles" instance=ExtResource("4_eictm")]
+[node name="BlueTile2" parent="PLATFORMS/PlatformV1/BlueTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/BlueTiles/BlueTile2"]
@@ -1150,7 +1248,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile3" parent="PLATFORMS/PlatformV1/BlueTiles" instance=ExtResource("4_eictm")]
+[node name="BlueTile3" parent="PLATFORMS/PlatformV1/BlueTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/BlueTiles/BlueTile3"]
@@ -1201,7 +1299,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile4" parent="PLATFORMS/PlatformV1/BlueTiles" instance=ExtResource("4_eictm")]
+[node name="BlueTile4" parent="PLATFORMS/PlatformV1/BlueTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/BlueTiles/BlueTile4"]
@@ -1253,10 +1351,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
 [node name="PurpleTiles" type="Node3D" parent="PLATFORMS/PlatformV1"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 6
 
-[node name="PurpleTile" parent="PLATFORMS/PlatformV1/PurpleTiles" instance=ExtResource("4_eictm")]
+[node name="PurpleTile" parent="PLATFORMS/PlatformV1/PurpleTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/PurpleTiles/PurpleTile"]
@@ -1307,7 +1405,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile2" parent="PLATFORMS/PlatformV1/PurpleTiles" instance=ExtResource("4_eictm")]
+[node name="PurpleTile2" parent="PLATFORMS/PlatformV1/PurpleTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/PurpleTiles/PurpleTile2"]
@@ -1358,7 +1456,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile3" parent="PLATFORMS/PlatformV1/PurpleTiles" instance=ExtResource("4_eictm")]
+[node name="PurpleTile3" parent="PLATFORMS/PlatformV1/PurpleTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/PurpleTiles/PurpleTile3"]
@@ -1409,7 +1507,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile4" parent="PLATFORMS/PlatformV1/PurpleTiles" instance=ExtResource("4_eictm")]
+[node name="PurpleTile4" parent="PLATFORMS/PlatformV1/PurpleTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/PurpleTiles/PurpleTile4"]
@@ -1465,10 +1563,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.6103, 0)
 visible = false
 
 [node name="RedTiles2" type="Node3D" parent="PLATFORMS/PlatformV2"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 1
 
-[node name="RedTile" parent="PLATFORMS/PlatformV2/RedTiles2" instance=ExtResource("4_eictm")]
+[node name="RedTile" parent="PLATFORMS/PlatformV2/RedTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/RedTiles2/RedTile"]
@@ -1519,7 +1617,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile2" parent="PLATFORMS/PlatformV2/RedTiles2" instance=ExtResource("4_eictm")]
+[node name="RedTile2" parent="PLATFORMS/PlatformV2/RedTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/RedTiles2/RedTile2"]
@@ -1570,7 +1668,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile3" parent="PLATFORMS/PlatformV2/RedTiles2" instance=ExtResource("4_eictm")]
+[node name="RedTile3" parent="PLATFORMS/PlatformV2/RedTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/RedTiles2/RedTile3"]
@@ -1622,10 +1720,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
 [node name="OrangeTiles2" type="Node3D" parent="PLATFORMS/PlatformV2"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 2
 
-[node name="OrangeTile" parent="PLATFORMS/PlatformV2/OrangeTiles2" instance=ExtResource("4_eictm")]
+[node name="OrangeTile" parent="PLATFORMS/PlatformV2/OrangeTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/OrangeTiles2/OrangeTile"]
@@ -1676,7 +1774,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile2" parent="PLATFORMS/PlatformV2/OrangeTiles2" instance=ExtResource("4_eictm")]
+[node name="OrangeTile2" parent="PLATFORMS/PlatformV2/OrangeTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/OrangeTiles2/OrangeTile2"]
@@ -1727,7 +1825,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile3" parent="PLATFORMS/PlatformV2/OrangeTiles2" instance=ExtResource("4_eictm")]
+[node name="OrangeTile3" parent="PLATFORMS/PlatformV2/OrangeTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/OrangeTiles2/OrangeTile3"]
@@ -1779,10 +1877,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
 [node name="YellowTiles2" type="Node3D" parent="PLATFORMS/PlatformV2"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 3
 
-[node name="YellowTile" parent="PLATFORMS/PlatformV2/YellowTiles2" instance=ExtResource("4_eictm")]
+[node name="YellowTile" parent="PLATFORMS/PlatformV2/YellowTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/YellowTiles2/YellowTile"]
@@ -1833,7 +1931,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
-[node name="YellowTile2" parent="PLATFORMS/PlatformV2/YellowTiles2" instance=ExtResource("4_eictm")]
+[node name="YellowTile2" parent="PLATFORMS/PlatformV2/YellowTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/YellowTiles2/YellowTile2"]
@@ -1884,7 +1982,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
-[node name="YellowTile3" parent="PLATFORMS/PlatformV2/YellowTiles2" instance=ExtResource("4_eictm")]
+[node name="YellowTile3" parent="PLATFORMS/PlatformV2/YellowTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/YellowTiles2/YellowTile3"]
@@ -1935,7 +2033,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
-[node name="YellowTile4" parent="PLATFORMS/PlatformV2/YellowTiles2" instance=ExtResource("4_eictm")]
+[node name="YellowTile4" parent="PLATFORMS/PlatformV2/YellowTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/YellowTiles2/YellowTile4"]
@@ -1987,10 +2085,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
 [node name="GreenTiles2" type="Node3D" parent="PLATFORMS/PlatformV2"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 4
 
-[node name="GreenTile" parent="PLATFORMS/PlatformV2/GreenTiles2" instance=ExtResource("4_eictm")]
+[node name="GreenTile" parent="PLATFORMS/PlatformV2/GreenTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/GreenTiles2/GreenTile"]
@@ -2041,7 +2139,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
-[node name="GreenTile2" parent="PLATFORMS/PlatformV2/GreenTiles2" instance=ExtResource("4_eictm")]
+[node name="GreenTile2" parent="PLATFORMS/PlatformV2/GreenTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/GreenTiles2/GreenTile2"]
@@ -2092,7 +2190,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
-[node name="GreenTile3" parent="PLATFORMS/PlatformV2/GreenTiles2" instance=ExtResource("4_eictm")]
+[node name="GreenTile3" parent="PLATFORMS/PlatformV2/GreenTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/GreenTiles2/GreenTile3"]
@@ -2144,10 +2242,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
 [node name="BlueTiles2" type="Node3D" parent="PLATFORMS/PlatformV2"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 5
 
-[node name="BlueTile" parent="PLATFORMS/PlatformV2/BlueTiles2" instance=ExtResource("4_eictm")]
+[node name="BlueTile" parent="PLATFORMS/PlatformV2/BlueTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/BlueTiles2/BlueTile"]
@@ -2198,7 +2296,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile2" parent="PLATFORMS/PlatformV2/BlueTiles2" instance=ExtResource("4_eictm")]
+[node name="BlueTile2" parent="PLATFORMS/PlatformV2/BlueTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/BlueTiles2/BlueTile2"]
@@ -2249,7 +2347,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile3" parent="PLATFORMS/PlatformV2/BlueTiles2" instance=ExtResource("4_eictm")]
+[node name="BlueTile3" parent="PLATFORMS/PlatformV2/BlueTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/BlueTiles2/BlueTile3"]
@@ -2300,7 +2398,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile4" parent="PLATFORMS/PlatformV2/BlueTiles2" instance=ExtResource("4_eictm")]
+[node name="BlueTile4" parent="PLATFORMS/PlatformV2/BlueTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/BlueTiles2/BlueTile4"]
@@ -2352,10 +2450,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
 [node name="PurpleTiles2" type="Node3D" parent="PLATFORMS/PlatformV2"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 6
 
-[node name="PurpleTile" parent="PLATFORMS/PlatformV2/PurpleTiles2" instance=ExtResource("4_eictm")]
+[node name="PurpleTile" parent="PLATFORMS/PlatformV2/PurpleTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/PurpleTiles2/PurpleTile"]
@@ -2406,7 +2504,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile2" parent="PLATFORMS/PlatformV2/PurpleTiles2" instance=ExtResource("4_eictm")]
+[node name="PurpleTile2" parent="PLATFORMS/PlatformV2/PurpleTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/PurpleTiles2/PurpleTile2"]
@@ -2457,7 +2555,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile3" parent="PLATFORMS/PlatformV2/PurpleTiles2" instance=ExtResource("4_eictm")]
+[node name="PurpleTile3" parent="PLATFORMS/PlatformV2/PurpleTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/PurpleTiles2/PurpleTile3"]
@@ -2508,7 +2606,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile4" parent="PLATFORMS/PlatformV2/PurpleTiles2" instance=ExtResource("4_eictm")]
+[node name="PurpleTile4" parent="PLATFORMS/PlatformV2/PurpleTiles2" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV2/PurpleTiles2/PurpleTile4"]
@@ -2564,10 +2662,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.6103, 0)
 visible = false
 
 [node name="RedTiles3" type="Node3D" parent="PLATFORMS/PlatformV3"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 1
 
-[node name="RedTile" parent="PLATFORMS/PlatformV3/RedTiles3" instance=ExtResource("4_eictm")]
+[node name="RedTile" parent="PLATFORMS/PlatformV3/RedTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/RedTiles3/RedTile"]
@@ -2618,7 +2716,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile2" parent="PLATFORMS/PlatformV3/RedTiles3" instance=ExtResource("4_eictm")]
+[node name="RedTile2" parent="PLATFORMS/PlatformV3/RedTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/RedTiles3/RedTile2"]
@@ -2669,7 +2767,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile3" parent="PLATFORMS/PlatformV3/RedTiles3" instance=ExtResource("4_eictm")]
+[node name="RedTile3" parent="PLATFORMS/PlatformV3/RedTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/RedTiles3/RedTile3"]
@@ -2721,10 +2819,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
 [node name="OrangeTiles3" type="Node3D" parent="PLATFORMS/PlatformV3"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 2
 
-[node name="OrangeTile" parent="PLATFORMS/PlatformV3/OrangeTiles3" instance=ExtResource("4_eictm")]
+[node name="OrangeTile" parent="PLATFORMS/PlatformV3/OrangeTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/OrangeTiles3/OrangeTile"]
@@ -2775,7 +2873,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile2" parent="PLATFORMS/PlatformV3/OrangeTiles3" instance=ExtResource("4_eictm")]
+[node name="OrangeTile2" parent="PLATFORMS/PlatformV3/OrangeTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/OrangeTiles3/OrangeTile2"]
@@ -2826,7 +2924,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile3" parent="PLATFORMS/PlatformV3/OrangeTiles3" instance=ExtResource("4_eictm")]
+[node name="OrangeTile3" parent="PLATFORMS/PlatformV3/OrangeTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/OrangeTiles3/OrangeTile3"]
@@ -2877,7 +2975,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile4" parent="PLATFORMS/PlatformV3/OrangeTiles3" instance=ExtResource("4_eictm")]
+[node name="OrangeTile4" parent="PLATFORMS/PlatformV3/OrangeTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/OrangeTiles3/OrangeTile4"]
@@ -2929,10 +3027,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
 [node name="YellowTiles3" type="Node3D" parent="PLATFORMS/PlatformV3"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 3
 
-[node name="YellowTile" parent="PLATFORMS/PlatformV3/YellowTiles3" instance=ExtResource("4_eictm")]
+[node name="YellowTile" parent="PLATFORMS/PlatformV3/YellowTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/YellowTiles3/YellowTile"]
@@ -2983,7 +3081,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
-[node name="YellowTile2" parent="PLATFORMS/PlatformV3/YellowTiles3" instance=ExtResource("4_eictm")]
+[node name="YellowTile2" parent="PLATFORMS/PlatformV3/YellowTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/YellowTiles3/YellowTile2"]
@@ -3034,7 +3132,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
-[node name="YellowTile3" parent="PLATFORMS/PlatformV3/YellowTiles3" instance=ExtResource("4_eictm")]
+[node name="YellowTile3" parent="PLATFORMS/PlatformV3/YellowTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/YellowTiles3/YellowTile3"]
@@ -3086,10 +3184,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
 [node name="GreenTiles3" type="Node3D" parent="PLATFORMS/PlatformV3"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 4
 
-[node name="GreenTile" parent="PLATFORMS/PlatformV3/GreenTiles3" instance=ExtResource("4_eictm")]
+[node name="GreenTile" parent="PLATFORMS/PlatformV3/GreenTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/GreenTiles3/GreenTile"]
@@ -3140,7 +3238,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
-[node name="GreenTile2" parent="PLATFORMS/PlatformV3/GreenTiles3" instance=ExtResource("4_eictm")]
+[node name="GreenTile2" parent="PLATFORMS/PlatformV3/GreenTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/GreenTiles3/GreenTile2"]
@@ -3191,7 +3289,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
-[node name="GreenTile3" parent="PLATFORMS/PlatformV3/GreenTiles3" instance=ExtResource("4_eictm")]
+[node name="GreenTile3" parent="PLATFORMS/PlatformV3/GreenTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/GreenTiles3/GreenTile3"]
@@ -3243,10 +3341,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
 [node name="BlueTiles3" type="Node3D" parent="PLATFORMS/PlatformV3"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 5
 
-[node name="BlueTile" parent="PLATFORMS/PlatformV3/BlueTiles3" instance=ExtResource("4_eictm")]
+[node name="BlueTile" parent="PLATFORMS/PlatformV3/BlueTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/BlueTiles3/BlueTile"]
@@ -3297,7 +3395,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile2" parent="PLATFORMS/PlatformV3/BlueTiles3" instance=ExtResource("4_eictm")]
+[node name="BlueTile2" parent="PLATFORMS/PlatformV3/BlueTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/BlueTiles3/BlueTile2"]
@@ -3348,7 +3446,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile3" parent="PLATFORMS/PlatformV3/BlueTiles3" instance=ExtResource("4_eictm")]
+[node name="BlueTile3" parent="PLATFORMS/PlatformV3/BlueTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/BlueTiles3/BlueTile3"]
@@ -3399,7 +3497,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile4" parent="PLATFORMS/PlatformV3/BlueTiles3" instance=ExtResource("4_eictm")]
+[node name="BlueTile4" parent="PLATFORMS/PlatformV3/BlueTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/BlueTiles3/BlueTile4"]
@@ -3451,10 +3549,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
 [node name="PurpleTiles3" type="Node3D" parent="PLATFORMS/PlatformV3"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 6
 
-[node name="PurpleTile" parent="PLATFORMS/PlatformV3/PurpleTiles3" instance=ExtResource("4_eictm")]
+[node name="PurpleTile" parent="PLATFORMS/PlatformV3/PurpleTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/PurpleTiles3/PurpleTile"]
@@ -3505,7 +3603,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile2" parent="PLATFORMS/PlatformV3/PurpleTiles3" instance=ExtResource("4_eictm")]
+[node name="PurpleTile2" parent="PLATFORMS/PlatformV3/PurpleTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/PurpleTiles3/PurpleTile2"]
@@ -3556,7 +3654,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile3" parent="PLATFORMS/PlatformV3/PurpleTiles3" instance=ExtResource("4_eictm")]
+[node name="PurpleTile3" parent="PLATFORMS/PlatformV3/PurpleTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/PurpleTiles3/PurpleTile3"]
@@ -3607,7 +3705,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile4" parent="PLATFORMS/PlatformV3/PurpleTiles3" instance=ExtResource("4_eictm")]
+[node name="PurpleTile4" parent="PLATFORMS/PlatformV3/PurpleTiles3" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV3/PurpleTiles3/PurpleTile4"]
@@ -3663,10 +3761,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.6103, 0)
 visible = false
 
 [node name="RedTiles4" type="Node3D" parent="PLATFORMS/PlatformV4"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 1
 
-[node name="RedTile" parent="PLATFORMS/PlatformV4/RedTiles4" instance=ExtResource("4_eictm")]
+[node name="RedTile" parent="PLATFORMS/PlatformV4/RedTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/RedTiles4/RedTile"]
@@ -3717,7 +3815,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile2" parent="PLATFORMS/PlatformV4/RedTiles4" instance=ExtResource("4_eictm")]
+[node name="RedTile2" parent="PLATFORMS/PlatformV4/RedTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/RedTiles4/RedTile2"]
@@ -3768,7 +3866,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile3" parent="PLATFORMS/PlatformV4/RedTiles4" instance=ExtResource("4_eictm")]
+[node name="RedTile3" parent="PLATFORMS/PlatformV4/RedTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/RedTiles4/RedTile3"]
@@ -3819,7 +3917,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile4" parent="PLATFORMS/PlatformV4/RedTiles4" instance=ExtResource("4_eictm")]
+[node name="RedTile4" parent="PLATFORMS/PlatformV4/RedTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/RedTiles4/RedTile4"]
@@ -3871,10 +3969,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
 [node name="OrangeTiles4" type="Node3D" parent="PLATFORMS/PlatformV4"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 2
 
-[node name="OrangeTile" parent="PLATFORMS/PlatformV4/OrangeTiles4" instance=ExtResource("4_eictm")]
+[node name="OrangeTile" parent="PLATFORMS/PlatformV4/OrangeTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/OrangeTiles4/OrangeTile"]
@@ -3925,7 +4023,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile2" parent="PLATFORMS/PlatformV4/OrangeTiles4" instance=ExtResource("4_eictm")]
+[node name="OrangeTile2" parent="PLATFORMS/PlatformV4/OrangeTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/OrangeTiles4/OrangeTile2"]
@@ -3976,7 +4074,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile3" parent="PLATFORMS/PlatformV4/OrangeTiles4" instance=ExtResource("4_eictm")]
+[node name="OrangeTile3" parent="PLATFORMS/PlatformV4/OrangeTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/OrangeTiles4/OrangeTile3"]
@@ -4027,7 +4125,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile4" parent="PLATFORMS/PlatformV4/OrangeTiles4" instance=ExtResource("4_eictm")]
+[node name="OrangeTile4" parent="PLATFORMS/PlatformV4/OrangeTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/OrangeTiles4/OrangeTile4"]
@@ -4079,10 +4177,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
 [node name="YellowTiles4" type="Node3D" parent="PLATFORMS/PlatformV4"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 3
 
-[node name="YellowTile" parent="PLATFORMS/PlatformV4/YellowTiles4" instance=ExtResource("4_eictm")]
+[node name="YellowTile" parent="PLATFORMS/PlatformV4/YellowTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/YellowTiles4/YellowTile"]
@@ -4133,7 +4231,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
-[node name="YellowTile2" parent="PLATFORMS/PlatformV4/YellowTiles4" instance=ExtResource("4_eictm")]
+[node name="YellowTile2" parent="PLATFORMS/PlatformV4/YellowTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/YellowTiles4/YellowTile2"]
@@ -4184,7 +4282,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
-[node name="YellowTile3" parent="PLATFORMS/PlatformV4/YellowTiles4" instance=ExtResource("4_eictm")]
+[node name="YellowTile3" parent="PLATFORMS/PlatformV4/YellowTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/YellowTiles4/YellowTile3"]
@@ -4235,7 +4333,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
-[node name="YellowTile4" parent="PLATFORMS/PlatformV4/YellowTiles4" instance=ExtResource("4_eictm")]
+[node name="YellowTile4" parent="PLATFORMS/PlatformV4/YellowTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/YellowTiles4/YellowTile4"]
@@ -4287,10 +4385,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
 [node name="GreenTiles4" type="Node3D" parent="PLATFORMS/PlatformV4"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 4
 
-[node name="GreenTile" parent="PLATFORMS/PlatformV4/GreenTiles4" instance=ExtResource("4_eictm")]
+[node name="GreenTile" parent="PLATFORMS/PlatformV4/GreenTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/GreenTiles4/GreenTile"]
@@ -4341,7 +4439,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
-[node name="GreenTile2" parent="PLATFORMS/PlatformV4/GreenTiles4" instance=ExtResource("4_eictm")]
+[node name="GreenTile2" parent="PLATFORMS/PlatformV4/GreenTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/GreenTiles4/GreenTile2"]
@@ -4392,7 +4490,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
-[node name="GreenTile3" parent="PLATFORMS/PlatformV4/GreenTiles4" instance=ExtResource("4_eictm")]
+[node name="GreenTile3" parent="PLATFORMS/PlatformV4/GreenTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/GreenTiles4/GreenTile3"]
@@ -4444,10 +4542,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
 [node name="BlueTiles4" type="Node3D" parent="PLATFORMS/PlatformV4"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 5
 
-[node name="BlueTile" parent="PLATFORMS/PlatformV4/BlueTiles4" instance=ExtResource("4_eictm")]
+[node name="BlueTile" parent="PLATFORMS/PlatformV4/BlueTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/BlueTiles4/BlueTile"]
@@ -4498,7 +4596,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile2" parent="PLATFORMS/PlatformV4/BlueTiles4" instance=ExtResource("4_eictm")]
+[node name="BlueTile2" parent="PLATFORMS/PlatformV4/BlueTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/BlueTiles4/BlueTile2"]
@@ -4549,7 +4647,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile3" parent="PLATFORMS/PlatformV4/BlueTiles4" instance=ExtResource("4_eictm")]
+[node name="BlueTile3" parent="PLATFORMS/PlatformV4/BlueTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/BlueTiles4/BlueTile3"]
@@ -4601,10 +4699,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
 [node name="PurpleTiles4" type="Node3D" parent="PLATFORMS/PlatformV4"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 6
 
-[node name="PurpleTile" parent="PLATFORMS/PlatformV4/PurpleTiles4" instance=ExtResource("4_eictm")]
+[node name="PurpleTile" parent="PLATFORMS/PlatformV4/PurpleTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/PurpleTiles4/PurpleTile"]
@@ -4655,7 +4753,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile2" parent="PLATFORMS/PlatformV4/PurpleTiles4" instance=ExtResource("4_eictm")]
+[node name="PurpleTile2" parent="PLATFORMS/PlatformV4/PurpleTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/PurpleTiles4/PurpleTile2"]
@@ -4706,7 +4804,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile3" parent="PLATFORMS/PlatformV4/PurpleTiles4" instance=ExtResource("4_eictm")]
+[node name="PurpleTile3" parent="PLATFORMS/PlatformV4/PurpleTiles4" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV4/PurpleTiles4/PurpleTile3"]
@@ -4762,10 +4860,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.6103, 0)
 visible = false
 
 [node name="RedTiles5" type="Node3D" parent="PLATFORMS/PlatformV5"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 1
 
-[node name="RedTile" parent="PLATFORMS/PlatformV5/RedTiles5" instance=ExtResource("4_eictm")]
+[node name="RedTile" parent="PLATFORMS/PlatformV5/RedTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/RedTiles5/RedTile"]
@@ -4816,7 +4914,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile2" parent="PLATFORMS/PlatformV5/RedTiles5" instance=ExtResource("4_eictm")]
+[node name="RedTile2" parent="PLATFORMS/PlatformV5/RedTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/RedTiles5/RedTile2"]
@@ -4867,7 +4965,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile3" parent="PLATFORMS/PlatformV5/RedTiles5" instance=ExtResource("4_eictm")]
+[node name="RedTile3" parent="PLATFORMS/PlatformV5/RedTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/RedTiles5/RedTile3"]
@@ -4918,7 +5016,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
-[node name="RedTile4" parent="PLATFORMS/PlatformV5/RedTiles5" instance=ExtResource("4_eictm")]
+[node name="RedTile4" parent="PLATFORMS/PlatformV5/RedTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/RedTiles5/RedTile4"]
@@ -4970,10 +5068,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_4tqks")
 
 [node name="OrangeTiles5" type="Node3D" parent="PLATFORMS/PlatformV5"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 2
 
-[node name="OrangeTile" parent="PLATFORMS/PlatformV5/OrangeTiles5" instance=ExtResource("4_eictm")]
+[node name="OrangeTile" parent="PLATFORMS/PlatformV5/OrangeTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/OrangeTiles5/OrangeTile"]
@@ -5024,7 +5122,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile2" parent="PLATFORMS/PlatformV5/OrangeTiles5" instance=ExtResource("4_eictm")]
+[node name="OrangeTile2" parent="PLATFORMS/PlatformV5/OrangeTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/OrangeTiles5/OrangeTile2"]
@@ -5075,7 +5173,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile3" parent="PLATFORMS/PlatformV5/OrangeTiles5" instance=ExtResource("4_eictm")]
+[node name="OrangeTile3" parent="PLATFORMS/PlatformV5/OrangeTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/OrangeTiles5/OrangeTile3"]
@@ -5126,7 +5224,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="OrangeTile4" parent="PLATFORMS/PlatformV5/OrangeTiles5" instance=ExtResource("4_eictm")]
+[node name="OrangeTile4" parent="PLATFORMS/PlatformV5/OrangeTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/OrangeTiles5/OrangeTile4"]
@@ -5178,10 +5276,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
 [node name="YellowTiles5" type="Node3D" parent="PLATFORMS/PlatformV5"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 3
 
-[node name="YellowTile" parent="PLATFORMS/PlatformV5/YellowTiles5" instance=ExtResource("4_eictm")]
+[node name="YellowTile" parent="PLATFORMS/PlatformV5/YellowTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/YellowTiles5/YellowTile"]
@@ -5232,7 +5330,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
-[node name="YellowTile2" parent="PLATFORMS/PlatformV5/YellowTiles5" instance=ExtResource("4_eictm")]
+[node name="YellowTile2" parent="PLATFORMS/PlatformV5/YellowTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/YellowTiles5/YellowTile2"]
@@ -5283,7 +5381,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
-[node name="YellowTile3" parent="PLATFORMS/PlatformV5/YellowTiles5" instance=ExtResource("4_eictm")]
+[node name="YellowTile3" parent="PLATFORMS/PlatformV5/YellowTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/YellowTiles5/YellowTile3"]
@@ -5335,10 +5433,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_huxip")
 
 [node name="GreenTiles5" type="Node3D" parent="PLATFORMS/PlatformV5"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 4
 
-[node name="GreenTile" parent="PLATFORMS/PlatformV5/GreenTiles5" instance=ExtResource("4_eictm")]
+[node name="GreenTile" parent="PLATFORMS/PlatformV5/GreenTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/GreenTiles5/GreenTile"]
@@ -5389,7 +5487,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
-[node name="GreenTile2" parent="PLATFORMS/PlatformV5/GreenTiles5" instance=ExtResource("4_eictm")]
+[node name="GreenTile2" parent="PLATFORMS/PlatformV5/GreenTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/GreenTiles5/GreenTile2"]
@@ -5440,7 +5538,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
-[node name="GreenTile3" parent="PLATFORMS/PlatformV5/GreenTiles5" instance=ExtResource("4_eictm")]
+[node name="GreenTile3" parent="PLATFORMS/PlatformV5/GreenTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, -6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/GreenTiles5/GreenTile3"]
@@ -5492,10 +5590,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_tj8a5")
 
 [node name="BlueTiles5" type="Node3D" parent="PLATFORMS/PlatformV5"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 5
 
-[node name="BlueTile" parent="PLATFORMS/PlatformV5/BlueTiles5" instance=ExtResource("4_eictm")]
+[node name="BlueTile" parent="PLATFORMS/PlatformV5/BlueTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/BlueTiles5/BlueTile"]
@@ -5546,7 +5644,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile2" parent="PLATFORMS/PlatformV5/BlueTiles5" instance=ExtResource("4_eictm")]
+[node name="BlueTile2" parent="PLATFORMS/PlatformV5/BlueTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/BlueTiles5/BlueTile2"]
@@ -5597,7 +5695,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile3" parent="PLATFORMS/PlatformV5/BlueTiles5" instance=ExtResource("4_eictm")]
+[node name="BlueTile3" parent="PLATFORMS/PlatformV5/BlueTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/BlueTiles5/BlueTile3"]
@@ -5648,7 +5746,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
-[node name="BlueTile4" parent="PLATFORMS/PlatformV5/BlueTiles5" instance=ExtResource("4_eictm")]
+[node name="BlueTile4" parent="PLATFORMS/PlatformV5/BlueTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/BlueTiles5/BlueTile4"]
@@ -5700,10 +5798,10 @@ depth = 0.11
 material = SubResource("StandardMaterial3D_23ad3")
 
 [node name="PurpleTiles5" type="Node3D" parent="PLATFORMS/PlatformV5"]
-script = ExtResource("7_js3m4")
+script = ExtResource("7_vpoqu")
 color = 6
 
-[node name="PurpleTile" parent="PLATFORMS/PlatformV5/PurpleTiles5" instance=ExtResource("4_eictm")]
+[node name="PurpleTile" parent="PLATFORMS/PlatformV5/PurpleTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/PurpleTiles5/PurpleTile"]
@@ -5754,7 +5852,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile2" parent="PLATFORMS/PlatformV5/PurpleTiles5" instance=ExtResource("4_eictm")]
+[node name="PurpleTile2" parent="PLATFORMS/PlatformV5/PurpleTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -12)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/PurpleTiles5/PurpleTile2"]
@@ -5805,7 +5903,7 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
-[node name="PurpleTile3" parent="PLATFORMS/PlatformV5/PurpleTiles5" instance=ExtResource("4_eictm")]
+[node name="PurpleTile3" parent="PLATFORMS/PlatformV5/PurpleTiles5" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 12, 0, 6)
 
 [node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV5/PurpleTiles5/PurpleTile3"]
@@ -5858,7 +5956,7 @@ material = SubResource("StandardMaterial3D_3lshp")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-script = ExtResource("6_acf2r")
+script = ExtResource("8_5w2yo")
 
 [node name="StartButton" type="Button" parent="HUD"]
 anchors_preset = -1
@@ -5872,6 +5970,8 @@ offset_right = 330.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_jclgh")
+theme_override_font_sizes/font_size = 75
+shortcut = SubResource("Shortcut_4mt3y")
 text = "Start Game"
 
 [node name="ColorSwitchLabel" type="Label" parent="HUD"]
@@ -5890,6 +5990,25 @@ text = "Color Switch"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="GetReadyLabel" type="Label" parent="HUD"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -76.0
+offset_right = 288.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_sspva")
+theme_override_font_sizes/font_size = 111
+text = "Get Ready!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="IntermissionTimerLabel" type="Label" parent="HUD"]
 visible = false
@@ -5965,6 +6084,57 @@ grow_horizontal = 0
 [node name="ColorSwitchTimer" type="Timer" parent="HUD"]
 wait_time = 5.0
 
+[node name="DeathScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="MainMenuButton" type="Button" parent="DeathScreen"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+offset_left = -330.0
+offset_top = -155.0
+offset_right = 330.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_iyol3")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4mt3y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wfbg8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_13qcr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4y1eh")
+shortcut = SubResource("Shortcut_wfbg8")
+text = "Main Menu"
+
+[node name="YouDiedLabel" type="Label" parent="DeathScreen"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.254
+anchor_top = 0.097
+anchor_right = 0.746
+anchor_bottom = 0.332
+offset_left = -49.608
+offset_top = 0.143997
+offset_right = 49.608
+offset_bottom = -0.135986
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 111
+text = "You Died"
+horizontal_alignment = 1
+
+[node name="DeathColorRect" type="ColorRect" parent="DeathScreen"]
+visible = false
+z_index = -1
+offset_right = 5688.0
+offset_bottom = 3128.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
 [connection signal="timeout" from="Timers/IntermissionTimer" to="." method="_on_intermission_timer_timeout"]
 [connection signal="timeout" from="Timers/SpeedUpTimer" to="." method="_on_speed_up_timer_timeout"]
+[connection signal="timeout" from="Timers/SpeedUpTimer2" to="." method="_on_speed_up_timer2_timeout"]
+[connection signal="timeout" from="Timers/SpeedUpTimer3" to="." method="_on_speed_up_timer3_timeout"]
 [connection signal="timeout" from="HUD/ColorSwitchTimer" to="." method="_on_color_switch_timer_timeout"]
+[connection signal="pressed" from="DeathScreen/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
