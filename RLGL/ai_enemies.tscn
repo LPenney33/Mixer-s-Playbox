@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c6gsguejx5dsk"]
 
 [ext_resource type="PackedScene" uid="uid://g5gvlql40lv4" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie.glb" id="1_mr15w"]
-[ext_resource type="Script" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie.gd" id="2_i5v12"]
+[ext_resource type="Script" uid="uid://xu5clo6x1xlp" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie.gd" id="2_i5v12"]
 
 [node name="AI_Enemies" type="Node3D"]
 script = ExtResource("2_i5v12")

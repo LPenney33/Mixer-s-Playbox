@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://kap20mckuqp7"]
 
-[ext_resource type="Script" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie.gd" id="1_fn6p3"]
-[ext_resource type="Texture2D" uid="uid://duicp6q78rni8" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie_albedo.png" id="2_7iqbq"]
+[ext_resource type="Script" uid="uid://xu5clo6x1xlp" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie.gd" id="1_fn6p3"]
+[ext_resource type="Texture2D" uid="uid://duicp6q78rni8" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/zombie/zombie_albedo.png" id="2_7iqbq"]
 
 [sub_resource type="Animation" id="Animation_11tuq"]
 resource_local_to_scene = true
@@ -249,7 +249,7 @@ tracks/33/keys = PackedFloat32Array(0, 1, -0.0282627, -0.953941, 0.297574, 0.025
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5xo6t"]
 _data = {
-"Run": SubResource("Animation_11tuq")
+&"Run": SubResource("Animation_11tuq")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5fkk"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bi1e2i1apdlgs"]
 
-[ext_resource type="PackedScene" uid="uid://i8c4fbeasb56" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/dungeon_assets/building/wall_arched.glb" id="1_le6lq"]
+[ext_resource type="PackedScene" uid="uid://i8c4fbeasb56" path="res://Global Assets/brackeys_3d_game_assets/dungeon_assets/building/wall_arched.glb" id="1_le6lq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gy3sc"]
 size = Vector3(4, 4, 1)

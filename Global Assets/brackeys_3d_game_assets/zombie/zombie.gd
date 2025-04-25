@@ -1,7 +1,5 @@
 extends Node3D
 
-@onready var zom_player = $Skeleton3D/AnimationPlayer  # Reference to the AnimationPlayer
-
 @export var move_speed: float = 2.0
 var started := false
 var delay_timer := 0.0
@@ -12,14 +10,6 @@ var is_moving = false
 func _ready():
 	# Random delay before NPC starts moving (personality quirk)
 	delay_timer = randf_range(0.0, 2.0)
-
-	# Print to check if animation player is found
-	if zom_player == null:
-		print("Error: AnimationPlayer not found!")
-
-	# Start with an idle animation (or you can leave it empty to default to no animation)
-	if !zom_player.is_playing():
-		zom_player.play("Idle")  # Or change this to a default pose name if you have one
 
 func _physics_process(delta):
 	if not started:
@@ -49,23 +39,10 @@ func _physics_process(delta):
 				return
 		else:
 			is_moving = false
-			if zom_player.is_playing():
-				zom_player.stop()
 			return  # Stay still during red light if not cheating
-	if ignoring_red_light:
-		print("🧠 Cheating decision made: Will CHEAT 🔴")
-	else:
-		print("🧠 Cheating decision made: Will OBEY 🛑")
-	# If green light
-	move_forward(delta)
 
-	# Animation control
-	if is_moving:
-		if !zom_player.is_playing() or zom_player.current_animation != "Run":
-			zom_player.play("Run")
-	else:
-		if zom_player.is_playing():
-			zom_player.stop()
+
+	move_forward(delta)
 
 
 func move_forward(delta):
