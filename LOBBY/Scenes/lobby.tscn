@@ -110,10 +110,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 0, 11)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 0, 11)
 
 [node name="wall5" parent="Room1/Build/Walls" instance=ExtResource("5_pvsig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 4, 10.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 4, 11)
 
 [node name="wall12" parent="Room1/Build/Walls" instance=ExtResource("5_pvsig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 4, 10.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 4, 11)
 
 [node name="wall7" parent="Room1/Build/Walls" instance=ExtResource("5_pvsig")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 4, 7)
@@ -123,6 +123,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 4, 4)
 
 [node name="wall6" parent="Room1/Build/Walls" instance=ExtResource("5_pvsig")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.25, 4, 8.5)
+
+[node name="wall14" parent="Room1/Build/Walls" instance=ExtResource("5_pvsig")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.25, 4, 9.5)
 
 [node name="wall9" parent="Room1/Build/Walls" instance=ExtResource("5_pvsig")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 4, 0)
