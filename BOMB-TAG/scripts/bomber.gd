@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED = 8.05
+const SPEED = 8.5
 const ATTACK_RANGE = 2.0
 
 # This flag will be false until the Level node emits "game_started"

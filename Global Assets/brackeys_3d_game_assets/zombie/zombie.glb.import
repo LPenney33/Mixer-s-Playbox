@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/zombie.glb-ea900e1b788b3c7a079e386aa2572a64.s
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="Node3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -32,6 +32,12 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Skeleton3D": {
+"rest_pose/external_animation_library": null
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

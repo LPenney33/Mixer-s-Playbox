@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="animation_library"
 importer_version=1
-type="PackedScene"
+type="AnimationLibrary"
 uid="uid://dc0dhl2yib861"
-path="res://.godot/imported/zombie_run.glb-423f358fdae2d33d340b3bff2f055766.scn"
+path="res://.godot/imported/zombie_run.glb-423f358fdae2d33d340b3bff2f055766.res"
 
 [deps]
 
 source_file="res://Global Assets/brackeys_3d_game_assets/zombie/zombie_run.glb"
-dest_files=["res://.godot/imported/zombie_run.glb-423f358fdae2d33d340b3bff2f055766.scn"]
+dest_files=["res://.godot/imported/zombie_run.glb-423f358fdae2d33d340b3bff2f055766.res"]
 
 [params]
 
