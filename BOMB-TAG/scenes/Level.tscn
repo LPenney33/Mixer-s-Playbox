@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cleyfc8v6hy1e"]
+[gd_scene load_steps=28 format=3 uid="uid://cleyfc8v6hy1e"]
 
-[ext_resource type="Script" uid="uid://cmhbk34yvq58v" path="res://BOMB-TAG/scripts/cutscene.gd" id="1_2cssc"]
-[ext_resource type="Script" uid="uid://ds7mw16v8jadh" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_srt87"]
-[ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/floor_wood.tscn" id="3_mosly"]
+[ext_resource type="Script" uid="uid://chxvpusdjy5vn" path="res://BOMB-TAG/scripts/cutscene.gd" id="1_2cssc"]
+[ext_resource type="Script" uid="uid://bxmm7bges2de3" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_srt87"]
+[ext_resource type="PackedScene" uid="uid://c871m31o65if5" path="res://Global Assets/OFFICIAL Building Assets/woodfloor.tscn" id="3_mosly"]
 [ext_resource type="PackedScene" uid="uid://6n8achi2iynu" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall_corner.tscn" id="4_aia4l"]
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall.tscn" id="5_xoj5x"]
 [ext_resource type="PackedScene" uid="uid://1367mm0hhlt4" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall_cracked.tscn" id="6_2f6on"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/half_wall.tscn" id="8_qmdvw"]
 [ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="9_7x8v1"]
 [ext_resource type="PackedScene" uid="uid://dv6xewp5blt34" path="res://BOMB-TAG/scenes/bomber.tscn" id="11_h2r53"]
-[ext_resource type="Script" uid="uid://bg0y5hunlmtnb" path="res://BOMB-TAG/scripts/timer.gd" id="13_wsk4p"]
+[ext_resource type="Script" uid="uid://dtmf1ecyey6pe" path="res://BOMB-TAG/scripts/timer.gd" id="13_wsk4p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3am5r"]
 
@@ -40,6 +40,14 @@ Button/styles/focus = SubResource("StyleBoxEmpty_3am5r")
 Button/styles/hover = SubResource("StyleBoxFlat_gi5qk")
 Button/styles/normal = SubResource("StyleBoxFlat_gi5qk")
 Button/styles/pressed = SubResource("StyleBoxFlat_4351x")
+
+[sub_resource type="InputEventKey" id="InputEventKey_5gfwp"]
+device = -1
+keycode = 76
+unicode = 108
+
+[sub_resource type="Shortcut" id="Shortcut_btft3"]
+events = [SubResource("InputEventKey_5gfwp")]
 
 [sub_resource type="Theme" id="Theme_eyso4"]
 
@@ -110,6 +118,7 @@ offset_right = 330.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_jclgh")
+shortcut = SubResource("Shortcut_btft3")
 text = "Start Game"
 
 [node name="Label" type="Label" parent="StartMenu"]
@@ -123,7 +132,7 @@ offset_bottom = -0.280014
 grow_horizontal = 2
 theme = SubResource("Theme_eyso4")
 theme_override_font_sizes/font_size = 111
-text = "Bomb-Tag"
+text = "Zombie-Tag"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

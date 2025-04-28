@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c1l5ym45hmh1"]
 
-[ext_resource type="Script" uid="uid://dinjq43v6dqj3" path="res://RLGL/rlgl_death.gd" id="1_3mcqv"]
+[ext_resource type="Script" uid="uid://cpbotg5tskv4n" path="res://RLGL/rlgl_death.gd" id="1_3mcqv"]
 
 [sub_resource type="Theme" id="Theme_pfame"]
 
