@@ -1,10 +1,10 @@
-[gd_scene load_steps=45 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=47 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="Script" uid="uid://cdpk6bj4rkuvi" path="res://COLOR-SWITCH/color_switch.gd" id="1_iyol3"]
-[ext_resource type="Script" uid="uid://bxmm7bges2de3" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_4mt3y"]
+[ext_resource type="Script" uid="uid://djowtcqfc8chk" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_4mt3y"]
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/floor_wood.tscn" id="3_wfbg8"]
-[ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/pillar.tscn" id="4_13qcr"]
-[ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/wall.tscn" id="5_4y1eh"]
+[ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="4_13qcr"]
+[ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="5_4y1eh"]
 [ext_resource type="Script" uid="uid://cta1tlul583at" path="res://COLOR-SWITCH/platforms.gd" id="6_36ef6"]
 [ext_resource type="Script" uid="uid://cljex2s47i161" path="res://COLOR-SWITCH/ThatTile.gd" id="7_vpoqu"]
 [ext_resource type="Script" uid="uid://tatpd88ul1w0" path="res://COLOR-SWITCH/hud.gd" id="8_5w2yo"]
@@ -74,6 +74,22 @@ albedo_color = Color(0, 0, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3lshp"]
 albedo_color = Color(0.252387, 0.000638695, 0.601038, 1)
+
+[sub_resource type="Theme" id="Theme_4mt3y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36ef6"]
+bg_color = Color(0.521569, 0.537255, 0.533333, 0.470588)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.258824, 0.258824, 0.258824, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 3
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3am5r"]
 
@@ -5957,6 +5973,25 @@ material = SubResource("StandardMaterial3D_3lshp")
 [node name="HUD" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 script = ExtResource("8_5w2yo")
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 248.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 30
+text = "Score: 00000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScorePanel" type="Panel" parent="HUD/ScoreLabel"]
+z_index = -1
+offset_left = -16.0
+offset_top = -8.0
+offset_right = 240.0
+offset_bottom = 120.0
+theme = SubResource("Theme_4mt3y")
+theme_override_styles/panel = SubResource("StyleBoxFlat_36ef6")
 
 [node name="StartButton" type="Button" parent="HUD"]
 anchors_preset = -1
