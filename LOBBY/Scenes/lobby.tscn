@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://boqt6aedc5k2e"]
+[gd_scene load_steps=24 format=3 uid="uid://boqt6aedc5k2e"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="1_5svd6"]
 [ext_resource type="PackedScene" uid="uid://bxomekkp44vay" path="res://Global Assets/OFFICIAL Building Assets/torch.tscn" id="4_7uu27"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bi1e2i1apdlgs" path="res://Global Assets/OFFICIAL Building Assets/wall_arched.tscn" id="10_rdps7"]
 [ext_resource type="PackedScene" uid="uid://dh5i235bcbmtk" path="res://Global Assets/OFFICIAL Building Assets/wall_tsplit.tscn" id="12_bs5ov"]
 [ext_resource type="PackedScene" uid="uid://u4dnfxwalj5k" path="res://Global Assets/OFFICIAL Building Assets/ceiling.tscn" id="13_kixn4"]
-[ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://Global Assets/OFFICIAL Building Assets/floor_wood.tscn" id="14_6g5bq"]
+[ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/floor_wood.tscn" id="14_6g5bq"]
 [ext_resource type="PackedScene" uid="uid://dyk46kbtjgkly" path="res://Global Assets/OFFICIAL Building Assets/barrel.tscn" id="15_iwren"]
 [ext_resource type="PackedScene" uid="uid://ctgwr1p1ptn6a" path="res://Global Assets/OFFICIAL Building Assets/coinstack.tscn" id="16_ignqn"]
 [ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://Global Assets/OFFICIAL Building Assets/half_wall.tscn" id="17_077yn"]
@@ -20,10 +20,25 @@
 [ext_resource type="Script" uid="uid://ep0raa4apk7i" path="res://LOBBY/Scripts/csTransitionTorch.gd" id="22_ieyhh"]
 [ext_resource type="Script" uid="uid://bvdets0lcgiql" path="res://LOBBY/Interact/interactable.gd" id="22_wtp6t"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mc2qy"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_i0j28"]
+sky_material = SubResource("ProceduralSkyMaterial_mc2qy")
+
+[sub_resource type="Environment" id="Environment_7npox"]
+background_mode = 2
+sky = SubResource("Sky_i0j28")
+tonemap_mode = 2
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5yqrr"]
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="Lobby" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7npox")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.747798, -0.663926, -2.90211e-08, 0, -4.37114e-08, 1, -0.663926, 0.747798, 3.26873e-08, 0, 0, 0)
@@ -80,16 +95,6 @@ omni_attenuation = 1.5
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16, 1.7, 10.75)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Room1/Build/Lighting/torch5"]
-transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.34202, 2.63612e-09, 0.34202, 0.939693, 0, 0.689168, 0.342449)
-light_color = Color(0.730085, 0.407925, 0.248344, 1)
-shadow_bias = 4.1
-omni_range = 14.0
-omni_attenuation = 1.5
-
-[node name="torch8" parent="Room1/Build/Lighting" instance=ExtResource("4_7uu27")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -9.75, 1.7, 9.25)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Room1/Build/Lighting/torch8"]
 transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.34202, 2.63612e-09, 0.34202, 0.939693, 0, 0.689168, 0.342449)
 light_color = Color(0.730085, 0.407925, 0.248344, 1)
 shadow_bias = 4.1
@@ -530,6 +535,7 @@ text = "Zombie Tag
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 2.5, 1.7, 0.075)
 script = ExtResource("22_wtp6t")
 prompt_message = "Press [X] to Interact"
+LevelPath = "res://RLGL/Level.tscn"
 
 [node name="RLGL_OmniLight" type="OmniLight3D" parent="Room2/TransitionTorches/RLGL_Torch"]
 transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.34202, 2.63612e-09, 0.34202, 0.939693, 0, 0.689168, 0.342449)
