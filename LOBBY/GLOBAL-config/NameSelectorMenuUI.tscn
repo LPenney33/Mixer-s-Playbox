@@ -1,0 +1,356 @@
+[gd_scene load_steps=13 format=3 uid="uid://bx12mj2kv3etd"]
+
+[ext_resource type="Script" uid="uid://cm8e72eflj8q" path="res://LOBBY/GLOBAL-config/nameSelectorScripting.gd" id="1_75oy4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75oy4"]
+bg_color = Color(0.774662, 0.776563, 0.468518, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.49383, 0.339885, 0.10634, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge1ly"]
+bg_color = Color(0.380392, 0.317647, 0.219608, 1)
+border_width_bottom = 20
+border_color = Color(0.498039, 0.345098, 0.109804, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjtwc"]
+bg_color = Color(0.6, 0.878431, 0.6, 1)
+border_width_left = 5
+border_width_top = 10
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.494118, 0.341176, 0.105882, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx5ci"]
+bg_color = Color(0.920995, 0.920995, 0.920995, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.494118, 0.341176, 0.105882, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjs5y"]
+bg_color = Color(0.6, 0.737255, 0.6, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.099986, 0.099986, 0.0999859, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 7.0
+expand_margin_right = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13m0q"]
+bg_color = Color(0.6, 0.737255, 0.6, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_akrsl"]
+LineEdit/styles/focus = SubResource("StyleBoxFlat_fjs5y")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_13m0q")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlj3i"]
+bg_color = Color(0.0470588, 0.4, 0.921569, 1)
+border_width_left = 5
+border_width_bottom = 5
+border_color = Color(0.0477187, 0.402203, 0.92011, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_akrsl"]
+border_width_left = 5
+border_width_bottom = 5
+border_color = Color(0.489622, 0.489622, 0.489622, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcgkv"]
+bg_color = Color(0.0611412, 0.432976, 0.974537, 1)
+border_width_left = 5
+border_width_bottom = 5
+border_color = Color(0.0477187, 0.402203, 0.92011, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkdhv"]
+bg_color = Color(0, 0, 0, 0.694118)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="NameSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_75oy4")
+
+[node name="Background" type="Node" parent="."]
+
+[node name="MainBackground" type="Panel" parent="Background"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -672.0
+offset_top = 40.0
+offset_right = 224.0
+offset_bottom = 640.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_75oy4")
+
+[node name="Divider" type="Panel" parent="Background"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 40.0
+offset_right = 20.0
+offset_bottom = 940.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ge1ly")
+
+[node name="TitleBackground" type="Panel" parent="Background"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -672.0
+offset_top = 40.0
+offset_right = 224.0
+offset_bottom = 145.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_gjtwc")
+
+[node name="Label" type="Label" parent="Background/TitleBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -445.0
+offset_top = -46.5
+offset_right = 447.0
+offset_bottom = 58.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "Create Your Username"
+horizontal_alignment = 1
+
+[node name="P1_Control" type="Node" parent="."]
+
+[node name="Panel" type="Panel" parent="P1_Control"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -591.0
+offset_top = 250.0
+offset_right = -286.0
+offset_bottom = 656.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_xx5ci")
+
+[node name="P1_Title" type="Label" parent="P1_Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.5
+offset_top = -203.0
+offset_right = 29.5
+offset_bottom = -161.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Player 1"
+horizontal_alignment = 1
+
+[node name="P1_NameEntry" type="LineEdit" parent="P1_Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -111.833
+offset_top = 90.6666
+offset_right = 108.167
+offset_bottom = 133.667
+grow_horizontal = 2
+theme = SubResource("Theme_akrsl")
+theme_override_font_sizes/font_size = 25
+placeholder_text = "P1_Initials"
+max_length = 3
+clear_button_enabled = true
+caret_blink = true
+
+[node name="P1_ConfirmButton" type="Button" parent="P1_Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.5
+offset_top = 330.0
+offset_right = 2.5
+offset_bottom = 360.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_styles/hover = SubResource("StyleBoxFlat_xlj3i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_akrsl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wcgkv")
+disabled = true
+text = "Confirm"
+
+[node name="P1_Indicator" type="CheckBox" parent="P1_Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 139.833
+offset_top = 330.0
+offset_right = 163.833
+offset_bottom = 354.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+button_mask = 0
+
+[node name="P2_Control" type="Node" parent="."]
+
+[node name="Panel" type="Panel" parent="P2_Control"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 134.0
+offset_top = 250.0
+offset_right = 439.0
+offset_bottom = 656.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_xx5ci")
+
+[node name="P2_NameEntry" type="LineEdit" parent="P2_Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -111.5
+offset_top = 90.0
+offset_right = 108.5
+offset_bottom = 133.0
+grow_horizontal = 2
+theme = SubResource("Theme_akrsl")
+theme_override_font_sizes/font_size = 25
+placeholder_text = "P2_Initials"
+max_length = 3
+clear_button_enabled = true
+caret_blink = true
+
+[node name="P2_Title" type="Label" parent="P2_Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.4997
+offset_top = -203.0
+offset_right = 29.5003
+offset_bottom = -161.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Player 2"
+horizontal_alignment = 1
+
+[node name="P2_ConfirmButton" type="Button" parent="P2_Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -135.833
+offset_top = 330.0
+offset_right = -0.833374
+offset_bottom = 360.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_styles/hover = SubResource("StyleBoxFlat_xlj3i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_akrsl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wcgkv")
+disabled = true
+text = "Confirm"
+
+[node name="P2PanelDisabler" type="Button" parent="P2_Control/Panel"]
+layout_mode = 0
+offset_right = 305.0
+offset_bottom = 406.0
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_mkdhv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mkdhv")
+disabled = true
+text = "Enable Multiplayer to Unlock Player 2"
+
+[node name="P2_Indicator" type="CheckBox" parent="P2_Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 140.5
+offset_top = 330.0
+offset_right = 164.5
+offset_bottom = 354.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+button_mask = 0
+
+[node name="MultiplayerToggle" type="CheckBox" parent="P2_Control"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -618.0
+offset_top = 180.0
+offset_right = -445.0
+offset_bottom = 211.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+text = "Enable Multiplayer"

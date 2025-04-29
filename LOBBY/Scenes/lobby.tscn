@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://boqt6aedc5k2e"]
+[gd_scene load_steps=27 format=3 uid="uid://boqt6aedc5k2e"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="1_5svd6"]
+[ext_resource type="Script" uid="uid://o41ame7ts6fr" path="res://LOBBY/Scripts/lobby.gd" id="1_7npox"]
 [ext_resource type="PackedScene" uid="uid://bxomekkp44vay" path="res://Global Assets/OFFICIAL Building Assets/torch.tscn" id="4_7uu27"]
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="5_pvsig"]
 [ext_resource type="PackedScene" uid="uid://6n8achi2iynu" path="res://Global Assets/OFFICIAL Building Assets/wall_corner.tscn" id="6_xsi3p"]
@@ -16,8 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://Global Assets/OFFICIAL Building Assets/half_wall.tscn" id="17_077yn"]
 [ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://Global Assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="18_qwdpg"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="19_g8u60"]
+[ext_resource type="PackedScene" uid="uid://bx12mj2kv3etd" path="res://LOBBY/GLOBAL-config/NameSelectorMenuUI.tscn" id="20_i0j28"]
 [ext_resource type="Script" uid="uid://6q78mqsmomal" path="res://LOBBY/Scripts/rlglTransitionTorch.gd" id="21_od0gi"]
 [ext_resource type="Script" uid="uid://ep0raa4apk7i" path="res://LOBBY/Scripts/csTransitionTorch.gd" id="22_ieyhh"]
+[ext_resource type="PackedScene" uid="uid://1367mm0hhlt4" path="res://Global Assets/OFFICIAL Building Assets/wall_cracked.tscn" id="22_qdeey"]
 [ext_resource type="Script" uid="uid://bvdets0lcgiql" path="res://LOBBY/Interact/interactable.gd" id="22_wtp6t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mc2qy"]
@@ -36,6 +39,9 @@ tonemap_mode = 2
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="Lobby" type="Node3D"]
+script = ExtResource("1_7npox")
+
+[node name="NameSelector" parent="." instance=ExtResource("20_i0j28")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7npox")
@@ -50,15 +56,18 @@ visible = false
 use_collision = true
 size = Vector3(34.25, 28.75, 1)
 
-[node name="Player" parent="." instance=ExtResource("1_5svd6")]
-transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -24.0063, 0.526559, 1.80674)
-can_move = true
+[node name="Player1" parent="." instance=ExtResource("1_5svd6")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -24.0063, 0.526559, 1.05674)
 can_sprint = true
 can_freefly = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Player2" parent="." instance=ExtResource("1_5svd6")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -24.0063, 0.526559, 9.80674)
+visible = false
+can_sprint = true
+can_freefly = true
 
-[node name="Room1" type="Node" parent="."]
+[node name="Room1" type="Node3D" parent="."]
 
 [node name="Build" type="Node" parent="Room1"]
 
@@ -175,8 +184,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 0)
 [node name="wall_tsplit2" parent="Room1/Build/Walls" instance=ExtResource("12_bs5ov")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.5, 0, 11)
 
-[node name="barrel10" parent="Room1/Build/Walls" instance=ExtResource("15_iwren")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -8, 4, 9.5)
+[node name="wall" parent="Room1/Build/Walls" instance=ExtResource("5_pvsig")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.5, 0, 3.5)
 
 [node name="Ceiling" type="Node" parent="Room1/Build"]
 
@@ -316,7 +325,7 @@ light_color = Color(0.730085, 0.407925, 0.248344, 1)
 omni_range = 14.0
 omni_attenuation = 1.5
 
-[node name="Room2" type="Node" parent="."]
+[node name="Room2" type="Node3D" parent="."]
 
 [node name="Build" type="Node" parent="Room2"]
 
@@ -345,6 +354,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 4, 11)
 
 [node name="wall9" parent="Room2/Build/Railing" instance=ExtResource("17_077yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 4, 11)
+
+[node name="wall10" parent="Room2/Build/Railing" instance=ExtResource("17_077yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 4, 11)
 
 [node name="wall4" parent="Room2/Build/Railing" instance=ExtResource("17_077yn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 4, 0)
@@ -419,6 +431,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 10, 11)
 [node name="wall_window_closed2" parent="Room2/Build/Walls" instance=ExtResource("9_ttrip")]
 transform = Transform3D(1.19209e-07, 0, 1, 0, 1, 0, -1, 0, 1.19209e-07, 6.5, 0, 4)
 
+[node name="wall_window_closed3" parent="Room2/Build/Walls" instance=ExtResource("9_ttrip")]
+transform = Transform3D(1, 0, -1.6292e-07, 0, 1, 0, 1.6292e-07, 0, 1, 2.5, 0, 11)
+
 [node name="wall_arched" parent="Room2/Build/Walls" instance=ExtResource("10_rdps7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 0)
 
@@ -430,6 +445,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
 
 [node name="wall_arched2" parent="Room2/Build/Walls" instance=ExtResource("10_rdps7")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.5, 0, 7.5)
+
+[node name="wall_cracked" parent="Room2/Build/Walls" instance=ExtResource("22_qdeey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 11)
+
+[node name="wall" parent="Room2/Build/Walls" instance=ExtResource("5_pvsig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 11)
 
 [node name="Floor" type="Node" parent="Room2/Build"]
 
@@ -453,33 +474,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.754885, 2.38419e-07, 0.5413
 
 [node name="floor_wood10" parent="Room2/Build/Floor" instance=ExtResource("14_6g5bq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24512, 2.38419e-07, 8.54132)
-
-[node name="floor_wood16" parent="Room2/Build/Floor" instance=ExtResource("14_6g5bq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.754885, 2.38419e-07, 12.5413)
-
-[node name="floor_wood17" parent="Room2/Build/Floor" instance=ExtResource("14_6g5bq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24512, 2.38419e-07, 12.5413)
-
-[node name="floor_wood19" parent="Room2/Build/Floor" instance=ExtResource("14_6g5bq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.754885, 2.38419e-07, 16.5413)
-
-[node name="floor_wood22" parent="Room2/Build/Floor" instance=ExtResource("14_6g5bq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75489, 2.38419e-07, 12.5413)
-
-[node name="floor_wood23" parent="Room2/Build/Floor" instance=ExtResource("14_6g5bq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75489, 2.38419e-07, 16.5413)
-
-[node name="floor_wood20" parent="Room2/Build/Floor" instance=ExtResource("14_6g5bq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24512, 2.38419e-07, 16.5413)
-
-[node name="floor_wood24" parent="Room2/Build/Floor" instance=ExtResource("14_6g5bq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.754885, 2.38419e-07, 20.5413)
-
-[node name="floor_wood25" parent="Room2/Build/Floor" instance=ExtResource("14_6g5bq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75489, 2.38419e-07, 20.5413)
-
-[node name="floor_wood26" parent="Room2/Build/Floor" instance=ExtResource("14_6g5bq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24512, 2.38419e-07, 20.5413)
 
 [node name="floor_wood11" parent="Room2/Build/Floor" instance=ExtResource("14_6g5bq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24512, 2.38419e-07, 4.54132)
@@ -600,87 +594,58 @@ text = "3. Dummy3   -   "
 transform = Transform3D(7.45058e-08, 0, -1, 0, 1, 0, 1, 0, 7.45058e-08, 6.23419, 2.175, 8.10479)
 text = "13650"
 
-[node name="Room3" type="Node" parent="."]
+[node name="barrel10" parent="Room2" instance=ExtResource("15_iwren")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -8, 4, 9.5)
 
-[node name="Build" type="Node" parent="Room3"]
-
-[node name="wall_tsplit" parent="Room3/Build" instance=ExtResource("12_bs5ov")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 11)
-
-[node name="wall_tsplit2" parent="Room3/Build" instance=ExtResource("12_bs5ov")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 11)
-
-[node name="wall" parent="Room3/Build" instance=ExtResource("5_pvsig")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 0, 15)
-
-[node name="wall3" parent="Room3/Build" instance=ExtResource("5_pvsig")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0, 19)
-
-[node name="wall2" parent="Room3/Build" instance=ExtResource("5_pvsig")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5, 0, 15)
-
-[node name="wall_corner" parent="Room3/Build" instance=ExtResource("6_xsi3p")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.5, 0, 19)
-
-[node name="wall_corner2" parent="Room3/Build" instance=ExtResource("6_xsi3p")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.5, 0, 19)
-
-[node name="torch9" parent="Room3/Build" instance=ExtResource("4_7uu27")]
-transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, -4.25, 1.7, 11.25)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Room3/Build/torch9"]
-transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.34202, 2.63612e-09, 0.34202, 0.939693, 0, 0.689168, 0.342449)
-light_color = Color(0.730085, 0.407925, 0.248344, 1)
-shadow_bias = 4.1
-omni_range = 14.0
-omni_attenuation = 1.5
-
-[node name="torch10" parent="Room3/Build" instance=ExtResource("4_7uu27")]
-transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 1.25, 1.7, 11.25)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Room3/Build/torch10"]
-transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.34202, 2.63612e-09, 0.34202, 0.939693, 0, 0.689168, 0.342449)
-light_color = Color(0.730085, 0.407925, 0.248344, 1)
-shadow_bias = 4.1
-omni_range = 14.0
-omni_attenuation = 1.5
-
-[node name="torch11" parent="Room3/Build" instance=ExtResource("4_7uu27")]
-transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, -4.25, 4.7, 11.25)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Room3/Build/torch11"]
-transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.34202, 2.63612e-09, 0.34202, 0.939693, 0, 0.689168, 0.342449)
-light_color = Color(0.730085, 0.407925, 0.248344, 1)
-shadow_bias = 4.1
-omni_range = 14.0
-omni_attenuation = 1.5
-
-[node name="torch12" parent="Room3/Build" instance=ExtResource("4_7uu27")]
-transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 1.25, 4.7, 11.25)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Room3/Build/torch12"]
-transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.34202, 2.63612e-09, 0.34202, 0.939693, 0, 0.689168, 0.342449)
-light_color = Color(0.730085, 0.407925, 0.248344, 1)
-shadow_bias = 4.1
-omni_range = 14.0
-omni_attenuation = 1.5
-
-[node name="ConfigItems" type="Node" parent="Room3"]
-
-[node name="NameSelectorTorch" parent="Room3/ConfigItems" instance=ExtResource("4_7uu27")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2.25, 1.7, 16.575)
-
-[node name="OmniLight" type="OmniLight3D" parent="Room3/ConfigItems/NameSelectorTorch"]
-transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.34202, 2.63612e-09, 0.34202, 0.939693, 0, 0.689168, 0.342449)
-omni_range = 14.0
-omni_attenuation = 1.5
-
-[node name="Label" type="Label3D" parent="Room3/ConfigItems/NameSelectorTorch"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.18)
-text = "Name Selector"
-
-[node name="wall" parent="." instance=ExtResource("5_pvsig")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.5, 0, 3.5)
-
-[node name="pillar" parent="." instance=ExtResource("19_g8u60")]
+[node name="pillar" parent="Room2" instance=ExtResource("19_g8u60")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 9.5)
+
+[node name="SplitCanvas" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Mask" type="ColorRect" parent="SplitCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384314, 0.454902, 0.54902, 1)
+
+[node name="SplitScreen" type="Control" parent="SplitCanvas"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftContainer" type="SubViewportContainer" parent="SplitCanvas/SplitScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.451
+offset_top = -31.0
+offset_right = 900.0
+offset_bottom = 58.752
+grow_vertical = 2
+
+[node name="LeftViewport" type="SubViewport" parent="SplitCanvas/SplitScreen/LeftContainer"]
+handle_input_locally = false
+size = Vector2i(1010, 1030)
+render_target_update_mode = 0
+
+[node name="RightContainer" type="SubViewportContainer" parent="SplitCanvas/SplitScreen"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -900.0
+offset_top = -31.0
+offset_bottom = 351.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="RightViewport" type="SubViewport" parent="SplitCanvas/SplitScreen/RightContainer"]
+handle_input_locally = false
+size = Vector2i(1010, 1030)
+render_target_update_mode = 0
