@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/zombie_run.glb-931c6aac68dd8e304ff852be650700
 
 nodes/root_type=""
 nodes/root_name=""
-nodes/apply_root_scale=true
+nodes/apply_root_scale=false
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
@@ -29,7 +29,7 @@ skins/use_named_skins=true
 animation/import=true
 animation/fps=30
 animation/trimming=false
-animation/remove_immutable_tracks=true
+animation/remove_immutable_tracks=false
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
