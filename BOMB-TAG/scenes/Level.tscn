@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://Global Assets/OFFICIAL Building Assets/half_wall.tscn" id="8_qmdvw"]
 [ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://Global Assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="9_7x8v1"]
 [ext_resource type="PackedScene" uid="uid://dv6xewp5blt34" path="res://BOMB-TAG/scenes/bomber.tscn" id="11_h2r53"]
-[ext_resource type="Script" uid="uid://dtmf1ecyey6pe" path="res://BOMB-TAG/scripts/timer.gd" id="13_wsk4p"]
+[ext_resource type="Script" uid="uid://emew1gs6mbva" path="res://BOMB-TAG/scripts/timer.gd" id="13_wsk4p"]
 
 [sub_resource type="Resource" id="Resource_1mpen"]
 metadata/__load_path__ = "res://BOMB-TAG/cutscene.gd"
@@ -92,7 +92,7 @@ shadow_offset = Vector2(5, 2)
 [node name="Level" type="Node3D" node_paths=PackedStringArray("revolve_camera", "player_camera", "start_menu", "start_button")]
 script = SubResource("Resource_1mpen")
 revolve_camera = NodePath("Cutscene Camera")
-player_camera = NodePath("Map/Player/Head/Camera3D")
+player_camera = NodePath("Map/Player1/Head/Camera3D")
 start_menu = NodePath("StartMenu")
 start_button = NodePath("StartMenu/Button")
 
@@ -114,14 +114,15 @@ anchor_left = 0.5
 anchor_top = 0.75
 anchor_right = 0.5
 anchor_bottom = 0.75
-offset_left = -330.0
-offset_top = -155.0
-offset_right = 330.0
+offset_left = -306.0
+offset_top = -221.0
+offset_right = 306.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_jclgh")
 shortcut = SubResource("Shortcut_btft3")
-text = "Start Game"
+text = "Press [X] to Start 
+the Game"
 
 [node name="Label" type="Label" parent="StartMenu"]
 layout_mode = 1
@@ -150,7 +151,7 @@ light_color = Color(0.949378, 0.95411, 1, 1)
 light_energy = 1.116
 shadow_enabled = true
 
-[node name="Player" type="CharacterBody3D" parent="Map"]
+[node name="Player1" type="CharacterBody3D" parent="Map"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.25, -14.75)
 script = ExtResource("2_srt87")
 can_freefly = true
@@ -163,21 +164,21 @@ input_forward = "move_up"
 input_back = "move_down"
 input_jump = "jump"
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/Player"]
+[node name="Mesh" type="MeshInstance3D" parent="Map/Player1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 visible = false
 material_override = SubResource("StandardMaterial3D_bentt")
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_llw20")
 
-[node name="Collider" type="CollisionShape3D" parent="Map/Player"]
+[node name="Collider" type="CollisionShape3D" parent="Map/Player1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_bdwpg")
 
-[node name="Head" type="Node3D" parent="Map/Player"]
+[node name="Head" type="Node3D" parent="Map/Player1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Map/Player/Head"]
+[node name="Camera3D" type="Camera3D" parent="Map/Player1/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43234e-09, -0.35, -0.0163841)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map"]

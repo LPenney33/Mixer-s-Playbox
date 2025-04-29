@@ -69,7 +69,7 @@ func _ready():
 	# Connect start button signal if available
 	if start_button:
 		start_button.connect("pressed", Callable(self, "_on_button_pressed"))
-    
+	
 	if skip_cutscene:
 		revolve_camera.current = false
 		player_camera.current = true
@@ -113,16 +113,16 @@ func _process(delta: float) -> void:
 			desired_pos.y = max(collision.position.y + collision_bump, forced_y_if_collision)
 		revolve_camera.global_transform.origin = desired_pos
 		revolve_camera.look_at(revolve_center, Vector3.UP)
-    
+	
 	# Update countdown if active
 	if countdown_active:
 		countdown_time -= delta
 		var seconds_left = ceil(countdown_time)
 		# Only display seconds in the format :05, :04, etc.
 		if seconds_left < 10:
-			countdown_label.text = ":0" + str(seconds_left)
+			countdown_label.text = ":0" + str(int(seconds_left))
 		else:
-			countdown_label.text = ":" + str(seconds_left)
+			countdown_label.text = ":" + str(int(seconds_left))
 		if countdown_time <= 0:
 			countdown_active = false
 			canvas_layer.visible = false

@@ -11,6 +11,12 @@ extends CharacterBody3D
 ## Can we press to enter freefly mode (noclip)?
 @export var can_freefly : bool = false
 
+# --------------------------------------------------
+# Added for multiplayer setup
+@export var input_prefix : String = "p1"
+@export var username     : String = ""
+# --------------------------------------------------
+
 @export_group("Speeds")
 @export var look_speed : float = 0.002
 @export var controller_look_sensitivity : float = 4.0
