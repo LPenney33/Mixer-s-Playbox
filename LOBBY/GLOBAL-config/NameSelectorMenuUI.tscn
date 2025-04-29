@@ -1,4 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx12mj2kv3etd"]
+[gd_scene load_steps=13 format=3 uid="uid://bx12mj2kv3etd"]
+
+[ext_resource type="Script" uid="uid://cm8e72eflj8q" path="res://LOBBY/GLOBAL-config/nameSelectorScripting.gd" id="1_75oy4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75oy4"]
 bg_color = Color(0.774662, 0.776563, 0.468518, 1)
@@ -71,6 +73,35 @@ corner_radius_bottom_left = 10
 LineEdit/styles/focus = SubResource("StyleBoxFlat_fjs5y")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_13m0q")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlj3i"]
+bg_color = Color(0.0470588, 0.4, 0.921569, 1)
+border_width_left = 5
+border_width_bottom = 5
+border_color = Color(0.0477187, 0.402203, 0.92011, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_akrsl"]
+border_width_left = 5
+border_width_bottom = 5
+border_color = Color(0.489622, 0.489622, 0.489622, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcgkv"]
+bg_color = Color(0.0611412, 0.432976, 0.974537, 1)
+border_width_left = 5
+border_width_bottom = 5
+border_color = Color(0.0477187, 0.402203, 0.92011, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkdhv"]
 bg_color = Color(0, 0, 0, 0.694118)
 corner_radius_top_left = 30
@@ -85,6 +116,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_75oy4")
 
 [node name="Background" type="Node" parent="."]
 
@@ -101,7 +133,7 @@ scale = Vector2(1.5, 1.5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_75oy4")
 
 [node name="Divider" type="Panel" parent="Background"]
-anchors_preset = -1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -20.0
@@ -131,14 +163,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -337.0
-offset_top = -63.5
-offset_right = 338.0
-offset_bottom = 41.5
+offset_left = -445.0
+offset_top = -46.5
+offset_right = 447.0
+offset_bottom = 58.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 76
-text = "Create Your Name"
+theme_override_font_sizes/font_size = 70
+text = "Create Your Username"
 horizontal_alignment = 1
 
 [node name="P1_Control" type="Node" parent="."]
@@ -179,17 +211,47 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -97.5
-offset_top = 80.3335
-offset_right = 68.5
-offset_bottom = 123.333
+offset_left = -111.833
+offset_top = 90.6666
+offset_right = 108.167
+offset_bottom = 133.667
 grow_horizontal = 2
 theme = SubResource("Theme_akrsl")
 theme_override_font_sizes/font_size = 25
-placeholder_text = "P1_Usrname"
-max_length = 10
+placeholder_text = "P1_Initials"
+max_length = 3
 clear_button_enabled = true
 caret_blink = true
+
+[node name="P1_ConfirmButton" type="Button" parent="P1_Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.5
+offset_top = 330.0
+offset_right = 2.5
+offset_bottom = 360.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_styles/hover = SubResource("StyleBoxFlat_xlj3i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_akrsl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wcgkv")
+disabled = true
+text = "Confirm"
+
+[node name="P1_Indicator" type="CheckBox" parent="P1_Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 139.833
+offset_top = 330.0
+offset_right = 163.833
+offset_bottom = 354.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+button_mask = 0
 
 [node name="P2_Control" type="Node" parent="."]
 
@@ -205,14 +267,22 @@ grow_horizontal = 2
 scale = Vector2(1.5, 1.5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_xx5ci")
 
-[node name="P2PanelDisabler" type="Button" parent="P2_Control/Panel"]
-visible = false
-offset_right = 305.0
-offset_bottom = 406.0
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_styles/disabled = SubResource("StyleBoxFlat_mkdhv")
-disabled = true
-text = "Enable Multiplayer to Unlock Player 2"
+[node name="P2_NameEntry" type="LineEdit" parent="P2_Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -111.5
+offset_top = 90.0
+offset_right = 108.5
+offset_bottom = 133.0
+grow_horizontal = 2
+theme = SubResource("Theme_akrsl")
+theme_override_font_sizes/font_size = 25
+placeholder_text = "P2_Initials"
+max_length = 3
+clear_button_enabled = true
+caret_blink = true
 
 [node name="P2_Title" type="Label" parent="P2_Control/Panel"]
 layout_mode = 1
@@ -233,19 +303,54 @@ theme_override_font_sizes/font_size = 30
 text = "Player 2"
 horizontal_alignment = 1
 
-[node name="P2_NameEntry" type="LineEdit" parent="P2_Control/Panel"]
+[node name="P2_ConfirmButton" type="Button" parent="P2_Control/Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -86.5
-offset_top = 80.6667
-offset_right = 79.5
-offset_bottom = 123.667
+offset_left = -135.833
+offset_top = 330.0
+offset_right = -0.833374
+offset_bottom = 360.0
 grow_horizontal = 2
-theme = SubResource("Theme_akrsl")
-theme_override_font_sizes/font_size = 25
-placeholder_text = "P2_Usrname"
-max_length = 10
-clear_button_enabled = true
-caret_blink = true
+scale = Vector2(2, 2)
+theme_override_styles/hover = SubResource("StyleBoxFlat_xlj3i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_akrsl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wcgkv")
+disabled = true
+text = "Confirm"
+
+[node name="P2PanelDisabler" type="Button" parent="P2_Control/Panel"]
+layout_mode = 0
+offset_right = 305.0
+offset_bottom = 406.0
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_mkdhv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mkdhv")
+disabled = true
+text = "Enable Multiplayer to Unlock Player 2"
+
+[node name="P2_Indicator" type="CheckBox" parent="P2_Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 140.5
+offset_top = 330.0
+offset_right = 164.5
+offset_bottom = 354.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+button_mask = 0
+
+[node name="MultiplayerToggle" type="CheckBox" parent="P2_Control"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -618.0
+offset_top = 180.0
+offset_right = -445.0
+offset_bottom = 211.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+text = "Enable Multiplayer"
