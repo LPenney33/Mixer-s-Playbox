@@ -109,6 +109,7 @@ func _on_intermission_timer_timeout():
 	timer_label.visible = true
 	color_square.visible = true
 	pmosybau_label.visible = false
+	starting_platform.visible = false
 
 	for platform in platform_manager.get_children():
 		platform.visible = false

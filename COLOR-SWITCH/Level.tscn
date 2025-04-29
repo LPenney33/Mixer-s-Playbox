@@ -61,7 +61,7 @@ albedo_color = Color(0, 0, 0, 1)
 albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8tc8"]
-albedo_color = Color(0.484932, 0.238072, 9.62615e-08, 1)
+albedo_color = Color(1, 0.321569, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_huxip"]
 albedo_color = Color(1, 1, 0, 1)
@@ -73,7 +73,7 @@ albedo_color = Color(0, 1, 0, 1)
 albedo_color = Color(0, 0, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3lshp"]
-albedo_color = Color(0.252387, 0.000638695, 0.601038, 1)
+albedo_color = Color(0.490196, 0, 1, 1)
 
 [sub_resource type="Theme" id="Theme_4mt3y"]
 
@@ -694,50 +694,52 @@ color = 2
 [node name="OrangeTile" parent="PLATFORMS/PlatformV1/OrangeTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, -6)
 
-[node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile"]
+
+[node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821381, 0.0765874)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard2" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+[node name="TileShard2" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821381, 0.455052)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard3" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+[node name="TileShard3" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821381, 1.3034)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard4" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+[node name="TileShard4" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821381, 0.554627)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard5" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+[node name="TileShard5" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821381, 2.46865)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard6" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+[node name="TileShard6" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821381, 2.46865)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard7" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+[node name="TileShard7" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821381, 1.94603)
 polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard8" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+[node name="TileShard8" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821381, 1.76281)
 polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
@@ -745,50 +747,52 @@ material = SubResource("StandardMaterial3D_p8tc8")
 [node name="OrangeTile2" parent="PLATFORMS/PlatformV1/OrangeTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, -6)
 
-[node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2"]
+
+[node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821381, 0.0765874)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard2" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+[node name="TileShard2" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821381, 0.455052)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard3" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+[node name="TileShard3" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821381, 1.3034)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard4" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+[node name="TileShard4" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821381, 0.554627)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard5" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+[node name="TileShard5" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821381, 2.46865)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard6" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+[node name="TileShard6" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821381, 2.46865)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard7" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+[node name="TileShard7" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821381, 1.94603)
 polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard8" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+[node name="TileShard8" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile2/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821381, 1.76281)
 polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
@@ -796,50 +800,52 @@ material = SubResource("StandardMaterial3D_p8tc8")
 [node name="OrangeTile3" parent="PLATFORMS/PlatformV1/OrangeTiles" instance=ExtResource("3_wfbg8")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 12)
 
-[node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821382, 0.0765873)
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3"]
+
+[node name="TileShard1" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.592698, 0.0821381, 0.0765867)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard2" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821382, 0.455052)
+[node name="TileShard2" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.532563, 0.0821381, 0.455051)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.549207, 1.41368, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard3" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821382, 1.3034)
+[node name="TileShard3" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.428605, 0.0821381, 1.3034)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.823205, 1.49182, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard4" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821382, 0.554627)
+[node name="TileShard4" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68928, 0.0821381, 0.554626)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.547921, 1.34711, 0.885078, 1.52178, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard5" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821382, 2.46865)
+[node name="TileShard5" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.28445, 0.0821381, 2.46865)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.573189, 1.44253, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard6" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821382, 2.46865)
+[node name="TileShard6" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.726432, 0.0821381, 2.46865)
 polygon = PackedVector2Array(0.649395, 1.31477, 0.534399, 1.43063, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard7" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821382, 1.94603)
+[node name="TileShard7" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.148518, 0.0821381, 1.94603)
 polygon = PackedVector2Array(0.724901, 1.20481, 0.547921, 1.34711, 0.754032, 1.49075, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
 
-[node name="TileShard8" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821382, 1.76281)
+[node name="TileShard8" type="CSGPolygon3D" parent="PLATFORMS/PlatformV1/OrangeTiles/OrangeTile3/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.07637, 0.0821381, 1.76281)
 polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.46064, 0.817208, 1.32815)
 depth = 0.11
 material = SubResource("StandardMaterial3D_p8tc8")
@@ -5975,6 +5981,7 @@ unique_name_in_owner = true
 script = ExtResource("8_5w2yo")
 
 [node name="ScoreLabel" type="Label" parent="HUD"]
+visible = false
 offset_left = 24.0
 offset_top = 16.0
 offset_right = 248.0
@@ -5986,6 +5993,7 @@ vertical_alignment = 1
 
 [node name="ScorePanel" type="Panel" parent="HUD/ScoreLabel"]
 z_index = -1
+layout_mode = 0
 offset_left = -16.0
 offset_top = -8.0
 offset_right = 240.0
