@@ -39,6 +39,7 @@ var freeflying : bool = false
 
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
+@onready var death_menu = $DeathMenu  # adjust if DeathMenu is in a different spot
 
 func _ready() -> void:
 	check_input_mappings()
@@ -62,6 +63,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			enable_freefly()
 		else:
 			disable_freefly()
+
 
 func _physics_process(delta: float) -> void:
 	if can_freefly and freeflying:
@@ -143,15 +145,15 @@ func check_input_mappings():
 			set(key, false)
 
 # When the player is tagged, immediately respawn
-func kill():
+func die():
+	print("💀 Player died!")
 	can_move = false
 	velocity = Vector3.ZERO
-	respawn()
-
-func respawn():
-	global_transform.origin = Vector3(0, 10, 0)
-	velocity = Vector3.ZERO
-	can_move = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)  # Let player use mouse
+	if death_menu:
+		death_menu.visible = true
+	else:
+		print("❌ DeathMenu not found! Check node path.")
 
 func _on_game_started() -> void:
 	can_move = true
