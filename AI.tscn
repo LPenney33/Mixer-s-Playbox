@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://kap20mckuqp7"]
+[gd_scene load_steps=8 format=4 uid="uid://dvfjgf7tpo6k2"]
 
 [ext_resource type="Script" uid="uid://xu5clo6x1xlp" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie.gd" id="1_fn6p3"]
 [ext_resource type="Script" uid="uid://clmb8ykr4d3xv" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie.gd" id="1_fn6p3"]
