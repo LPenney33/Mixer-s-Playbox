@@ -1,13 +1,13 @@
 # lobby.gd
 extends Node3D
 
-@onready var name_selector  : Control          = $NameSelector
-@onready var player1        : CharacterBody3D  = $Player1
-@onready var player2        : CharacterBody3D  = $Player2
+@onready var name_selector   : Control          = $NameSelector
+@onready var player1         : CharacterBody3D  = $Player1
+@onready var player2         : CharacterBody3D  = $Player2
 
-@onready var split_canvas   : CanvasLayer      = $SplitCanvas
-@onready var left_viewport  : SubViewport      = $SplitCanvas/SplitScreen/LeftContainer/LeftViewport
-@onready var right_viewport : SubViewport      = $SplitCanvas/SplitScreen/RightContainer/RightViewport
+@onready var split_canvas    : CanvasLayer      = $SplitCanvas
+@onready var left_viewport   : SubViewport      = $SplitCanvas/SplitScreen/LeftContainer/LeftViewport
+@onready var right_viewport  : SubViewport      = $SplitCanvas/SplitScreen/RightContainer/RightViewport
 
 func _ready() -> void:
 	# Show the name selector, lock both players & hide Player2
@@ -21,24 +21,18 @@ func _ready() -> void:
 
 func _on_names_chosen(p1_name: String, p2_name: String) -> void:
 	# Configure Player1
-	player1.input_prefix   = "p1"
-	player1.username       = p1_name
-	player1.input_left     = "p1_left"
-	player1.input_right    = "p1_right"
-	player1.input_forward  = "p1_up"
-	player1.input_back     = "p1_down"
-	player1.can_move       = true
+	player1.input_prefix = "p1"
+	player1.configure_inputs()
+	player1.username     = p1_name
+	player1.can_move     = true
 
 	# If multiplayer, configure Player2 and enable split-screen
 	if p2_name != "":
-		player2.visible        = true
-		player2.input_prefix   = "p2"
-		player2.username       = p2_name
-		player2.input_left     = "p2_left"
-		player2.input_right    = "p2_right"
-		player2.input_forward  = "p2_up"
-		player2.input_back     = "p2_down"
-		player2.can_move       = true
+		player2.visible       = true
+		player2.input_prefix  = "p2"
+		player2.configure_inputs()
+		player2.username      = p2_name
+		player2.can_move      = true
 		_enable_split_screen()
 
 	# Remove the name selector UI
