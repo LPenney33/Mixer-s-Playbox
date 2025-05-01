@@ -14,15 +14,18 @@ func _ready():
 		print("✅ Player assigned:", playerr.name)
 
 func _physics_process(delta):
+	if playerr == null:
+		print("❌ No player assigned.")
+		return
 
 	if is_red_light:
 		print("🚦 RED light is ON")
 		if player_is_moving():
 			print("🚨 Player is moving!")
-			player.die()
+			playerr.die()
 		else:
 			print("🟩 Player is NOT moving.")
-
+			
 func player_is_moving() -> bool:
 	if player == null:
 		return false
