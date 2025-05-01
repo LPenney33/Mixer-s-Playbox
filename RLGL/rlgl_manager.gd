@@ -1,32 +1,32 @@
 extends Node
-@export var player: CharacterBody3D
-@onready var playerr = $"../Player"
-var is_red_light: bool = false
 
-func set_red_light(state: bool):
-	is_red_light = state
-	print("🚦 Red Light changed: ", is_red_light)
+@export var player: CharacterBody3D
+var is_red_light := false
 
 func _ready():
-	if not playerr:
-		print("❌ Player is NOT assigned in the Inspector!")
-	else:
-		print("✅ Player assigned:", playerr.name)
 
-func _physics_process(delta):
-	if playerr == null:
-		print("❌ No player assigned.")
+	
+	if player != null:
+		print("✅ Player assigned or found:", player.name)
+	else:
+		print("❌ Still no player found.")
+
+func _physics_process(_delta):
+	if player == null:
+		print("❌ No player found.")
 		return
 
 	if is_red_light:
 		print("🚦 RED light is ON")
 		if player_is_moving():
 			print("🚨 Player is moving!")
-			playerr.die()
+			player.die()
 		else:
 			print("🟩 Player is NOT moving.")
-			
+
+func set_red_light(state: bool):
+	is_red_light = state
+	print("🚦 Red Light changed:", state)
+
 func player_is_moving() -> bool:
-	if player == null:
-		return false
-	return player.velocity.length() > 0.1  # adjust threshold if needed
+	return player != null and player.velocity.length() > 0.1
