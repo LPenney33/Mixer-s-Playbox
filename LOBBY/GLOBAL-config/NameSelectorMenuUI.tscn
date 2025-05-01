@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bx12mj2kv3etd"]
+[gd_scene load_steps=15 format=3 uid="uid://bx12mj2kv3etd"]
 
 [ext_resource type="Script" uid="uid://cm8e72eflj8q" path="res://LOBBY/GLOBAL-config/nameSelectorScripting.gd" id="1_75oy4"]
 
@@ -108,6 +108,12 @@ corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_yrh2l"]
+button_index = 2
+
+[sub_resource type="Shortcut" id="Shortcut_awjb1"]
+events = [SubResource("InputEventJoypadButton_yrh2l")]
 
 [node name="NameSelector" type="Control"]
 layout_mode = 3
@@ -253,6 +259,22 @@ grow_horizontal = 2
 scale = Vector2(3, 3)
 button_mask = 0
 
+[node name="Label" type="Label" parent="P1_Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.5
+offset_top = 148.0
+offset_right = 102.5
+offset_bottom = 197.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Player 1: Press [R1] to toggle Multiplayer"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="P2_Control" type="Node" parent="."]
 
 [node name="Panel" type="Panel" parent="P2_Control"]
@@ -347,10 +369,11 @@ button_mask = 0
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -618.0
-offset_top = 180.0
-offset_right = -445.0
-offset_bottom = 211.0
+offset_left = -536.0
+offset_top = 176.0
+offset_right = -419.0
+offset_bottom = 207.0
 grow_horizontal = 2
 scale = Vector2(3, 3)
-text = "Enable Multiplayer"
+shortcut = SubResource("Shortcut_awjb1")
+text = "Multiplayer"
