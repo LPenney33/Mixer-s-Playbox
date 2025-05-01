@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cleyfc8v6hy1e"]
+[gd_scene load_steps=27 format=3 uid="uid://cleyfc8v6hy1e"]
 
 [ext_resource type="Script" uid="uid://djowtcqfc8chk" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_srt87"]
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/floor_wood.tscn" id="3_mosly"]
@@ -10,10 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://Global Assets/OFFICIAL Building Assets/half_wall.tscn" id="8_qmdvw"]
 [ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://Global Assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="9_7x8v1"]
 [ext_resource type="PackedScene" uid="uid://dv6xewp5blt34" path="res://BOMB-TAG/scenes/bomber.tscn" id="11_h2r53"]
-[ext_resource type="Script" uid="uid://emew1gs6mbva" path="res://BOMB-TAG/scripts/timer.gd" id="13_wsk4p"]
-
-[sub_resource type="Resource" id="Resource_1mpen"]
-metadata/__load_path__ = "res://BOMB-TAG/cutscene.gd"
+[ext_resource type="Script" uid="uid://dtmf1ecyey6pe" path="res://BOMB-TAG/scripts/timer.gd" id="13_wsk4p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_owxug"]
 
@@ -89,12 +86,7 @@ outline_size = 3
 shadow_size = 2
 shadow_offset = Vector2(5, 2)
 
-[node name="Level" type="Node3D" node_paths=PackedStringArray("revolve_camera", "player_camera", "start_menu", "start_button")]
-script = SubResource("Resource_1mpen")
-revolve_camera = NodePath("Cutscene Camera")
-player_camera = NodePath("Map/Player1/Head/Camera3D")
-start_menu = NodePath("StartMenu")
-start_button = NodePath("StartMenu/Button")
+[node name="Level" type="Node3D"]
 
 [node name="Cutscene Camera" type="Camera3D" parent="."]
 transform = Transform3D(-0.337417, -0.721153, 0.605052, -0.0559255, 0.656967, 0.751842, -0.939693, 0.219846, -0.262002, 39.8896, 27.4821, -15)
@@ -1239,9 +1231,11 @@ transform = Transform3D(8, 0, 0, 0, 0.939693, -2.05212, 0, 0.34202, 5.63816, 0, 
 
 [node name="Tagger" parent="." instance=ExtResource("11_h2r53")]
 transform = Transform3D(0.5, 0, 1.06581e-14, 0, 0.5, 0, -1.06581e-14, 0, 0.5, 0, 0, 0)
+script = null
 
 [node name="Tagger2" parent="." instance=ExtResource("11_h2r53")]
 transform = Transform3D(0.5, 0, 1.06581e-14, 0, 0.5, 0, -1.06581e-14, 0, 0.5, 0, 4.1542, 0)
+script = null
 
 [node name="StartGameTimer" type="Timer" parent="."]
 wait_time = 5.0

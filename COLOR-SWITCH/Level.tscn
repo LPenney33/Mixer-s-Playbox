@@ -244,6 +244,7 @@ wait_time = 9.0
 [node name="ProtoController" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 1.29701e-05, -0.000994183, -1.35234e-05, 1, -0.000546289, 0.000994176, 0.000546303, 0.999999, -0.138779, 2.14244, -0.0684204)
 script = ExtResource("2_4mt3y")
+can_move = true
 input_left = "move_left"
 input_right = "move_right"
 input_forward = "move_up"
