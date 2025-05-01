@@ -36,12 +36,10 @@ var mouse_captured : bool = false
 var look_rotation : Vector2
 var move_speed : float = 0.0
 var freeflying : bool = false
-var death_menu_instance
 
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
-@onready var death_menu_scene = preload("res://RLGL/RLGL_Death.tscn")  # Adjust path if needed
-
+@onready var death_menu = $DeathMenu  # adjust if DeathMenu is in a different spot
 
 func _ready() -> void:
 	check_input_mappings()
@@ -65,6 +63,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			enable_freefly()
 		else:
 			disable_freefly()
+
 
 func _physics_process(delta: float) -> void:
 	if can_freefly and freeflying:
@@ -146,14 +145,15 @@ func check_input_mappings():
 			set(key, false)
 
 # When the player is tagged, immediately respawn
+func die():
+	print("💀 Player died!")
+	can_move = false
+	velocity = Vector3.ZERO
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)  # Let player use mouse
+	if death_menu:
+		death_menu.visible = true
+	else:
+		print("❌ DeathMenu not found! Check node path.")
 
 func _on_game_started() -> void:
 	can_move = true
-
-func die():
-	print("Player died!")
-	if not death_menu_instance:
-		death_menu_instance = death_menu_scene.instantiate()
-		add_child(death_menu_instance)
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		can_move = false
