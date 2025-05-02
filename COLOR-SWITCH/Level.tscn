@@ -1,7 +1,7 @@
 [gd_scene load_steps=48 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="Script" uid="uid://cdpk6bj4rkuvi" path="res://COLOR-SWITCH/color_switch.gd" id="1_iyol3"]
-[ext_resource type="Script" uid="uid://bisc62nxxk3am" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_4mt3y"]
+[ext_resource type="Script" uid="uid://djowtcqfc8chk" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_4mt3y"]
 [ext_resource type="PackedScene" uid="uid://bcbpggjb5hwwx" path="res://LOBBY/Interact/interact_ray.tscn" id="3_4mt3y"]
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/floor_wood.tscn" id="3_wfbg8"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="4_13qcr"]
@@ -239,6 +239,7 @@ input_jump = "jump"
 
 [node name="Mesh" type="MeshInstance3D" parent="Player1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_iof21")
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_ucva2")
@@ -259,8 +260,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
 target_position = Vector3(0, 0, -2)
 
 [node name="Player2" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52044, 4.93716, 0.01614)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9353, 4.85, -0.00156593)
 script = ExtResource("2_4mt3y")
+input_prefix = "p2"
 input_left = "move_left"
 input_right = "move_right"
 input_forward = "move_up"
@@ -269,6 +271,7 @@ input_jump = "jump"
 
 [node name="Mesh" type="MeshInstance3D" parent="Player2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_iof21")
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_ucva2")
@@ -6015,6 +6018,13 @@ material = SubResource("StandardMaterial3D_3lshp")
 unique_name_in_owner = true
 script = ExtResource("8_5w2yo")
 
+[node name="MultiplayerButton" type="Button" parent="HUD"]
+offset_left = 56.0
+offset_top = 216.0
+offset_right = 260.0
+offset_bottom = 296.0
+text = "CLICK FOR MULTIPLAYER!"
+
 [node name="ScoreLabel" type="Label" parent="HUD"]
 visible = false
 offset_left = 24.0
@@ -6264,5 +6274,6 @@ render_target_update_mode = 0
 [connection signal="timeout" from="Timers/SpeedUpTimer" to="." method="_on_speed_up_timer_timeout"]
 [connection signal="timeout" from="Timers/SpeedUpTimer2" to="." method="_on_speed_up_timer2_timeout"]
 [connection signal="timeout" from="Timers/SpeedUpTimer3" to="." method="_on_speed_up_timer3_timeout"]
+[connection signal="pressed" from="HUD/MultiplayerButton" to="." method="_on_multiplayer_button_pressed"]
 [connection signal="timeout" from="HUD/ColorSwitchTimer" to="." method="_on_color_switch_timer_timeout"]
 [connection signal="pressed" from="DeathScreen/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

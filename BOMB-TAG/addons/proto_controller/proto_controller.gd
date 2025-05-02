@@ -10,7 +10,6 @@ extends CharacterBody3D
 @export var can_sprint : bool = false
 ## Can we press to enter freefly mode (noclip)?
 @export var can_freefly : bool = false
-
 # --------------------------------------------------
 # Added for multiplayer setup
 @export var input_prefix : String = "p1"
@@ -96,7 +95,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = move_dir.x * move_speed if move_dir else move_toward(velocity.x, 0, move_speed)
 	velocity.z = move_dir.z * move_speed if move_dir else move_toward(velocity.z, 0, move_speed)
 	move_and_slide()
-	
+
 	var look_x = Input.get_action_strength(input_look_right) - Input.get_action_strength(input_look_left)
 	var look_y = Input.get_action_strength(input_look_down) - Input.get_action_strength(input_look_up)
 	if look_x != 0 or look_y != 0:

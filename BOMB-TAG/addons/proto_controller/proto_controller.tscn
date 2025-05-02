@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bs72ogkvdd7d6"]
 
-[ext_resource type="Script" uid="uid://bisc62nxxk3am" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="1_ucva2"]
+[ext_resource type="Script" uid="uid://djowtcqfc8chk" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="1_ucva2"]
 [ext_resource type="PackedScene" uid="uid://bcbpggjb5hwwx" path="res://LOBBY/Interact/interact_ray.tscn" id="2_oaf7c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]

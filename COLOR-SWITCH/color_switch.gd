@@ -19,6 +19,8 @@ extends Node3D
 @onready var death_label = $DeathScreen/YouDiedLabel
 @onready var death_square = $DeathScreen/DeathColorRect
 @onready var score_label = $HUD/ScoreLabel
+@onready var player1mesh = $Player1/Mesh
+@onready var player2mesh = $Player2/Mesh
 
 @onready var split_canvas: CanvasLayer = $SplitCanvas
 @onready var left_viewport: SubViewport = $SplitCanvas/SplitScreen/LeftContainer/LeftViewport
@@ -34,7 +36,8 @@ var purple = Color(0.5, 0, 1)    # Purple
 
 var colors = [red, orange, yellow, green, blue, purple]
 
-var target_position = Vector3(-0.032, 1.596, 0.504) ## Players starting point
+var target_position = Vector3(-2.238, 3.923, 0) ## Players starting point
+var target_position_other = Vector3(1.369, 4.85, 0)
 var target_platform_position = Vector3(0, 0, 0)
 var target_start_platform_position = Vector3(0, 50, 0)
 var player1_death_position = Vector3(-31, 1, -1)
@@ -56,18 +59,46 @@ var add_more_score = 0
 
 var first_time = 0
 
+var multiplayer_enabled
+
 func _ready():
 	button.connect("pressed", _on_start_button_pressed)
 	hide_all()
 	cameraStart.current = true
 	cameraPlayer1.current = false
+	multiplayer_enabled = false
 
 func hide_all():
 	for platform in platform_manager.get_children():
 		platform.visible = false
 
+
+func _on_multiplayer_button_pressed():
+	multiplayer_enabled = true
+
+
 func _on_start_button_pressed():
-	_enable_split_screen()
+
+	player1.input_prefix   = "p1"
+	player1.input_left     = "p1_left"
+	player1.input_right    = "p1_right"
+	player1.input_forward  = "p1_up"
+	player1.input_back     = "p1_down"
+
+	if multiplayer_enabled == true:
+		player2.input_prefix   = "p2"
+		player2.input_left     = "p2_left"
+		player2.input_right    = "p2_right"
+		player2.input_forward  = "p2_up"
+		player2.input_back     = "p2_down"
+		player2.can_move = true
+		player2mesh.visible = true
+		player1mesh.visible = true
+		player2.global_transform.origin = target_position_other
+		_enable_split_screen()
+
+
+
 	int_timer.start()
 	speed_timer.start()
 	hide_all()
