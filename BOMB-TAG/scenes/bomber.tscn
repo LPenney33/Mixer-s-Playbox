@@ -1,7 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://dv6xewp5blt34"]
 
 [ext_resource type="PackedScene" uid="uid://g5gvlql40lv4" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie.glb" id="1_hji5q"]
-[ext_resource type="Script" uid="uid://cxsh6ogvsg7wx" path="res://BOMB-TAG/scripts/bomber.gd" id="1_ode8r"]
+[ext_resource type="Script" uid="uid://bne6b0oykmf06" path="res://BOMB-TAG/scenes/bomber.gd" id="1_ode8r"]
+[ext_resource type="PackedScene" uid="uid://cbsfmfxp56rho" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie_idle.glb" id="2_h8bho"]
+[ext_resource type="PackedScene" uid="uid://dwkwiqmry75ec" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie_jump.glb" id="3_xcaxh"]
+[ext_resource type="PackedScene" uid="uid://dc0dhl2yib861" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie_run.glb" id="4_c3nol"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3v05w"]
 radius = 1.0
