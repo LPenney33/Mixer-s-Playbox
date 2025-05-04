@@ -44,117 +44,117 @@ var freeflying    : bool  = false
 @onready var collider : CollisionShape3D   = $Collider
 
 func _ready() -> void:
-    configure_inputs()
-    check_input_mappings()
-    look_rotation.y = rotation.y
-    look_rotation.x = head.rotation.x
-    var lvl = get_node_or_null("/root/Level")
-    if lvl:
-        lvl.connect("game_started", Callable(self, "_on_game_started"))
+	configure_inputs()
+	check_input_mappings()
+	look_rotation.y = rotation.y
+	look_rotation.x = head.rotation.x
+	var lvl = get_node_or_null("/root/Level")
+	if lvl:
+		lvl.connect("game_started", Callable(self, "_on_game_started"))
 
 func configure_inputs() -> void:
-    input_jump      = input_prefix + "_a"
-    input_left      = input_prefix + "_b"
-    input_forward   = input_prefix + "_l1"
-    input_right     = input_prefix + "_r1"
-    input_back      = input_prefix + "_l2"      # <-- changed from "_x" to "_l2"
-    # Look via your stick mappings:
-    input_look_up    = input_prefix + "_up"
-    input_look_down  = input_prefix + "_down"
-    input_look_left  = input_prefix + "_left"
-    input_look_right = input_prefix + "_right"
+	input_jump      = input_prefix + "_a"
+	input_left      = input_prefix + "_b"
+	input_forward   = input_prefix + "_l1"
+	input_right     = input_prefix + "_r1"
+	input_back      = input_prefix + "_l2"      # <-- changed from "_x" to "_l2"
+	# Look via your stick mappings:
+	input_look_up    = input_prefix + "_up"
+	input_look_down  = input_prefix + "_down"
+	input_look_left  = input_prefix + "_left"
+	input_look_right = input_prefix + "_right"
 
 func _unhandled_input(event: InputEvent) -> void:
-    if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-        capture_mouse()
-    if Input.is_key_pressed(KEY_ESCAPE):
-        release_mouse()
-    if Input.is_action_just_pressed(quit_action):
-        get_tree().quit()
-    if mouse_captured and event is InputEventMouseMotion:
-        rotate_look(event.relative * look_speed)
-    if can_freefly and Input.is_action_just_pressed(input_freefly):
-        if freeflying:
-            disable_freefly()
-        else:
-            enable_freefly()
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		capture_mouse()
+	if Input.is_key_pressed(KEY_ESCAPE):
+		release_mouse()
+	if Input.is_action_just_pressed(quit_action):
+		get_tree().quit()
+	if mouse_captured and event is InputEventMouseMotion:
+		rotate_look(event.relative * look_speed)
+	if can_freefly and Input.is_action_just_pressed(input_freefly):
+		if freeflying:
+			disable_freefly()
+		else:
+			enable_freefly()
 
 func _physics_process(delta: float) -> void:
-    # Freefly
-    if can_freefly and freeflying:
-        var df = Input.get_vector(input_left, input_right, input_forward, input_back)
-        var m  = (head.global_basis * Vector3(df.x,0,df.y)).normalized() * freefly_speed * delta
-        move_and_collide(m)
-        return
+	# Freefly
+	if can_freefly and freeflying:
+		var df = Input.get_vector(input_left, input_right, input_forward, input_back)
+		var m  = (head.global_basis * Vector3(df.x,0,df.y)).normalized() * freefly_speed * delta
+		move_and_collide(m)
+		return
 
-    # Locked / gravity-only
-    if not can_move:
-        velocity.x = 0; velocity.z = 0
-        if has_gravity and not is_on_floor():
-            velocity += get_gravity() * delta
-        move_and_slide()
-        return
+	# Locked / gravity-only
+	if not can_move:
+		velocity.x = 0; velocity.z = 0
+		if has_gravity and not is_on_floor():
+			velocity += get_gravity() * delta
+		move_and_slide()
+		return
 
-    # Gravity & jump
-    if has_gravity and not is_on_floor():
-        velocity += get_gravity() * delta
-    if can_jump and Input.is_action_just_pressed(input_jump) and is_on_floor():
-        velocity.y = jump_velocity
+	# Gravity & jump
+	if has_gravity and not is_on_floor():
+		velocity += get_gravity() * delta
+	if can_jump and Input.is_action_just_pressed(input_jump) and is_on_floor():
+		velocity.y = jump_velocity
 
-    # Movement via B, L1, R1, L2 buttons
-    move_speed = sprint_speed if (can_sprint and Input.is_action_pressed(input_sprint)) else base_speed
-    var dv = Vector2(
-        Input.get_action_strength(input_right) - Input.get_action_strength(input_left),
-        Input.get_action_strength(input_back)  - Input.get_action_strength(input_forward)
-    )
-    var md = (transform.basis * Vector3(dv.x,0,dv.y)).normalized()
-    if md != Vector3.ZERO:
-        velocity.x = md.x * move_speed
-        velocity.z = md.z * move_speed
-    else:
-        velocity.x = move_toward(velocity.x,0,move_speed)
-        velocity.z = move_toward(velocity.z,0,move_speed)
+	# Movement via B, L1, R1, L2 buttons
+	move_speed = sprint_speed if (can_sprint and Input.is_action_pressed(input_sprint)) else base_speed
+	var dv = Vector2(
+		Input.get_action_strength(input_right) - Input.get_action_strength(input_left),
+		Input.get_action_strength(input_back)  - Input.get_action_strength(input_forward)
+	)
+	var md = (transform.basis * Vector3(dv.x,0,dv.y)).normalized()
+	if md != Vector3.ZERO:
+		velocity.x = md.x * move_speed
+		velocity.z = md.z * move_speed
+	else:
+		velocity.x = move_toward(velocity.x,0,move_speed)
+		velocity.z = move_toward(velocity.z,0,move_speed)
 
-    move_and_slide()
+	move_and_slide()
 
-    # Look via joystick-axis actions
-    var lx = Input.get_action_strength(input_look_right) - Input.get_action_strength(input_look_left)
-    var ly = Input.get_action_strength(input_look_down)  - Input.get_action_strength(input_look_up)
-    if lx != 0 or ly != 0:
-        rotate_look(Vector2(lx,ly)*controller_look_sensitivity*delta)
+	# Look via joystick-axis actions
+	var lx = Input.get_action_strength(input_look_right) - Input.get_action_strength(input_look_left)
+	var ly = Input.get_action_strength(input_look_down)  - Input.get_action_strength(input_look_up)
+	if lx != 0 or ly != 0:
+		rotate_look(Vector2(lx,ly)*controller_look_sensitivity*delta)
 
 func rotate_look(v: Vector2) -> void:
-    look_rotation.x = clamp(look_rotation.x - v.y, deg_to_rad(-85), deg_to_rad(85))
-    look_rotation.y -= v.x
-    transform.basis = Basis()
-    rotate_y(look_rotation.y)
-    head.transform.basis = Basis()
-    head.rotate_x(look_rotation.x)
+	look_rotation.x = clamp(look_rotation.x - v.y, deg_to_rad(-85), deg_to_rad(85))
+	look_rotation.y -= v.x
+	transform.basis = Basis()
+	rotate_y(look_rotation.y)
+	head.transform.basis = Basis()
+	head.rotate_x(look_rotation.x)
 
 func enable_freefly():
-    collider.disabled = true; freeflying = true; velocity = Vector3.ZERO
+	collider.disabled = true; freeflying = true; velocity = Vector3.ZERO
 
 func disable_freefly():
-    collider.disabled = false; freeflying = false
+	collider.disabled = false; freeflying = false
 
 func capture_mouse():
-    Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED); mouse_captured = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED); mouse_captured = true
 
 func release_mouse():
-    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE); mouse_captured = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE); mouse_captured = false
 
 func check_input_mappings():
-    for a in [input_left,input_right,input_forward,input_back,
-              input_jump,input_look_up,input_look_down,
-              input_look_left,input_look_right,quit_action]:
-        if a != "" and not InputMap.has_action(a):
-            push_error("Missing InputMap: %s"%a)
+	for a in [input_left,input_right,input_forward,input_back,
+			  input_jump,input_look_up,input_look_down,
+			  input_look_left,input_look_right,quit_action]:
+		if a != "" and not InputMap.has_action(a):
+			push_error("Missing InputMap: %s"%a)
 
 func kill():
-    can_move = false; velocity = Vector3.ZERO; respawn()
+	can_move = false; velocity = Vector3.ZERO; respawn()
 
 func respawn():
-    global_transform.origin = Vector3(0,10,0); velocity = Vector3.ZERO; can_move = true
+	global_transform.origin = Vector3(0,10,0); velocity = Vector3.ZERO; can_move = true
 
 func _on_game_started() -> void:
-    can_move = true
+	can_move = true
