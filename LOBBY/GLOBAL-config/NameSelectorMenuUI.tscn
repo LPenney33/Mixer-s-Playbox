@@ -94,16 +94,17 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_yrh2l"]
-button_index = 2
-
 [sub_resource type="InputEventKey" id="InputEventKey_yrh2l"]
 device = -1
 keycode = 76
 unicode = 108
 
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_yrh2l"]
+button_index = 10
+pressed = true
+
 [sub_resource type="Shortcut" id="Shortcut_awjb1"]
-events = [SubResource("InputEventJoypadButton_yrh2l"), SubResource("InputEventKey_yrh2l")]
+events = [SubResource("InputEventKey_yrh2l"), SubResource("InputEventJoypadButton_yrh2l")]
 
 [node name="NameSelector" type="Control"]
 layout_mode = 3

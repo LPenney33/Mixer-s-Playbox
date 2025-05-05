@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cleyfc8v6hy1e"]
+[gd_scene load_steps=28 format=3 uid="uid://cleyfc8v6hy1e"]
 
 [ext_resource type="Script" uid="uid://b55k3fy75mqr3" path="res://BOMB-TAG/scripts/cutscene.gd" id="1_2cssc"]
 [ext_resource type="Script" uid="uid://bisc62nxxk3am" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_srt87"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://Global Assets/OFFICIAL Building Assets/half_wall.tscn" id="8_qmdvw"]
 [ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://Global Assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="9_7x8v1"]
 [ext_resource type="PackedScene" uid="uid://dv6xewp5blt34" path="res://BOMB-TAG/scenes/bomber.tscn" id="11_h2r53"]
-[ext_resource type="Script" uid="uid://cxsh6ogvsg7wx" path="res://BOMB-TAG/scripts/bomber.gd" id="12_n7u00"]
 [ext_resource type="Script" uid="uid://emew1gs6mbva" path="res://BOMB-TAG/scripts/timer.gd" id="13_wsk4p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_owxug"]
@@ -1238,11 +1237,9 @@ transform = Transform3D(8, 0, 0, 0, 0.939693, -2.05212, 0, 0.34202, 5.63816, 0, 
 
 [node name="Tagger" parent="." instance=ExtResource("11_h2r53")]
 transform = Transform3D(0.5, 0, 1.06581e-14, 0, 0.5, 0, -1.06581e-14, 0, 0.5, 0, 0, 0)
-script = ExtResource("12_n7u00")
 
 [node name="Tagger2" parent="." instance=ExtResource("11_h2r53")]
 transform = Transform3D(0.5, 0, 1.06581e-14, 0, 0.5, 0, -1.06581e-14, 0, 0.5, 0, 4.1542, 0)
-script = ExtResource("12_n7u00")
 
 [node name="StartGameTimer" type="Timer" parent="."]
 wait_time = 5.0

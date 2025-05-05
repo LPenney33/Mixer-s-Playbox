@@ -57,9 +57,7 @@ use_collision = true
 size = Vector3(34.25, 28.75, 1)
 
 [node name="Player1" parent="." instance=ExtResource("1_5svd6")]
-transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -24.0063, 0.526559, 1.05674)
-can_sprint = true
-can_freefly = true
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -23.75, 0, 1.5)
 
 [node name="Player2" parent="." instance=ExtResource("1_5svd6")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -24.0063, 0.526559, 9.80674)
