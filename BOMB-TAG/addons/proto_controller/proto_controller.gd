@@ -1,13 +1,17 @@
 extends CharacterBody3D
 
-## ———————— General flags ————————
-@export var can_move     : bool  = false
-@export var has_gravity  : bool  = true
-@export var can_jump     : bool  = true
-@export var can_sprint   : bool  = false
-@export var can_freefly  : bool  = false
-
-## ——— Multiplayer settings (set by Lobby) ———
+## Can we move around?
+@export var can_move : bool = false  # Disabled until game start
+## Are we affected by gravity?
+@export var has_gravity : bool = true
+## Can we press to jump?
+@export var can_jump : bool = true
+## Can we hold to run?
+@export var can_sprint : bool = false
+## Can we press to enter freefly mode (noclip)?
+@export var can_freefly : bool = false
+# --------------------------------------------------
+# Added for multiplayer setup
 @export var input_prefix : String = "p1"
 @export var username     : String = ""
 
@@ -103,17 +107,16 @@ func _physics_process(delta: float) -> void:
 
 	# Movement via B, L1, R1, L2 buttons
 	move_speed = sprint_speed if (can_sprint and Input.is_action_pressed(input_sprint)) else base_speed
-	var dv = Vector2(
-		Input.get_action_strength(input_right) - Input.get_action_strength(input_left),
-		Input.get_action_strength(input_back)  - Input.get_action_strength(input_forward)
-	)
-	var md = (transform.basis * Vector3(dv.x,0,dv.y)).normalized()
-	if md != Vector3.ZERO:
-		velocity.x = md.x * move_speed
-		velocity.z = md.z * move_speed
-	else:
-		velocity.x = move_toward(velocity.x,0,move_speed)
-		velocity.z = move_toward(velocity.z,0,move_speed)
+	var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
+	var move_dir := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	velocity.x = move_dir.x * move_speed if move_dir else move_toward(velocity.x, 0, move_speed)
+	velocity.z = move_dir.z * move_speed if move_dir else move_toward(velocity.z, 0, move_speed)
+	move_and_slide()
+
+	var look_x = Input.get_action_strength(input_look_right) - Input.get_action_strength(input_look_left)
+	var look_y = Input.get_action_strength(input_look_down) - Input.get_action_strength(input_look_up)
+	if look_x != 0 or look_y != 0:
+		rotate_look(Vector2(look_x, look_y) * controller_look_sensitivity * delta)
 
 	move_and_slide()
 
