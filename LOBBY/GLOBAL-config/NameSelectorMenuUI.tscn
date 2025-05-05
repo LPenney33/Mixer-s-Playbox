@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bx12mj2kv3etd"]
 
-[ext_resource type="Script" uid="uid://cm8e72eflj8q" path="res://LOBBY/GLOBAL-config/nameSelectorScripting.gd" id="1_75oy4"]
+[ext_resource type="Script" path="res://LOBBY/GLOBAL-config/nameSelectorScripting.gd" id="1_75oy4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75oy4"]
 bg_color = Color(0.774662, 0.776563, 0.468518, 1)

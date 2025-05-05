@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://Global Assets/OFFICIAL Building Assets/half_wall.tscn" id="8_qmdvw"]
 [ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://Global Assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="9_7x8v1"]
 [ext_resource type="PackedScene" uid="uid://dv6xewp5blt34" path="res://BOMB-TAG/scenes/bomber.tscn" id="11_h2r53"]
-[ext_resource type="Script" uid="uid://dtmf1ecyey6pe" path="res://BOMB-TAG/scripts/timer.gd" id="13_wsk4p"]
+[ext_resource type="Script" uid="uid://emew1gs6mbva" path="res://BOMB-TAG/scripts/timer.gd" id="13_wsk4p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_owxug"]
 

@@ -18,10 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://Global Assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="18_qwdpg"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="19_g8u60"]
 [ext_resource type="PackedScene" uid="uid://bx12mj2kv3etd" path="res://LOBBY/GLOBAL-config/NameSelectorMenuUI.tscn" id="20_i0j28"]
-[ext_resource type="Script" uid="uid://6q78mqsmomal" path="res://LOBBY/Scripts/rlglTransitionTorch.gd" id="21_od0gi"]
-[ext_resource type="Script" uid="uid://ep0raa4apk7i" path="res://LOBBY/Scripts/csTransitionTorch.gd" id="22_ieyhh"]
+[ext_resource type="Script" path="res://LOBBY/Scripts/rlglTransitionTorch.gd" id="21_od0gi"]
+[ext_resource type="Script" path="res://LOBBY/Scripts/csTransitionTorch.gd" id="22_ieyhh"]
 [ext_resource type="PackedScene" uid="uid://1367mm0hhlt4" path="res://Global Assets/OFFICIAL Building Assets/wall_cracked.tscn" id="22_qdeey"]
-[ext_resource type="Script" uid="uid://bvdets0lcgiql" path="res://LOBBY/Interact/interactable.gd" id="22_wtp6t"]
+[ext_resource type="Script" path="res://LOBBY/Interact/interactable.gd" id="22_wtp6t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mc2qy"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
