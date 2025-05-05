@@ -57,7 +57,9 @@ use_collision = true
 size = Vector3(34.25, 28.75, 1)
 
 [node name="Player1" parent="." instance=ExtResource("1_5svd6")]
-transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -23.75, 0, 1.5)
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -24.0063, 0.526559, 1.05674)
+can_sprint = true
+can_freefly = true
 
 [node name="Player2" parent="." instance=ExtResource("1_5svd6")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -24.0063, 0.526559, 9.80674)
@@ -494,7 +496,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.24512, 2.38419e-07, 0.5413
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -5.5, 1.7, 0.075)
 script = ExtResource("22_wtp6t")
 prompt_message = "Press [X] to Interact"
-LevelPath = "res://COLOR-SWITCH/Level.tscn"
 
 [node name="CS_OmniLight" type="OmniLight3D" parent="Room2/TransitionTorches/CS_Torch"]
 transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.34202, 2.63612e-09, 0.34202, 0.939693, 0, 0.689168, 0.342449)
