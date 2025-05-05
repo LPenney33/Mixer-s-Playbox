@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1l5ym45hmh1"]
+[gd_scene load_steps=9 format=3 uid="uid://c1l5ym45hmh1"]
 
 [ext_resource type="Script" uid="uid://cpbotg5tskv4n" path="res://RLGL/rlgl_death.gd" id="1_3mcqv"]
 
@@ -10,36 +10,6 @@ draw_center = false
 
 [sub_resource type="Theme" id="Theme_8kpd0"]
 Label/styles/normal = SubResource("StyleBoxFlat_qksff")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3all"]
-bg_color = Color(0.027451, 0, 0.976471, 1)
-border_color = Color(0.0290194, 0, 0.978444, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtswx"]
-bg_color = Color(0.027451, 0.184314, 1, 1)
-border_width_left = 8
-border_width_bottom = 8
-border_color = Color(0.0290194, 0, 0.978444, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxxq6"]
-bg_color = Color(0.0180035, 0, 0.810203, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="Theme" id="Theme_bx2fu"]
-Button/styles/hover = SubResource("StyleBoxFlat_o3all")
-Button/styles/normal = SubResource("StyleBoxFlat_xtswx")
-Button/styles/pressed = SubResource("StyleBoxFlat_uxxq6")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_la72w"]
 bg_color = Color(0.455403, 1.07693e-06, 2.16588e-07, 1)
@@ -113,13 +83,6 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 150
 text = "You Died :("
 horizontal_alignment = 1
-
-[node name="RestartButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_bx2fu")
-theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 60
-text = "Restart"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2

@@ -39,7 +39,7 @@ var freeflying : bool = false
 
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
-@onready var death_menu = $DeathMenu  # adjust if DeathMenu is in a different spot
+@onready var death_menu = $"../DeathMenu" # adjust if DeathMenu is in a different spot
 
 func _ready() -> void:
 	check_input_mappings()

@@ -3,13 +3,18 @@ extends AnimationPlayer
 @onready var anim_player = $"../AnimationPlayer"
 @onready var timer = $Timer
 @onready var status_light = $"../Rig/Skeleton3D/Skeleton_Mage_Hat/RedGreenLight" # Adjust path to your light node
+@onready var kill_buffer_timer = $KillBufferTimer
+
+@export var player: CharacterBody3D
 
 var is_red_light = false  # Track if it's red light
 
 func _ready():
 	anim_player.play("Startup")  
 	anim_player.animation_finished.connect(_on_animation_finished)
+	anim_player.animation_started.connect(_on_animation_started)  # ✅ This was missing
 	timer.timeout.connect(_on_Timer_timeout)
+	kill_buffer_timer.timeout.connect(_on_kill_buffer_timeout)
 	if is_red_light:
 		print("🚦 Red Light is active!")
 func _process(_delta):
@@ -20,10 +25,17 @@ func _process(_delta):
 		status_light.light_color = Color.LIME_GREEN  # Or use Color(0, 1, 0)
 
 func _on_animation_started(anim_name):
-	if anim_name == "Red_Light":  # Make sure the name matches the animation
-		get_node("../Player").set_red_light(true)
+	if anim_name == "Red_Light":
+		print("🚦 Red light started.")
+		RlglManager.set_red_light(true)
+		is_red_light = true
+		status_light.light_color = Color.RED
+		kill_buffer_timer.start()  # Wait before checking if player is moving
 	elif anim_name == "Green_Light":
-		get_node("../Player").set_red_light(false)
+		print("🟢 Green light started.")
+		RlglManager.set_red_light(false)
+		is_red_light = false
+		status_light.light_color = Color.LIME_GREEN
 
 func _on_animation_finished(anim_name):
 	if anim_name == "Startup":
@@ -65,3 +77,12 @@ func _pon_animation_started(anim_name):
 		get_node("../Player").set_red_light(false)
 		print("🚦 Green light started.")
 		RlglManager.is_red_light = false
+func kill_if_moving():
+	if player and player.velocity.length() > 0.1:
+		print("🚨 Player was moving during RED light!")
+		player.die()
+	else:
+		print("🟩 Player is safe.")
+
+func _on_kill_buffer_timeout():
+	kill_if_moving()
