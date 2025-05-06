@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs72ogkvdd7d6"]
+[gd_scene load_steps=6 format=3 uid="uid://bs72ogkvdd7d6"]
 
-[ext_resource type="Script" uid="uid://bisc62nxxk3am" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="1_ucva2"]
+[ext_resource type="Script" uid="uid://djowtcqfc8chk" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="1_ucva2"]
 [ext_resource type="PackedScene" uid="uid://bcbpggjb5hwwx" path="res://LOBBY/Interact/interact_ray.tscn" id="2_oaf7c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
@@ -9,11 +9,6 @@ albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ucva2"]
 radius = 0.4
 height = 1.8
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oaf7c"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxqc7"]
-albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
 radius = 0.4
@@ -32,38 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 material_override = SubResource("StandardMaterial3D_iof21")
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_ucva2")
-
-[node name="LeftEye" type="Node" parent="Mesh"]
-
-[node name="White" type="CSGSphere3D" parent="Mesh/LeftEye"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 1.375, -0.35)
-radius = 0.1
-radial_segments = 100
-rings = 100
-material = SubResource("StandardMaterial3D_oaf7c")
-
-[node name="Black" type="CSGSphere3D" parent="Mesh/LeftEye"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 1.375, -0.405)
-radius = 0.05
-radial_segments = 100
-rings = 100
-material = SubResource("StandardMaterial3D_nxqc7")
-
-[node name="RightEye" type="Node" parent="Mesh"]
-
-[node name="White" type="CSGSphere3D" parent="Mesh/RightEye"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 1.375, -0.35)
-radius = 0.1
-radial_segments = 100
-rings = 100
-material = SubResource("StandardMaterial3D_oaf7c")
-
-[node name="Black" type="CSGSphere3D" parent="Mesh/RightEye"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 1.375, -0.405)
-radius = 0.05
-radial_segments = 100
-rings = 100
-material = SubResource("StandardMaterial3D_nxqc7")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
