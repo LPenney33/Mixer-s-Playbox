@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var move_speed: float = 2.0
-@export var stop_x_position: float = 107.0  # X position to stop at
+@export var stop_x_position: float = 217.0  # X position to stop at
 var started := false
 var delay_timer := 0.0
 var ignoring_red_light := false  # Should this NPC break the rules this round?

@@ -32,7 +32,7 @@ extends CharacterBody3D
 @export var input_look_up : String = "look_up"
 @export var input_look_down : String = "look_down"
 
-@export var goal_x_position : float = 107.0  # Shared goal X value for the player
+@export var goal_x_position : float = 217.0  # Shared goal X value for the player
 
 var mouse_captured : bool = false
 var look_rotation : Vector2
@@ -42,6 +42,7 @@ var freeflying : bool = false
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
 @onready var death_menu = $"../DeathMenu" # adjust if DeathMenu is in a different spot
+@onready var win_menu = $"../Win Screen"
 
 func _ready() -> void:
 	check_input_mappings()
@@ -73,6 +74,8 @@ func _physics_process(delta: float) -> void:
 		# Stop movement if the player is at or past the goal
 		velocity.x = 0
 		velocity.z = 0
+		win_menu.visible = true
+		release_mouse()
 		return  # No further movement
 
 	if can_freefly and freeflying:

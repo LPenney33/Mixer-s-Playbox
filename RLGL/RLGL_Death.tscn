@@ -4,14 +4,14 @@
 
 [sub_resource type="Theme" id="Theme_pfame"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qksff"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5rs2"]
 bg_color = Color(0.589096, 0.589096, 0.589095, 1)
 draw_center = false
 
 [sub_resource type="Theme" id="Theme_8kpd0"]
-Label/styles/normal = SubResource("StyleBoxFlat_qksff")
+Label/styles/normal = SubResource("StyleBoxFlat_m5rs2")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_la72w"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxthj"]
 bg_color = Color(0.455403, 1.07693e-06, 2.16588e-07, 1)
 border_color = Color(0.639216, 0, 0, 1)
 corner_radius_top_left = 15
@@ -19,7 +19,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlyjk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3op5x"]
 bg_color = Color(0.638884, 1.29953e-06, 2.40654e-07, 1)
 border_width_left = 8
 border_width_bottom = 8
@@ -29,7 +29,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k22vv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3bo12"]
 bg_color = Color(0.365403, 1.95531e-07, 1.68458e-07, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
@@ -37,9 +37,9 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="Theme" id="Theme_mlaxj"]
-Button/styles/hover = SubResource("StyleBoxFlat_la72w")
-Button/styles/normal = SubResource("StyleBoxFlat_hlyjk")
-Button/styles/pressed = SubResource("StyleBoxFlat_k22vv")
+Button/styles/hover = SubResource("StyleBoxFlat_gxthj")
+Button/styles/normal = SubResource("StyleBoxFlat_3op5x")
+Button/styles/pressed = SubResource("StyleBoxFlat_3bo12")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
