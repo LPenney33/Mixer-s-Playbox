@@ -58,7 +58,6 @@ size = Vector3(34.25, 28.75, 1)
 
 [node name="Player1" parent="." instance=ExtResource("1_5svd6")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -23.75, 0, 1.5)
-can_sprint = true
 can_freefly = true
 base_speed = 5.0
 jump_velocity = 3.0
@@ -66,7 +65,6 @@ jump_velocity = 3.0
 [node name="Player2" parent="." instance=ExtResource("1_5svd6")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -24.0063, 0.526559, 9.80674)
 visible = false
-can_sprint = true
 can_freefly = true
 base_speed = 5.0
 jump_velocity = 3.0
@@ -169,9 +167,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.5, 
 
 [node name="wall_archedwindow_gated" parent="Room1/Build/Walls" instance=ExtResource("8_oufsh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.5, 0, 3.5)
-
-[node name="wall_archedwindow_gated2" parent="Room1/Build/Walls" instance=ExtResource("8_oufsh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -17.5, 0, 11)
 
 [node name="wall_window_closed" parent="Room1/Build/Walls" instance=ExtResource("9_ttrip")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -13.5, 0, 0)
@@ -282,16 +277,16 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3313, -1.78814e-07, 16.2003)
 
 [node name="ceiling15" parent="Room1/Misc_" instance=ExtResource("13_kixn4")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.25, 4, 13.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.75, 4, 13.5)
 
 [node name="ceiling16" parent="Room1/Misc_" instance=ExtResource("13_kixn4")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.25, 4, 13.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.75, 4, 13.5)
 
 [node name="ceiling17" parent="Room1/Misc_" instance=ExtResource("13_kixn4")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.25, 4, 17.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.75, 4, 17.5)
 
 [node name="ceiling18" parent="Room1/Misc_" instance=ExtResource("13_kixn4")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.25, 4, 17.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.75, 4, 17.5)
 
 [node name="floor_wood16" parent="Room1/Misc_" instance=ExtResource("14_6g5bq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7451, 2.38419e-07, 12.5413)
@@ -328,6 +323,10 @@ transform = Transform3D(1, -1.49502e-08, 2.63612e-09, 1.49502e-08, 0.939693, -0.
 light_color = Color(0.730085, 0.407925, 0.248344, 1)
 omni_range = 14.0
 omni_attenuation = 1.5
+
+[node name="wall_archedwindow_gated" parent="Room1/Misc_" instance=ExtResource("8_oufsh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 0, 11)
+collision_layer = 2
 
 [node name="Room2" type="Node3D" parent="."]
 
