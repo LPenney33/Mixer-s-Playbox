@@ -32,6 +32,8 @@ extends CharacterBody3D
 @export var input_look_up : String = "look_up"
 @export var input_look_down : String = "look_down"
 
+@export var goal_x_position : float = 107.0  # Shared goal X value for the player
+
 var mouse_captured : bool = false
 var look_rotation : Vector2
 var move_speed : float = 0.0
@@ -66,7 +68,15 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# Check if the player has reached or passed the goal X position (107)
+	if global_position.x >= goal_x_position:
+		# Stop movement if the player is at or past the goal
+		velocity.x = 0
+		velocity.z = 0
+		return  # No further movement
+
 	if can_freefly and freeflying:
+		@warning_ignore("confusable_local_declaration")
 		var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
 		var motion := (head.global_basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		motion *= freefly_speed * delta
@@ -146,14 +156,11 @@ func check_input_mappings():
 
 # When the player is tagged, immediately respawn
 func die():
-	print("💀 Player died!")
 	can_move = false
 	velocity = Vector3.ZERO
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)  # Let player use mouse
 	if death_menu:
 		death_menu.visible = true
-	else:
-		print("❌ DeathMenu not found! Check node path.")
 
 func _on_game_started() -> void:
 	can_move = true

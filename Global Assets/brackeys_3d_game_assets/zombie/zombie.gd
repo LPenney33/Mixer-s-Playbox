@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var move_speed: float = 2.0
+@export var stop_x_position: float = 107.0  # X position to stop at
 var started := false
 var delay_timer := 0.0
 var ignoring_red_light := false  # Should this NPC break the rules this round?
@@ -34,16 +35,19 @@ func _physics_process(delta):
 			# Move and check for punishment every frame
 			var moved = move_forward(delta)
 			if moved:
-				print("💀 Zombie got caught cheating! Deleting...")
 				queue_free()
 				return
 		else:
 			is_moving = false
 			return  # Stay still during red light if not cheating
 
+	# Check if the X position has passed the target
+	if global_position.x >= stop_x_position:
+		is_moving = false  # Stop moving once we pass the X threshold
+		return
 
+	# Keep moving forward until the stop position is reached
 	move_forward(delta)
-
 
 func move_forward(delta):
 	var forward = global_transform.basis.z.normalized()
@@ -52,6 +56,3 @@ func move_forward(delta):
 
 	is_moving = velocity.length() > 0.001
 	return is_moving  # Return if we moved
-
-	# Debugging: Print the position to ensure it's moving
-	print("Zombie Position: ", global_position)

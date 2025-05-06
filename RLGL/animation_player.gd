@@ -78,7 +78,7 @@ func _pon_animation_started(anim_name):
 		print("🚦 Green light started.")
 		RlglManager.is_red_light = false
 func kill_if_moving():
-	if player and player.velocity.length() > 0.1:
+	if is_red_light and player and player.velocity.length() > 0.1:
 		print("🚨 Player was moving during RED light!")
 		player.die()
 	else:

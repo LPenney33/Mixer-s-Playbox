@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://kap20mckuqp7"]
+[gd_scene load_steps=8 format=4 uid="uid://dvfjgf7tpo6k2"]
 
+[ext_resource type="Script" uid="uid://xu5clo6x1xlp" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie.gd" id="1_fn6p3"]
 [ext_resource type="Script" uid="uid://clmb8ykr4d3xv" path="res://Global Assets/brackeys_3d_game_assets/zombie/zombie.gd" id="1_fn6p3"]
 [ext_resource type="Texture2D" uid="uid://duicp6q78rni8" path="res://BOMB-TAG/assets/brackeys_3d_game_assets/zombie/zombie_albedo.png" id="2_7iqbq"]
 
@@ -876,6 +877,13 @@ bones/58/enabled = true
 bones/58/position = Vector3(-5.02514e-08, 0.213236, 1.04774e-09)
 bones/58/rotation = Quaternion(-3.79514e-08, -6.01169e-07, 3.79077e-09, 1)
 bones/58/scale = Vector3(1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skeleton3D"]
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_5xo6t")
+}
+autoplay = "Run"
 
 [node name="characterMedium" type="MeshInstance3D" parent="Skeleton3D"]
 mesh = SubResource("ArrayMesh_rvpl8")
