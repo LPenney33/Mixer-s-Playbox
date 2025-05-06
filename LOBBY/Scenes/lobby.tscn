@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://boqt6aedc5k2e"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="1_5svd6"]
-[ext_resource type="Script" path="res://LOBBY/Scripts/lobby.gd" id="1_7npox"]
+[ext_resource type="Script" uid="uid://o41ame7ts6fr" path="res://LOBBY/Scripts/lobby.gd" id="1_7npox"]
 [ext_resource type="PackedScene" uid="uid://bxomekkp44vay" path="res://Global Assets/OFFICIAL Building Assets/torch.tscn" id="4_7uu27"]
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="5_pvsig"]
 [ext_resource type="PackedScene" uid="uid://6n8achi2iynu" path="res://Global Assets/OFFICIAL Building Assets/wall_corner.tscn" id="6_xsi3p"]
@@ -58,6 +58,8 @@ size = Vector3(34.25, 28.75, 1)
 
 [node name="Player1" parent="." instance=ExtResource("1_5svd6")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -23.75, 0, 1.5)
+can_sprint = true
+can_freefly = true
 
 [node name="Player2" parent="." instance=ExtResource("1_5svd6")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -24.0063, 0.526559, 9.80674)
@@ -508,6 +510,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0.18)
 outline_modulate = Color(0.562585, 0.00451332, 1, 1)
 text = "Color Switch"
 
+[node name="CS_Label2" type="Label3D" parent="Room2/TransitionTorches/CS_Torch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65, 0.18)
+outline_modulate = Color(0.562585, 0.00451332, 1, 1)
+text = "Press [X] To Interact"
+
 [node name="TAG_Torch" parent="Room2/TransitionTorches" instance=ExtResource("4_7uu27")]
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -1.5, 1.7, 0.075)
 script = ExtResource("22_wtp6t")
@@ -526,6 +533,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0.18)
 outline_modulate = Color(3.85046e-07, 0.784806, 0.789466, 1)
 text = "Zombie Tag
 "
+
+[node name="TAG_Label2" type="Label3D" parent="Room2/TransitionTorches/TAG_Torch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65, 0.18)
+outline_modulate = Color(3.85046e-07, 0.784806, 0.789466, 1)
+text = "Press [X] To Interact"
 
 [node name="RLGL_Torch" parent="Room2/TransitionTorches" instance=ExtResource("4_7uu27")]
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 2.5, 1.7, 0.075)
@@ -550,6 +562,16 @@ text = "Red Light
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.35, 0.18)
 outline_modulate = Color(0, 1, 0, 1)
 text = " Green Light"
+
+[node name="RLGL_Label4" type="Label3D" parent="Room2/TransitionTorches/RLGL_Torch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.65, 0.18)
+outline_modulate = Color(0, 1, 0, 1)
+text = "To Interact"
+
+[node name="RLGL_Label3" type="Label3D" parent="Room2/TransitionTorches/RLGL_Torch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.486855, -0.65, 0.18)
+outline_modulate = Color(0.996078, 0, 0, 1)
+text = "Press [X] "
 
 [node name="Scoreboard" type="Node" parent="Room2"]
 

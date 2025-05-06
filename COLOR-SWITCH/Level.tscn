@@ -1,14 +1,13 @@
-[gd_scene load_steps=48 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=44 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="Script" uid="uid://cdpk6bj4rkuvi" path="res://COLOR-SWITCH/color_switch.gd" id="1_iyol3"]
-[ext_resource type="Script" uid="uid://djowtcqfc8chk" path="res://BOMB-TAG/addons/proto_controller/proto_controller.gd" id="2_4mt3y"]
-[ext_resource type="PackedScene" uid="uid://bcbpggjb5hwwx" path="res://LOBBY/Interact/interact_ray.tscn" id="3_4mt3y"]
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/floor_wood.tscn" id="3_wfbg8"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="4_13qcr"]
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="5_4y1eh"]
-[ext_resource type="Script" uid="uid://cta1tlul583at" path="res://COLOR-SWITCH/platforms.gd" id="6_36ef6"]
+[ext_resource type="Script" path="res://COLOR-SWITCH/platforms.gd" id="6_36ef6"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="7_iyol3"]
 [ext_resource type="Script" uid="uid://cljex2s47i161" path="res://COLOR-SWITCH/ThatTile.gd" id="7_vpoqu"]
-[ext_resource type="Script" uid="uid://tatpd88ul1w0" path="res://COLOR-SWITCH/hud.gd" id="8_5w2yo"]
+[ext_resource type="Script" path="res://COLOR-SWITCH/hud.gd" id="8_5w2yo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3rrl"]
 sky_top_color = Color(0.262805, 0.254747, 0.527349, 1)
@@ -23,17 +22,6 @@ sky_material = SubResource("ProceduralSkyMaterial_t3rrl")
 background_mode = 2
 sky = SubResource("Sky_5lwlc")
 tonemap_mode = 2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
-albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ucva2"]
-radius = 0.4
-height = 1.8
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
-radius = 0.4
-height = 1.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tp4i5"]
 transparency = 1
@@ -226,70 +214,6 @@ shadow_enabled = true
 unique_name_in_owner = true
 transform = Transform3D(0.107005, 0.697864, -0.708192, -0.0786227, 0.715991, 0.693669, 0.991145, -0.0185459, 0.131482, -32, 38, 5)
 fov = 35.0
-
-[node name="Player1" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23781, 3.92267, 0)
-script = ExtResource("2_4mt3y")
-can_move = true
-input_left = "move_left"
-input_right = "move_right"
-input_forward = "move_up"
-input_back = "move_down"
-input_jump = "jump"
-
-[node name="Mesh" type="MeshInstance3D" parent="Player1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-visible = false
-material_override = SubResource("StandardMaterial3D_iof21")
-cast_shadow = 0
-mesh = SubResource("CapsuleMesh_ucva2")
-
-[node name="Collider" type="CollisionShape3D" parent="Player1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-shape = SubResource("CapsuleShape3D_iof21")
-
-[node name="Head" type="Node3D" parent="Player1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Player1/Head" groups=["main_cameras"]]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
-
-[node name="InteractRay" parent="Player1/Head" instance=ExtResource("3_4mt3y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
-target_position = Vector3(0, 0, -2)
-
-[node name="Player2" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9353, 4.85, -0.00156593)
-script = ExtResource("2_4mt3y")
-input_prefix = "p2"
-input_left = "move_left"
-input_right = "move_right"
-input_forward = "move_up"
-input_back = "move_down"
-input_jump = "jump"
-
-[node name="Mesh" type="MeshInstance3D" parent="Player2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-visible = false
-material_override = SubResource("StandardMaterial3D_iof21")
-cast_shadow = 0
-mesh = SubResource("CapsuleMesh_ucva2")
-
-[node name="Collider" type="CollisionShape3D" parent="Player2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-shape = SubResource("CapsuleShape3D_iof21")
-
-[node name="Head" type="Node3D" parent="Player2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
-
-[node name="Camera3D2" type="Camera3D" parent="Player2/Head" groups=["main_cameras"]]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0587583, -0.35, -0.0398502)
-
-[node name="InteractRay" parent="Player2/Head" instance=ExtResource("3_4mt3y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
-target_position = Vector3(0, 0, -2)
 
 [node name="Timers" type="Node" parent="."]
 unique_name_in_owner = true
@@ -6014,16 +5938,16 @@ polygon = PackedVector2Array(0.723467, 1.26221, 0.547921, 1.34711, 0.640854, 1.4
 depth = 0.11
 material = SubResource("StandardMaterial3D_3lshp")
 
+[node name="Player1" parent="." instance=ExtResource("7_iyol3")]
+transform = Transform3D(-0.552257, 0, 0.833674, 0, 1, 0, -0.833674, 0, -0.552257, 14.1772, 0, -7.5524)
+
+[node name="Player2" parent="." instance=ExtResource("7_iyol3")]
+transform = Transform3D(0.534057, 0, -0.845448, 0, 1, 0, 0.845448, 0, 0.534057, -13.9224, 2.51021, 7.9638)
+visible = false
+
 [node name="HUD" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 script = ExtResource("8_5w2yo")
-
-[node name="MultiplayerButton" type="Button" parent="HUD"]
-offset_left = 56.0
-offset_top = 216.0
-offset_right = 260.0
-offset_bottom = 296.0
-text = "CLICK FOR MULTIPLAYER!"
 
 [node name="ScoreLabel" type="Label" parent="HUD"]
 visible = false
@@ -6274,6 +6198,5 @@ render_target_update_mode = 0
 [connection signal="timeout" from="Timers/SpeedUpTimer" to="." method="_on_speed_up_timer_timeout"]
 [connection signal="timeout" from="Timers/SpeedUpTimer2" to="." method="_on_speed_up_timer2_timeout"]
 [connection signal="timeout" from="Timers/SpeedUpTimer3" to="." method="_on_speed_up_timer3_timeout"]
-[connection signal="pressed" from="HUD/MultiplayerButton" to="." method="_on_multiplayer_button_pressed"]
 [connection signal="timeout" from="HUD/ColorSwitchTimer" to="." method="_on_color_switch_timer_timeout"]
 [connection signal="pressed" from="DeathScreen/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
