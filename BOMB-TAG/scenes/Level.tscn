@@ -11,11 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://dxak4yse752ic" path="res://Global Assets/OFFICIAL Building Assets/half_wall.tscn" id="8_qmdvw"]
 [ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://Global Assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="9_7x8v1"]
 [ext_resource type="PackedScene" uid="uid://dv6xewp5blt34" path="res://BOMB-TAG/scenes/bomber.tscn" id="11_h2r53"]
-[ext_resource type="Script" uid="uid://dtmf1ecyey6pe" path="res://BOMB-TAG/scripts/timer.gd" id="13_wsk4p"]
+[ext_resource type="Script" uid="uid://emew1gs6mbva" path="res://BOMB-TAG/scripts/timer.gd" id="13_wsk4p"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3am5r"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_owxug"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi5qk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7fxi"]
 bg_color = Color(0.326181, 0.694393, 0.360148, 1)
 border_width_left = 10
 border_width_bottom = 15
@@ -25,7 +25,7 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4351x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gia28"]
 bg_color = Color(0.326181, 0.694393, 0.360148, 1)
 border_width_top = 15
 border_color = Color(0.227451, 0.498039, 0.254902, 0)
@@ -36,10 +36,10 @@ corner_radius_bottom_left = 25
 
 [sub_resource type="Theme" id="Theme_jclgh"]
 default_font_size = 75
-Button/styles/focus = SubResource("StyleBoxEmpty_3am5r")
-Button/styles/hover = SubResource("StyleBoxFlat_gi5qk")
-Button/styles/normal = SubResource("StyleBoxFlat_gi5qk")
-Button/styles/pressed = SubResource("StyleBoxFlat_4351x")
+Button/styles/focus = SubResource("StyleBoxEmpty_owxug")
+Button/styles/hover = SubResource("StyleBoxFlat_f7fxi")
+Button/styles/normal = SubResource("StyleBoxFlat_f7fxi")
+Button/styles/pressed = SubResource("StyleBoxFlat_gia28")
 
 [sub_resource type="InputEventKey" id="InputEventKey_5gfwp"]
 device = -1
@@ -112,14 +112,15 @@ anchor_left = 0.5
 anchor_top = 0.75
 anchor_right = 0.5
 anchor_bottom = 0.75
-offset_left = -330.0
-offset_top = -155.0
-offset_right = 330.0
+offset_left = -306.0
+offset_top = -221.0
+offset_right = 306.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_jclgh")
 shortcut = SubResource("Shortcut_btft3")
-text = "Start Game"
+text = "Press [X] to Start 
+the Game"
 
 [node name="Label" type="Label" parent="StartMenu"]
 layout_mode = 1

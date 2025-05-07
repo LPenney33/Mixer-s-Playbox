@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://boqt6aedc5k2e"]
+[gd_scene load_steps=24 format=3 uid="uid://bf8w7mbqxgsns"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="1_mqm61"]
 [ext_resource type="PackedScene" uid="uid://b5lbqwdlk57ef" path="res://Global Assets/brackeys_3d_game_assets/dungeon_assets/building/wall_half_endcap.glb" id="2_73ap0"]
