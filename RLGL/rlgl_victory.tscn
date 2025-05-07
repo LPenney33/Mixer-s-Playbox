@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c8uhylkycsk3w"]
 
-[ext_resource type="Script" uid="uid://dhhifh2n4ijwt" path="res://rlgl_victory.gd" id="1_ukrm1"]
+[ext_resource type="Script" uid="uid://dhhifh2n4ijwt" path="res://RLGL/rlgl_victory.gd" id="1_1jl6s"]
 
 [sub_resource type="Theme" id="Theme_3ht8l"]
 
@@ -59,9 +59,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ukrm1")
+script = ExtResource("1_1jl6s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -261.0
 offset_top = -200.0
 offset_right = 2184.0
