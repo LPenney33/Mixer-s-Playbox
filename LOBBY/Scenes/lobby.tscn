@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://boqt6aedc5k2e"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="1_5svd6"]
-[ext_resource type="Script" uid="uid://o41ame7ts6fr" path="res://LOBBY/Scripts/lobby.gd" id="1_7npox"]
+[ext_resource type="Script" path="res://LOBBY/Scripts/lobby.gd" id="1_7npox"]
 [ext_resource type="PackedScene" uid="uid://bxomekkp44vay" path="res://Global Assets/OFFICIAL Building Assets/torch.tscn" id="4_7uu27"]
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="5_pvsig"]
 [ext_resource type="PackedScene" uid="uid://6n8achi2iynu" path="res://Global Assets/OFFICIAL Building Assets/wall_corner.tscn" id="6_xsi3p"]
