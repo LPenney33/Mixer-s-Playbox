@@ -1,14 +1,15 @@
+# File: res://BOMB-TAG/scripts/timer.gd
 extends Timer
 
 signal countdown_finished
 
-@onready var timer: Timer = $StartGameTimer  # Ensure you have a Timer node as a child.
+func _ready():
+	# connect this Timer’s own timeout
+	connect("timeout", Callable(self, "_on_Timer_timeout"))
 
 func start_countdown():
-	# Set how many seconds you want (5 in your case).
-	timer.wait_time = 5.0
-	timer.start()
+	wait_time = 5.0
+	start()
 
 func _on_Timer_timeout():
-	# This function is connected to the Timer’s "timeout" signal.
 	emit_signal("countdown_finished")
