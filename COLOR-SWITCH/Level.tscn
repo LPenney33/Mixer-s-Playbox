@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/floor_wood.tscn" id="3_wfbg8"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="4_13qcr"]
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="5_4y1eh"]
-[ext_resource type="Script" path="res://COLOR-SWITCH/platforms.gd" id="6_36ef6"]
+[ext_resource type="Script" uid="uid://cta1tlul583at" path="res://COLOR-SWITCH/platforms.gd" id="6_36ef6"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="7_iyol3"]
 [ext_resource type="Script" uid="uid://cljex2s47i161" path="res://COLOR-SWITCH/ThatTile.gd" id="7_vpoqu"]
-[ext_resource type="Script" path="res://COLOR-SWITCH/hud.gd" id="8_5w2yo"]
+[ext_resource type="Script" uid="uid://tatpd88ul1w0" path="res://COLOR-SWITCH/hud.gd" id="8_5w2yo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3rrl"]
 sky_top_color = Color(0.262805, 0.254747, 0.527349, 1)
@@ -63,6 +63,47 @@ albedo_color = Color(0, 0, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3lshp"]
 albedo_color = Color(0.490196, 0, 1, 1)
+
+[sub_resource type="Theme" id="Theme_iyol3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mt3y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfbg8"]
+bg_color = Color(0.32549, 0.694118, 0.360784, 1)
+border_width_left = 10
+border_width_bottom = 15
+border_color = Color(0.227451, 0.498039, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13qcr"]
+bg_color = Color(0.32549, 0.694118, 0.360784, 1)
+border_width_top = 15
+border_color = Color(0.227451, 0.498039, 0.254902, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4y1eh"]
+bg_color = Color(0.32549, 0.694118, 0.360784, 1)
+border_width_left = 10
+border_width_bottom = 15
+border_color = Color(0.227451, 0.498039, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="InputEventKey" id="InputEventKey_4mt3y"]
+device = -1
+keycode = 76
+unicode = 108
+
+[sub_resource type="Shortcut" id="Shortcut_wfbg8"]
+events = [SubResource("InputEventKey_4mt3y")]
 
 [sub_resource type="Theme" id="Theme_4mt3y"]
 
@@ -155,47 +196,6 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 shadow_color = Color(0.388521, 0.125488, 0.0152081, 0.6)
 shadow_size = 3
-
-[sub_resource type="Theme" id="Theme_iyol3"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mt3y"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfbg8"]
-bg_color = Color(0.32549, 0.694118, 0.360784, 1)
-border_width_left = 10
-border_width_bottom = 15
-border_color = Color(0.227451, 0.498039, 0.254902, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13qcr"]
-bg_color = Color(0.32549, 0.694118, 0.360784, 1)
-border_width_top = 15
-border_color = Color(0.227451, 0.498039, 0.254902, 0)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4y1eh"]
-bg_color = Color(0.32549, 0.694118, 0.360784, 1)
-border_width_left = 10
-border_width_bottom = 15
-border_color = Color(0.227451, 0.498039, 0.254902, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-
-[sub_resource type="InputEventKey" id="InputEventKey_4mt3y"]
-device = -1
-keycode = 76
-unicode = 108
-
-[sub_resource type="Shortcut" id="Shortcut_wfbg8"]
-events = [SubResource("InputEventKey_4mt3y")]
 
 [node name="Color Switch" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138779, -0.142441, 0.0684204)
@@ -5945,6 +5945,104 @@ transform = Transform3D(-0.552257, 0, 0.833674, 0, 1, 0, -0.833674, 0, -0.552257
 transform = Transform3D(0.534057, 0, -0.845448, 0, 1, 0, 0.845448, 0, 0.534057, -13.9224, 2.51021, 7.9638)
 visible = false
 
+[node name="SplitCanvas" type="CanvasLayer" parent="."]
+
+[node name="Mask" type="ColorRect" parent="SplitCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384314, 0.454902, 0.54902, 1)
+
+[node name="SplitScreen" type="Control" parent="SplitCanvas"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftContainer" type="SubViewportContainer" parent="SplitCanvas/SplitScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.451
+offset_top = -31.0
+offset_right = 900.0
+offset_bottom = 58.752
+grow_vertical = 2
+
+[node name="LeftViewport" type="SubViewport" parent="SplitCanvas/SplitScreen/LeftContainer"]
+handle_input_locally = false
+size = Vector2i(1010, 1030)
+render_target_update_mode = 4
+
+[node name="RightContainer" type="SubViewportContainer" parent="SplitCanvas/SplitScreen"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -952.0
+offset_top = -31.0
+offset_right = 58.0
+offset_bottom = 351.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="RightViewport" type="SubViewport" parent="SplitCanvas/SplitScreen/RightContainer"]
+handle_input_locally = false
+size = Vector2i(1010, 1030)
+render_target_update_mode = 4
+
+[node name="DeathScreen" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="MainMenuButton" type="Button" parent="DeathScreen"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+offset_left = -330.0
+offset_top = -155.0
+offset_right = 330.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_iyol3")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4mt3y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wfbg8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_13qcr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4y1eh")
+shortcut = SubResource("Shortcut_wfbg8")
+text = "Main Menu"
+
+[node name="YouDiedLabel" type="Label" parent="DeathScreen"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.254
+anchor_top = 0.097
+anchor_right = 0.746
+anchor_bottom = 0.332
+offset_left = -49.608
+offset_top = 0.143997
+offset_right = 49.608
+offset_bottom = -0.135986
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 111
+text = "You Died"
+horizontal_alignment = 1
+
+[node name="DeathColorRect" type="ColorRect" parent="DeathScreen"]
+visible = false
+z_index = -1
+offset_right = 5688.0
+offset_bottom = 3128.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
 [node name="HUD" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 script = ExtResource("8_5w2yo")
@@ -6087,116 +6185,18 @@ visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -125.0
-offset_top = 25.0
+offset_left = -216.0
+offset_top = 24.0
 offset_right = -25.0
-offset_bottom = 125.0
+offset_bottom = 215.0
 grow_horizontal = 0
 
 [node name="ColorSwitchTimer" type="Timer" parent="HUD"]
 wait_time = 5.0
 
-[node name="DeathScreen" type="CanvasLayer" parent="."]
-unique_name_in_owner = true
-
-[node name="MainMenuButton" type="Button" parent="DeathScreen"]
-visible = false
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.75
-anchor_right = 0.5
-anchor_bottom = 0.75
-offset_left = -330.0
-offset_top = -155.0
-offset_right = 330.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = SubResource("Theme_iyol3")
-theme_override_font_sizes/font_size = 75
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4mt3y")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wfbg8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_13qcr")
-theme_override_styles/normal = SubResource("StyleBoxFlat_4y1eh")
-shortcut = SubResource("Shortcut_wfbg8")
-text = "Main Menu"
-
-[node name="YouDiedLabel" type="Label" parent="DeathScreen"]
-visible = false
-anchors_preset = -1
-anchor_left = 0.254
-anchor_top = 0.097
-anchor_right = 0.746
-anchor_bottom = 0.332
-offset_left = -49.608
-offset_top = 0.143997
-offset_right = 49.608
-offset_bottom = -0.135986
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 111
-text = "You Died"
-horizontal_alignment = 1
-
-[node name="DeathColorRect" type="ColorRect" parent="DeathScreen"]
-visible = false
-z_index = -1
-offset_right = 5688.0
-offset_bottom = 3128.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[node name="SplitCanvas" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Mask" type="ColorRect" parent="SplitCanvas"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.384314, 0.454902, 0.54902, 1)
-
-[node name="SplitScreen" type="Control" parent="SplitCanvas"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="LeftContainer" type="SubViewportContainer" parent="SplitCanvas/SplitScreen"]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 1.451
-offset_top = -31.0
-offset_right = 900.0
-offset_bottom = 58.752
-grow_vertical = 2
-
-[node name="LeftViewport" type="SubViewport" parent="SplitCanvas/SplitScreen/LeftContainer"]
-handle_input_locally = false
-size = Vector2i(1010, 1030)
-render_target_update_mode = 0
-
-[node name="RightContainer" type="SubViewportContainer" parent="SplitCanvas/SplitScreen"]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -900.0
-offset_top = -31.0
-offset_bottom = 351.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="RightViewport" type="SubViewport" parent="SplitCanvas/SplitScreen/RightContainer"]
-handle_input_locally = false
-size = Vector2i(1010, 1030)
-render_target_update_mode = 0
-
 [connection signal="timeout" from="Timers/IntermissionTimer" to="." method="_on_intermission_timer_timeout"]
 [connection signal="timeout" from="Timers/SpeedUpTimer" to="." method="_on_speed_up_timer_timeout"]
 [connection signal="timeout" from="Timers/SpeedUpTimer2" to="." method="_on_speed_up_timer2_timeout"]
 [connection signal="timeout" from="Timers/SpeedUpTimer3" to="." method="_on_speed_up_timer3_timeout"]
-[connection signal="timeout" from="HUD/ColorSwitchTimer" to="." method="_on_color_switch_timer_timeout"]
 [connection signal="pressed" from="DeathScreen/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="timeout" from="HUD/ColorSwitchTimer" to="." method="_on_color_switch_timer_timeout"]

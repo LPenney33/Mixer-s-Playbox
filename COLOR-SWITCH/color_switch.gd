@@ -43,6 +43,7 @@ var purple  = Color(0.5, 0, 1)
 var colors = [red, orange, yellow, green, blue, purple]
 
 var target_position                = Vector3(-2.238, 3.923, 0)
+var color_square_position            = Vector2(860, 120)
 var target_position_other          = Vector3(1.369, 4.85, 0)
 var target_platform_position       = Vector3(0, 0, 0)
 var target_start_platform_position = Vector3(0, 50, 0)
@@ -114,6 +115,7 @@ func _on_start_button_pressed():
 		player2.username       = GlobalInfo.p2_name
 		player2mesh.visible    = true
 		player2.global_transform.origin = target_position_other
+		color_square.global_position = color_square_position
 		_enable_split_screen()
 	else:
 		cameraPlayer1.current = true
