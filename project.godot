@@ -21,6 +21,9 @@ RlglManager="*res://RLGL/rlgl_manager.gd"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 window/size/initial_position_type=2
 <<<<<<<Updatedupstreamwindow/size/viewport_width=1920
 
