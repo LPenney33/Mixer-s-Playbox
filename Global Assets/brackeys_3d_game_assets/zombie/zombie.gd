@@ -1,8 +1,7 @@
 extends Node3D
 
-@onready var zom_player = $Skeleton3D/AnimationPlayer  # Reference to the AnimationPlayer
-
 @export var move_speed: float = 2.0
+@export var stop_x_position: float = 217.0  # X position to stop at
 var started := false
 var delay_timer := 0.0
 var ignoring_red_light := false  # Should this NPC break the rules this round?
@@ -12,14 +11,6 @@ var is_moving = false
 func _ready():
 	# Random delay before NPC starts moving (personality quirk)
 	delay_timer = randf_range(0.0, 2.0)
-
-	# Print to check if animation player is found
-	if zom_player == null:
-		print("Error: AnimationPlayer not found!")
-
-	# Start with an idle animation (or you can leave it empty to default to no animation)
-	if !zom_player.is_playing():
-		zom_player.play("Idle")  # Or change this to a default pose name if you have one
 
 func _physics_process(delta):
 	if not started:
@@ -44,29 +35,19 @@ func _physics_process(delta):
 			# Move and check for punishment every frame
 			var moved = move_forward(delta)
 			if moved:
-				print("💀 Zombie got caught cheating! Deleting...")
 				queue_free()
 				return
 		else:
 			is_moving = false
-			if zom_player.is_playing():
-				zom_player.stop()
 			return  # Stay still during red light if not cheating
-	if ignoring_red_light:
-		print("🧠 Cheating decision made: Will CHEAT 🔴")
-	else:
-		print("🧠 Cheating decision made: Will OBEY 🛑")
-	# If green light
+
+	# Check if the X position has passed the target
+	if global_position.x >= stop_x_position:
+		is_moving = false  # Stop moving once we pass the X threshold
+		return
+
+	# Keep moving forward until the stop position is reached
 	move_forward(delta)
-
-	# Animation control
-	if is_moving:
-		if !zom_player.is_playing() or zom_player.current_animation != "Run":
-			zom_player.play("Run")
-	else:
-		if zom_player.is_playing():
-			zom_player.stop()
-
 
 func move_forward(delta):
 	var forward = global_transform.basis.z.normalized()
@@ -75,6 +56,3 @@ func move_forward(delta):
 
 	is_moving = velocity.length() > 0.001
 	return is_moving  # Return if we moved
-
-	# Debugging: Print the position to ensure it's moving
-	print("Zombie Position: ", global_position)
