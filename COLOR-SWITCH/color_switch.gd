@@ -60,6 +60,8 @@ var first_time     = 0
 # will be overridden by lobby
 var multiplayer_enabled = false
 
+var multiplayer_death = false
+
 func _ready():
 	button.connect("pressed", _on_start_button_pressed)
 	hide_all()
@@ -116,6 +118,7 @@ func _on_start_button_pressed():
 		player2mesh.visible    = true
 		player2.global_transform.origin = target_position_other
 		color_square.global_position = color_square_position
+		multiplayer_death = true
 		_enable_split_screen()
 	else:
 		cameraPlayer1.current = true
@@ -142,7 +145,8 @@ func _on_start_button_pressed():
 	# — Choose and show a random platform —
 	var idx = randi() % platform_manager.get_child_count()
 	var plat = platform_manager.get_children()[idx]
-	plat.visible = true
+	plat.visible = false
+	starting_platform.visible = true
 	plat.global_transform.origin = target_platform_position
 	platform_manager.active_platform = plat
 	print("Platform ", idx, " is now visible.")
@@ -154,15 +158,13 @@ func _on_start_button_pressed():
 	color_square.self_modulate = colors[new_index]
 	print("Selected Color: ", colors[new_index])
 
-	# — Sink the BlankPlatform out of the way so players fall through —
-	var t = starting_platform.global_transform
-	t.origin.y = -50
-	starting_platform.global_transform = t
-
 func _process(_delta):
 	timer_label.text        = ":" + str(int(roundf(color_timer.get_time_left())))
 	int_timer_label.text    = ":" + str(int(roundf(int_timer.get_time_left())))
 	score_label.text        = "Score: " + str(score)
+
+	if p1dead and p2dead:
+		both_players_dead()
 
 	if player1.global_transform.origin.y <= -2:
 		player1.global_transform.origin = player1_death_position
@@ -204,6 +206,10 @@ func _on_intermission_timer_timeout():
 	if first_time > 0:
 		score += add_more_score
 	first_time += 1
+
+	var t = starting_platform.global_transform
+	t.origin.y = -50
+	starting_platform.global_transform = t
 
 func _enable_split_screen() -> void:
 	for cam in get_tree().get_nodes_in_group("main_cameras"):
@@ -249,25 +255,25 @@ func _on_speed_up_timer3_timeout():
 func _on_main_menu_button_pressed():
 	get_tree().change_scene_to_file("res://LOBBY/Scenes/lobby.tscn")
 
+var p1dead = false
+
+var p2dead = false
+
 func player1_death():
 	player1.can_move         = false
-	death_button.visible     = true
-	death_label.visible      = true
-	death_square.visible     = true
-	color_square.visible     = false
-	pmosybau_label.visible   = false
-	timer_label.visible      = false
-	int_timer_label.visible  = false
-	start_label.visible      = false
-	score_label.visible      = false
-	color_timer.stop()
-	int_timer.stop()
-	speed_timer.stop()
-	speed_timer2.stop()
-	speed_timer3.stop()
+	p1dead = true
+
+	if multiplayer_death == false:
+		p2dead = true
+	else:
+		pass
 
 func player2_death():
 	player2.can_move         = false
+	p2dead = true
+
+
+func both_players_dead():
 	death_button.visible     = true
 	death_label.visible      = true
 	death_square.visible     = true
@@ -277,6 +283,8 @@ func player2_death():
 	int_timer_label.visible  = false
 	start_label.visible      = false
 	score_label.visible      = false
+	p1dead = false
+	p2dead = false
 	color_timer.stop()
 	int_timer.stop()
 	speed_timer.stop()

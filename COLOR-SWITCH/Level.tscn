@@ -5946,6 +5946,7 @@ transform = Transform3D(0.534057, 0, -0.845448, 0, 1, 0, 0.845448, 0, 0.534057, 
 visible = false
 
 [node name="SplitCanvas" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Mask" type="ColorRect" parent="SplitCanvas"]
 anchors_preset = 15
@@ -5975,7 +5976,7 @@ grow_vertical = 2
 [node name="LeftViewport" type="SubViewport" parent="SplitCanvas/SplitScreen/LeftContainer"]
 handle_input_locally = false
 size = Vector2i(1010, 1030)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="RightContainer" type="SubViewportContainer" parent="SplitCanvas/SplitScreen"]
 layout_mode = 1
@@ -5993,7 +5994,7 @@ grow_vertical = 2
 [node name="RightViewport" type="SubViewport" parent="SplitCanvas/SplitScreen/RightContainer"]
 handle_input_locally = false
 size = Vector2i(1010, 1030)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="DeathScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
