@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1ghppbhivvr5"]
+
+[ext_resource type="Script" uid="uid://bymu8q8e1jfro" path="res://MAIN_MENU/main_menu.gd" id="1_08en8"]
+[ext_resource type="Texture2D" uid="uid://dhupmbt0xceui" path="res://MAIN_MENU/Mixer's_Playbox_IMPORT.png" id="1_ffkd7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_7vrkn"]
+Button/styles/hover = SubResource("StyleBoxFlat_06t4h")
+Button/styles/normal = SubResource("StyleBoxFlat_06t4h")
+Button/styles/pressed = SubResource("StyleBoxFlat_06t4h")
+
+[sub_resource type="InputEventKey" id="InputEventKey_x8jh8"]
+device = -1
+keycode = 76
+unicode = 108
+
+[sub_resource type="InputEventKey" id="InputEventKey_a0kbt"]
+device = -1
+keycode = 4194438
+unicode = 48
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_wlaxm"]
+button_index = 10
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_ue208"]
+button_index = 4
+
+[sub_resource type="Shortcut" id="Shortcut_5m6cf"]
+events = [SubResource("InputEventKey_x8jh8"), SubResource("InputEventKey_a0kbt"), SubResource("InputEventJoypadButton_wlaxm"), SubResource("InputEventJoypadButton_ue208")]
+
+[sub_resource type="Shortcut" id="Shortcut_2s4yn"]
+events = [SubResource("InputEventKey_x8jh8"), SubResource("InputEventKey_a0kbt"), SubResource("InputEventJoypadButton_wlaxm"), SubResource("InputEventJoypadButton_ue208")]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_08en8")
+
+[node name="Mixer\'sPlayboxImport" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_ffkd7")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 557.0
+offset_right = 1263.0
+offset_bottom = 628.0
+rotation = 0.11596
+theme = SubResource("Theme_7vrkn")
+shortcut = SubResource("Shortcut_5m6cf")
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 628.0
+offset_top = 649.0
+offset_right = 1198.0
+offset_bottom = 720.0
+rotation = 0.11596
+theme = SubResource("Theme_7vrkn")
+shortcut = SubResource("Shortcut_2s4yn")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

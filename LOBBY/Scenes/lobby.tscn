@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://boqt6aedc5k2e"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="1_5svd6"]
-[ext_resource type="Script" path="res://LOBBY/Scripts/lobby.gd" id="1_7npox"]
+[ext_resource type="Script" uid="uid://o41ame7ts6fr" path="res://LOBBY/Scripts/lobby.gd" id="1_7npox"]
 [ext_resource type="PackedScene" uid="uid://bxomekkp44vay" path="res://Global Assets/OFFICIAL Building Assets/torch.tscn" id="4_7uu27"]
 [ext_resource type="PackedScene" uid="uid://d3vqmhd84e11y" path="res://Global Assets/OFFICIAL Building Assets/wall.tscn" id="5_pvsig"]
 [ext_resource type="PackedScene" uid="uid://6n8achi2iynu" path="res://Global Assets/OFFICIAL Building Assets/wall_corner.tscn" id="6_xsi3p"]
@@ -18,10 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://bxtrgi11wsx6e" path="res://Global Assets/OFFICIAL Building Assets/half_wall_corner.tscn" id="18_qwdpg"]
 [ext_resource type="PackedScene" uid="uid://6rw5x45y5vhi" path="res://Global Assets/OFFICIAL Building Assets/pillar.tscn" id="19_g8u60"]
 [ext_resource type="PackedScene" uid="uid://bx12mj2kv3etd" path="res://LOBBY/GLOBAL-config/NameSelectorMenuUI.tscn" id="20_i0j28"]
-[ext_resource type="Script" path="res://LOBBY/Scripts/rlglTransitionTorch.gd" id="21_od0gi"]
-[ext_resource type="Script" path="res://LOBBY/Scripts/csTransitionTorch.gd" id="22_ieyhh"]
+[ext_resource type="Script" uid="uid://6q78mqsmomal" path="res://LOBBY/Scripts/rlglTransitionTorch.gd" id="21_od0gi"]
+[ext_resource type="Script" uid="uid://ep0raa4apk7i" path="res://LOBBY/Scripts/csTransitionTorch.gd" id="22_ieyhh"]
 [ext_resource type="PackedScene" uid="uid://1367mm0hhlt4" path="res://Global Assets/OFFICIAL Building Assets/wall_cracked.tscn" id="22_qdeey"]
-[ext_resource type="Script" path="res://LOBBY/Interact/interactable.gd" id="22_wtp6t"]
+[ext_resource type="Script" uid="uid://bvdets0lcgiql" path="res://LOBBY/Interact/interactable.gd" id="22_wtp6t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mc2qy"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
