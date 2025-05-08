@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dd3v5hnjipwya"]
+[gd_scene load_steps=46 format=3 uid="uid://dd3v5hnjipwya"]
 
 [ext_resource type="Script" uid="uid://cdpk6bj4rkuvi" path="res://COLOR-SWITCH/color_switch.gd" id="1_iyol3"]
 [ext_resource type="PackedScene" uid="uid://dh2s0jhac7t2d" path="res://BOMB-TAG/assets/OFFICIAL Building Assets/floor_wood.tscn" id="3_wfbg8"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://BOMB-TAG/addons/proto_controller/proto_controller.tscn" id="7_iyol3"]
 [ext_resource type="Script" uid="uid://cljex2s47i161" path="res://COLOR-SWITCH/ThatTile.gd" id="7_vpoqu"]
 [ext_resource type="Script" uid="uid://tatpd88ul1w0" path="res://COLOR-SWITCH/hud.gd" id="8_5w2yo"]
+[ext_resource type="StyleBox" uid="uid://lfayjbrscklg" path="res://COLOR-SWITCH/ColorPanel.tres" id="9_4mt3y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3rrl"]
 sky_top_color = Color(0.262805, 0.254747, 0.527349, 1)
@@ -160,6 +161,9 @@ events = [SubResource("InputEventKey_iyol3")]
 [sub_resource type="Theme" id="Theme_eyso4"]
 
 [sub_resource type="Theme" id="Theme_sspva"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mt3y"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_02jvy"]
 font_size = 64
@@ -6069,6 +6073,27 @@ offset_bottom = 120.0
 theme = SubResource("Theme_4mt3y")
 theme_override_styles/panel = SubResource("StyleBoxFlat_36ef6")
 
+[node name="ScoreLabel2" type="Label" parent="HUD"]
+visible = false
+offset_left = 1656.0
+offset_top = 16.0
+offset_right = 1880.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 30
+text = "Score: 00000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScorePanel2" type="Panel" parent="HUD/ScoreLabel2"]
+z_index = -1
+layout_mode = 0
+offset_left = -16.0
+offset_top = -8.0
+offset_right = 240.0
+offset_bottom = 120.0
+theme = SubResource("Theme_4mt3y")
+theme_override_styles/panel = SubResource("StyleBoxFlat_36ef6")
+
 [node name="StartButton" type="Button" parent="HUD"]
 anchors_preset = -1
 anchor_left = 0.5
@@ -6117,6 +6142,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_sspva")
 theme_override_font_sizes/font_size = 111
+theme_override_styles/normal = SubResource("StyleBoxFlat_4mt3y")
 text = "Get Ready!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -6191,6 +6217,14 @@ offset_top = 24.0
 offset_right = -25.0
 offset_bottom = 215.0
 grow_horizontal = 0
+
+[node name="ColorRectPanel" type="Panel" parent="HUD/ColorRect"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_styles/panel = ExtResource("9_4mt3y")
 
 [node name="ColorSwitchTimer" type="Timer" parent="HUD"]
 wait_time = 5.0

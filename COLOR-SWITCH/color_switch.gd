@@ -20,6 +20,7 @@ extends Node3D
 @onready var death_label         = $DeathScreen/YouDiedLabel
 @onready var death_square        = $DeathScreen/DeathColorRect
 @onready var score_label         = $HUD/ScoreLabel
+@onready var score_label_other   = $HUD/ScoreLabel2
 @onready var player1mesh         = $Player1/Mesh
 @onready var player2mesh         = $Player2/Mesh
 
@@ -55,12 +56,18 @@ var new_index  = last_index
 
 var score          = 0
 var add_more_score = 0
+var score_other    = 0
+var add_more_score_other = 0
 var first_time     = 0
 
 # will be overridden by lobby
 var multiplayer_enabled = false
 
 var multiplayer_death = false
+
+var p1dead = false
+
+var p2dead = false
 
 func _ready():
 	button.connect("pressed", _on_start_button_pressed)
@@ -136,10 +143,14 @@ func _on_start_button_pressed():
 	int_timer_label.visible= false
 	timer_label.visible    = false
 	score_label.visible    = true
+	if multiplayer_enabled:
+		score_label_other.visible = true
 	starting_platform.visible = true
 
 	score          = 0
+	score_other    = 0
 	add_more_score = 100
+	add_more_score_other = 100
 	first_time     = 0
 
 	# — Choose and show a random platform —
@@ -161,7 +172,8 @@ func _on_start_button_pressed():
 func _process(_delta):
 	timer_label.text        = ":" + str(int(roundf(color_timer.get_time_left())))
 	int_timer_label.text    = ":" + str(int(roundf(int_timer.get_time_left())))
-	score_label.text        = "Score: " + str(score)
+	score_label.text        = GlobalInfo.p1_name + " Score: " + str(score)
+	score_label_other.text = GlobalInfo.p2_name + " Score: " + str(score_other)
 
 	if p1dead and p2dead:
 		both_players_dead()
@@ -200,11 +212,17 @@ func _on_intermission_timer_timeout():
 		tile.selected()
 
 	player1.can_jump  = true
+	player2.can_jump  = true
 	color_timer.start()
 	int_timer.stop()
 
-	if first_time > 0:
+	if first_time > 0 and p1dead == false:
 		score += add_more_score
+
+	if first_time > 0 and p2dead == false:
+		if multiplayer_death == true:
+			score_other += add_more_score_other
+
 	first_time += 1
 
 	var t = starting_platform.global_transform
@@ -229,6 +247,7 @@ func _on_color_switch_timer_timeout():
 	timer_label.visible     = false
 	platform_manager.update_platform(colors[new_index])
 	player1.can_jump = false
+	player2.can_jump = false
 	color_timer.stop()
 	int_timer.start()
 
@@ -238,6 +257,7 @@ func _on_speed_up_timer_timeout():
 	speed_timer.stop()
 	speed_timer2.start()
 	add_more_score = 150
+	add_more_score_other = 150
 
 func _on_speed_up_timer2_timeout():
 	color_timer.wait_time = 2
@@ -245,19 +265,19 @@ func _on_speed_up_timer2_timeout():
 	speed_timer2.stop()
 	speed_timer3.start()
 	add_more_score = 200
+	add_more_score_other = 200
 
 func _on_speed_up_timer3_timeout():
 	color_timer.wait_time = 1.5
 	int_timer.wait_time   = 0.5
 	speed_timer3.stop()
 	add_more_score = 300
+	add_more_score_other = 300
 
 func _on_main_menu_button_pressed():
 	get_tree().change_scene_to_file("res://LOBBY/Scenes/lobby.tscn")
 
-var p1dead = false
 
-var p2dead = false
 
 func player1_death():
 	player1.can_move         = false
@@ -283,6 +303,7 @@ func both_players_dead():
 	int_timer_label.visible  = false
 	start_label.visible      = false
 	score_label.visible      = false
+	score_label_other.visible = false
 	p1dead = false
 	p2dead = false
 	color_timer.stop()
