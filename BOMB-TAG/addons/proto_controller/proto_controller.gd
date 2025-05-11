@@ -44,8 +44,8 @@ var look_rotation : Vector2
 var move_speed    : float = 0.0
 var freeflying    : bool  = false
 
-@onready var head     : Node3D             = $Head
-@onready var collider : CollisionShape3D   = $Collider
+@onready var head     : Node3D           = $Head
+@onready var collider : CollisionShape3D = $Collider
 
 func _ready() -> void:
 	configure_inputs()
@@ -118,14 +118,6 @@ func _physics_process(delta: float) -> void:
 	if look_x != 0 or look_y != 0:
 		rotate_look(Vector2(look_x, look_y) * controller_look_sensitivity * delta)
 
-	move_and_slide()
-
-	# Look via joystick-axis actions
-	var lx = Input.get_action_strength(input_look_right) - Input.get_action_strength(input_look_left)
-	var ly = Input.get_action_strength(input_look_down)  - Input.get_action_strength(input_look_up)
-	if lx != 0 or ly != 0:
-		rotate_look(Vector2(lx,ly)*controller_look_sensitivity*delta)
-
 func rotate_look(v: Vector2) -> void:
 	look_rotation.x = clamp(look_rotation.x - v.y, deg_to_rad(-85), deg_to_rad(85))
 	look_rotation.y -= v.x
@@ -161,3 +153,4 @@ func respawn():
 
 func _on_game_started() -> void:
 	can_move = true
+	 

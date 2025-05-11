@@ -80,9 +80,9 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 shadow_size = 3
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3am5r"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iyol3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi5qk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mt3y"]
 bg_color = Color(0.326181, 0.694393, 0.360148, 1)
 border_width_left = 10
 border_width_bottom = 15
@@ -92,7 +92,7 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4351x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpoqu"]
 bg_color = Color(0.326181, 0.694393, 0.360148, 1)
 border_width_top = 15
 border_color = Color(0.227451, 0.498039, 0.254902, 0)
@@ -103,10 +103,10 @@ corner_radius_bottom_left = 25
 
 [sub_resource type="Theme" id="Theme_jclgh"]
 default_font_size = 75
-Button/styles/focus = SubResource("StyleBoxEmpty_3am5r")
-Button/styles/hover = SubResource("StyleBoxFlat_gi5qk")
-Button/styles/normal = SubResource("StyleBoxFlat_gi5qk")
-Button/styles/pressed = SubResource("StyleBoxFlat_4351x")
+Button/styles/focus = SubResource("StyleBoxEmpty_iyol3")
+Button/styles/hover = SubResource("StyleBoxFlat_4mt3y")
+Button/styles/normal = SubResource("StyleBoxFlat_4mt3y")
+Button/styles/pressed = SubResource("StyleBoxFlat_vpoqu")
 
 [sub_resource type="InputEventKey" id="InputEventKey_iyol3"]
 device = -1
