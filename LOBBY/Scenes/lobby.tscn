@@ -58,14 +58,20 @@ size = Vector3(100, 100, 1)
 
 [node name="Player1" parent="." instance=ExtResource("1_5svd6")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -23.75, 0, 1.5)
-can_freefly = true
-jump_velocity = 3.0
+input_left = ""
+input_right = ""
+input_forward = ""
+input_back = ""
+input_jump = ""
 
 [node name="Player2" parent="." instance=ExtResource("1_5svd6")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -24.0063, 0.526559, 9.80674)
 visible = false
-can_freefly = true
-jump_velocity = 3.0
+input_left = ""
+input_right = ""
+input_forward = ""
+input_back = ""
+input_jump = ""
 
 [node name="Room1" type="Node3D" parent="."]
 

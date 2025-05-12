@@ -153,4 +153,3 @@ func respawn():
 
 func _on_game_started() -> void:
 	can_move = true
-	 
