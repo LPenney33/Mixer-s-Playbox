@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b50615p1gw4a2"
+path="res://.godot/imported/indicator-square-b.obj-7fddf349d1cf51650c2c3c41a43b2ac7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/indicator-square-b.obj-7fddf349d1cf51650c2c3c41a43b2ac7.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/indicator-square-b.obj"
+dest_files=["res://.godot/imported/indicator-square-b.obj-7fddf349d1cf51650c2c3c41a43b2ac7.mesh", "res://.godot/imported/indicator-square-b.obj-7fddf349d1cf51650c2c3c41a43b2ac7.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

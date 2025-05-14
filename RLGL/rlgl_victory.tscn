@@ -1,0 +1,106 @@
+[gd_scene load_steps=13 format=3 uid="uid://c8uhylkycsk3w"]
+
+[ext_resource type="Script" uid="uid://dhhifh2n4ijwt" path="res://RLGL/rlgl_victory.gd" id="1_1jl6s"]
+
+[sub_resource type="Theme" id="Theme_3ht8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qksff"]
+bg_color = Color(0.589096, 0.589096, 0.589095, 1)
+draw_center = false
+
+[sub_resource type="Theme" id="Theme_ukrm1"]
+Label/styles/normal = SubResource("StyleBoxFlat_qksff")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ral15"]
+font_size = 150
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_la72w"]
+bg_color = Color(1.56425e-07, 0.351551, 5.29438e-07, 1)
+border_color = Color(0.639216, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e63f3"]
+bg_color = Color(0, 0.392157, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k22vv"]
+bg_color = Color(0, 0.329689, 6.73831e-07, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Theme" id="Theme_os6f4"]
+Button/styles/hover = SubResource("StyleBoxFlat_la72w")
+Button/styles/normal = SubResource("StyleBoxFlat_e63f3")
+Button/styles/pressed = SubResource("StyleBoxFlat_k22vv")
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_ukrm1"]
+button_index = 9
+
+[sub_resource type="InputEventKey" id="InputEventKey_ral15"]
+device = -1
+keycode = 76
+unicode = 108
+
+[sub_resource type="Shortcut" id="Shortcut_e63f3"]
+events = [SubResource("InputEventJoypadButton_ukrm1"), SubResource("InputEventKey_ral15")]
+
+[node name="Win Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1jl6s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -261.0
+offset_top = -200.0
+offset_right = 2184.0
+offset_bottom = 1354.0
+color = Color(0, 0, 0, 0.592157)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.5
+offset_top = -115.5
+offset_right = 245.5
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_3ht8l")
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ukrm1")
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 150
+text = "Victory!!"
+label_settings = SubResource("LabelSettings_ral15")
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_os6f4")
+theme_override_constants/outline_size = 6
+theme_override_constants/h_separation = -380
+theme_override_font_sizes/font_size = 60
+shortcut = SubResource("Shortcut_e63f3")
+text = "Next [X]"

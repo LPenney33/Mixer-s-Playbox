@@ -1,0 +1,236 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1l5ym45hmh1"]
+
+[ext_resource type="Script" uid="uid://cpbotg5tskv4n" path="res://RLGL/rlgl_death.gd" id="1_3mcqv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3am5r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi5qk"]
+bg_color = Color(0.326181, 0.694393, 0.360148, 1)
+border_width_left = 10
+border_width_bottom = 15
+border_color = Color(0.227451, 0.498039, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4351x"]
+bg_color = Color(0.326181, 0.694393, 0.360148, 1)
+border_width_top = 15
+border_color = Color(0.227451, 0.498039, 0.254902, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Theme" id="Theme_m5rs2"]
+default_font_size = 75
+Button/styles/focus = SubResource("StyleBoxEmpty_3am5r")
+Button/styles/hover = SubResource("StyleBoxFlat_gi5qk")
+Button/styles/normal = SubResource("StyleBoxFlat_gi5qk")
+Button/styles/pressed = SubResource("StyleBoxFlat_4351x")
+
+[sub_resource type="InputEventKey" id="InputEventKey_iyol3"]
+device = -1
+keycode = 76
+unicode = 108
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_gxthj"]
+button_index = 9
+
+[sub_resource type="Shortcut" id="Shortcut_3op5x"]
+events = [SubResource("InputEventKey_iyol3"), SubResource("InputEventJoypadButton_gxthj")]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1010.0
+offset_bottom = 1030.0
+script = ExtResource("1_3mcqv")
+
+[node name="P1_DeathScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftSideBlackScreen" type="ColorRect" parent="P1_DeathScreen"]
+layout_mode = 0
+offset_right = 1010.0
+offset_bottom = 1030.0
+color = Color(0, 0, 0, 1)
+
+[node name="P1_DeathLabel" type="Label" parent="P1_DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -253.5
+offset_right = 58.5
+offset_bottom = -230.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 91
+text = "You Have Died!"
+
+[node name="P1_DeathLabel2" type="Label" parent="P1_DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.5
+offset_top = -102.5
+offset_right = 110.5
+offset_bottom = -26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 55
+text = "Please Wait for "
+horizontal_alignment = 1
+
+[node name="P1_NameLabel" type="Label" parent="P1_DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -102.5
+offset_right = 390.5
+offset_bottom = -26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.180392, 0.796078, 1, 1)
+theme_override_font_sizes/font_size = 55
+text = "***"
+horizontal_alignment = 1
+
+[node name="P2_DeathScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1010.0
+offset_right = 1010.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftSideBlackScreen" type="ColorRect" parent="P2_DeathScreen"]
+layout_mode = 0
+offset_right = 1010.0
+offset_bottom = 1030.0
+color = Color(0, 0, 0, 1)
+
+[node name="P2_DeathLabel" type="Label" parent="P2_DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -253.5
+offset_right = 58.5
+offset_bottom = -230.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 91
+text = "You Have Died!"
+
+[node name="P2_DeathLabel2" type="Label" parent="P2_DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.5
+offset_top = -102.5
+offset_right = 110.5
+offset_bottom = -26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 55
+text = "Please Wait for "
+horizontal_alignment = 1
+
+[node name="P2_NameLabel" type="Label" parent="P2_DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -102.5
+offset_right = 390.5
+offset_bottom = -26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.180392, 0.796078, 1, 1)
+theme_override_font_sizes/font_size = 55
+text = "***"
+horizontal_alignment = 1
+
+[node name="SinglePlayer_DeathScreen" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 2036.0
+offset_bottom = 1030.0
+
+[node name="BlackScreen" type="ColorRect" parent="SinglePlayer_DeathScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="SinglePlayer_DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -974.5
+offset_top = -475.0
+offset_right = 974.5
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 350
+text = "You Died!"
+horizontal_alignment = 1
+
+[node name="LobbyButton" type="Button" parent="SinglePlayer_DeathScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+offset_left = -330.0
+offset_top = -155.0
+offset_right = 330.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_m5rs2")
+theme_override_font_sizes/font_size = 75
+shortcut = SubResource("Shortcut_3op5x")
+text = "Back to Lobby [X]"

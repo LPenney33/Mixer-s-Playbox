@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cps1r03bwppxs"
+path="res://.godot/imported/border-straight.obj-25dc5792455845c7f867f5510534da2d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/border-straight.obj-25dc5792455845c7f867f5510534da2d.mesh"]
+
+source_file="res://Global Assets/Kenney's Assets/Kenney's Desert Kit/Models/OBJ format/border-straight.obj"
+dest_files=["res://.godot/imported/border-straight.obj-25dc5792455845c7f867f5510534da2d.mesh", "res://.godot/imported/border-straight.obj-25dc5792455845c7f867f5510534da2d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
