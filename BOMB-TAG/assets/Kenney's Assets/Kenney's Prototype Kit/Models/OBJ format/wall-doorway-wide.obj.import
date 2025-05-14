@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dkwhrblg4yu1j"
+path="res://.godot/imported/wall-doorway-wide.obj-d60b92ec5c949475ed05b10ddbc5f2be.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-doorway-wide.obj-d60b92ec5c949475ed05b10ddbc5f2be.mesh"]
+
+source_file="res://BOMB-TAG/assets/Kenney's Assets/Kenney's Prototype Kit/Models/OBJ format/wall-doorway-wide.obj"
+dest_files=["res://.godot/imported/wall-doorway-wide.obj-d60b92ec5c949475ed05b10ddbc5f2be.mesh", "res://.godot/imported/wall-doorway-wide.obj-d60b92ec5c949475ed05b10ddbc5f2be.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
